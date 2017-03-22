@@ -1,63 +1,77 @@
-![:package](:hero)
+![forge-cli](:hero)
 
-# Package
+# Forge CLI
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
+[![Total Downloads][ico-downloads]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
 [![Code Climate][ico-codeclimate]][link-codeclimate]
 [![Code Quality][ico-quality]][link-quality]
 [![SensioLabs Insight][ico-insight]][link-insight]
 
-Short description of the package. What does it do and why should people download
-it? Brag a bit but don't exaggerate. Talk about what's to come and tease small
-pieces of functionality.
-
-> :namespace
-> :package
-> :insight
-> :hero
+Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites easily with this set of
+commands. An overview of all available commands can be found [here](#usage).
 
 ## Installation
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer require sven/:package
+$ composer global require sven/forge-cli
 ```
 
-Or add the package to your dependencies in `composer.json` and run
-`composer install` on the command line to download the package:
+## Setup
 
-```json
-{
-    "require": {
-        "sven/:package": "*"
-    }
-}
-```
-
-> Is this a Laravel package?
-
-Next, add the `ServiceProvider` to your `providers` array in `config/app.php`:
-
-```php
-'providers' => [
-    ...
-    Sven\:namespace\ServiceProvider::class,
-];
-```
-
-If you would like to load this package in certain environments only, take a look
-at [sven/env-providers](https://github.com/svenluijten/env-providers).
+Before using the commands, you have to provide an API token. To generate a new token, visit [this page](https://forge.laravel.com/user/profile#/api),
+give the token a name (like `forge-cli`) and click "Create new token". 
 
 ## Usage
-Some examples of the code. How should people use it, what options does this package
-provide? Should people be wary of some functionality?
+A list of commands with their explanation can be found below.
 
-```php
-Maybe some code?
-```
+### Servers
+Servers documentation...
+
+### Sites
+Sites documentation...
+
+### Services
+Services documentation...
+
+### Daemons
+Daemons documentation...
+
+### Firewalls
+Firewalls documentation...
+
+### Scheduled jobs
+Scheduled jobs documentation...
+
+### Databases
+Databases documentation...
+
+### SSL certificates
+SSL certificates documentation...
+
+### SSH keys
+SSH keys documentation...
+
+### Workers
+Workers documentation...
+
+### Deployment
+Deployment documentation...
+
+### Configuration
+Configuration documentation...
+
+### Projects
+Projects documentation...
+
+### Recipes
+Recipes documentation...
+
+### Credentials
+Credentials documentataion...
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
@@ -65,20 +79,19 @@ welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
 though. See the [contributors page](../../graphs/contributors) for all contributors.
 
 ## License
-`sven/:package` is licensed under the MIT License (MIT). Please see the
+`sven/forge-cli` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sven/:package.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sven/forge-cli.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sven/:package.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/svenluijten/:package.svg?style=flat-square
-[ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/:package.svg?style=flat-square
-[ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/:package.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/svenluijten/forge-cli.svg?style=flat-square
+[ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/forge-cli.svg?style=flat-square
+[ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/forge-cli.svg?style=flat-square
 [ico-insight]: https://img.shields.io/sensiolabs/i/:insight.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/sven/:package
-[link-downloads]: https://packagist.org/packages/sven/:package
-[link-travis]: https://travis-ci.org/svenluijten/:package
-[link-codeclimate]: https://codeclimate.com/github/svenluijten/:package
-[link-quality]: https://scrutinizer-ci.com/g/svenluijten/:package/?branch=master
+[link-packagist]: https://packagist.org/packages/sven/forge-cli
+[link-downloads]: https://packagist.org/packages/sven/forge-cli
+[link-travis]: https://travis-ci.org/svenluijten/forge-cli
+[link-codeclimate]: https://codeclimate.com/github/svenluijten/forge-cli
+[link-quality]: https://scrutinizer-ci.com/g/svenluijten/forge-cli/?branch=master
 [link-insight]: https://insight.sensiolabs.com/projects/:insight

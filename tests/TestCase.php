@@ -1,8 +1,8 @@
 <?php
 
-namespace Sven\:namespace\Tests;
+namespace Sven\ForgeCLI\Tests;
 
-use Sven\:namespace\ServiceProvider;
+use Sven\ForgeCLI\ServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 abstract class TestCase extends AbstractPackageTestCase

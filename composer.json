@@ -1,7 +1,7 @@
 {
-    "name": "sven/:package",
-    "description": "",
-    "keywords": [],
+    "name": "sven/forge-cli",
+    "description": "A set of commands to interact with your Laravel Forge servers & sites",
+    "keywords": ["laravel", "forge", "command", "cli"],
     "license": "MIT",
     "authors": [
         {
@@ -11,21 +11,19 @@
         }
     ],
     "require": {
-        "php": "^5.5.9 || ^7.0",
-        "illuminate/support": "^5.0"
+        "php": "^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8 || ^5.0",
-        "graham-campbell/testbench": "^3.1"
+        "phpunit/phpunit": "^4.8 || ^5.0"
     },
     "autoload": {
         "psr-4": {
-            "Sven\\:namespace\\": "src/"
+            "Sven\\ForgeCLI\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sven\\:namespace\\Tests\\": "tests/"
+            "Sven\\ForgeCLI\\Tests\\": "tests/"
         }
     }
 }
