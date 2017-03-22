@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+
+use Sven\ForgeCLI\Sites;
+use Sven\ForgeCLI\Servers;
+
+if (file_exists(__DIR__.'/../../autoload.php')) {
+    require __DIR__.'/../../autoload.php';
+} else {
+    require __DIR__.'/../vendor/autoload.php';
+}
+
+$app = new Symfony\Component\Console\Application('Forge CLI', '1.0.0');
+
+// Server-related commands
+$app->addCommands([
+    new Servers\Create,
+    new Servers\All,
+    new Servers\Get,
+    new Servers\Update,
+    new Servers\Delete,
+    new Servers\Reboot,
+]);
+
+$app->run();

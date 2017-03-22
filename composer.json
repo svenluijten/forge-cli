@@ -11,7 +11,9 @@
         }
     ],
     "require": {
-        "php": "^7.0"
+        "php": "^7.0",
+        "symfony/console": "~2.3|~3.0",
+        "symfony/process": "~2.3|~3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8 || ^5.0"
@@ -25,5 +27,8 @@
         "psr-4": {
             "Sven\\ForgeCLI\\Tests\\": "tests/"
         }
-    }
+    },
+    "bin": [
+        "bin/forge"
+    ]
 }
