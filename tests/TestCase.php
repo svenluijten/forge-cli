@@ -2,22 +2,10 @@
 
 namespace Sven\ForgeCLI\Tests;
 
-use Sven\ForgeCLI\ServiceProvider;
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
-abstract class TestCase extends AbstractPackageTestCase
+abstract class TestCase extends BaseTestCase
 {
-    /**
-     * Get the service provider class.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @return string
-     */
-    protected function getServiceProviderClass($app)
-    {
-        return ServiceProvider::class;
-    }
-
     /**
      * Set up the testing suite.
      */
