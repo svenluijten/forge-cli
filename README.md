@@ -1,4 +1,4 @@
-![forge-cli](:hero)
+![forge-cli](https://cloud.githubusercontent.com/assets/11269635/24330714/fdfddfaa-1224-11e7-8f84-f1b4efa7a8b7.jpg)
 
 # Forge CLI
 
