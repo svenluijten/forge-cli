@@ -22,6 +22,8 @@ $ composer global require sven/forge-cli
 ```
 
 ## Setup
+Ensure Composer's global `bin` directory is included in your path. This directory is located at `~/.composer/vendor/bin` on macOS / Linux, and at
+`%APPDATA%/Composer/vendor/bin` on Windows.
 
 Before using the commands, you have to provide an API token. To generate a new token, visit [this page](https://forge.laravel.com/user/profile#/api),
 give the token a name (like `forge-cli`) and click "Create new token". 
