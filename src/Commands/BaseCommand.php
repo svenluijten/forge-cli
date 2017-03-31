@@ -23,6 +23,6 @@ abstract class BaseCommand extends Command
     {
         // Check API key
 
-        $this->run($input, $output);
+        $this->perform($input, $output);
     }
 }
