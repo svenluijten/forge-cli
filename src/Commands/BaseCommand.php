@@ -2,7 +2,9 @@
 
 namespace Sven\ForgeCLI\Commands;
 
+use GuzzleHttp\Client;
 use Sven\ForgeCLI\Config;
+use Symfony\Component\Console\Helper\Table;
 use Themsaid\Forge\Forge;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -44,5 +46,20 @@ abstract class BaseCommand extends Command
         $this->forge = new Forge($key);
 
         $this->perform($input, $output);
+    }
+
+    /**
+     * @param OutputInterface $output
+     * @param array $header
+     * @param array $rows
+     */
+    protected function table(OutputInterface $output, array $header, array $rows)
+    {
+        $table = new Table($output);
+        $table->setHeaders($header)
+            ->setRows($rows)
+        ;
+
+        $table->render();
     }
 }
