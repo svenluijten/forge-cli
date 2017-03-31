@@ -2,7 +2,6 @@
 
 namespace Sven\ForgeCLI\Commands;
 
-use GuzzleHttp\Client;
 use Sven\ForgeCLI\Config;
 use Themsaid\Forge\Forge;
 use Symfony\Component\Console\Command\Command;
@@ -42,7 +41,7 @@ abstract class BaseCommand extends Command
 
         $key = (new Config)->get('key');
 
-        $this->forge = new Forge($key, new Client);
+        $this->forge = new Forge($key);
 
         $this->perform($input, $output);
     }
