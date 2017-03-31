@@ -2,12 +2,18 @@
 
 namespace Sven\ForgeCLI\Commands;
 
+use Sven\ForgeCLI\Config;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Authorize extends BaseCommand
 {
+    /**
+     * {@inheritdoc}
+     */
+    protected $disableApiKeyCheck = true;
+
     /**
      * {@inheritdoc}
      */
@@ -24,6 +30,8 @@ class Authorize extends BaseCommand
      */
     public function perform(InputInterface $input, OutputInterface $output)
     {
-        //
+        (new Config)->set('key', $input->getArgument('key'));
+
+        $output->write('Your API key has successfully been set.');
     }
 }
