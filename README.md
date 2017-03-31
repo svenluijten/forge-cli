@@ -26,7 +26,7 @@ Ensure Composer's global `bin` directory is included in your path. This director
 `%APPDATA%/Composer/vendor/bin` on Windows.
 
 Before using the commands, you have to provide an API token. To generate a new token, visit [this page](https://forge.laravel.com/user/profile#/api),
-give the token a name (like `forge-cli`) and click "Create new token". 
+give the token a name (like `ForgeCLI`) and click "Create new token". 
 
 Then, execute the following command on the command line, replacing `{key}` with your own API key:
 
