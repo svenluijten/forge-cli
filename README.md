@@ -41,7 +41,16 @@ directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Window
 A list of commands with their explanation can be found below.
 
 ### Servers
-Servers documentation...
+```bash
+# Show all servers associated with your account.
+$ forge list:servers
+
+# Show information about one of your servers.
+$ forge show:server {id}
+
+# Update the metadata on one of your servers.
+$ forge update:server {id} --name=sluggish-cheetah --size=1GB --ip=127.0.0.1 --private-ip=192.168.1.1 --max-upload-size=256 --network=123,456,789
+```
 
 ### Sites
 Sites documentation...
