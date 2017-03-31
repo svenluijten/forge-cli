@@ -32,6 +32,6 @@ class Authorize extends BaseCommand
     {
         (new Config)->set('key', $input->getArgument('key'));
 
-        $output->write('Your API key has successfully been set.');
+        $output->write('<info>Your API key has successfully been set.</info>');
     }
 }
