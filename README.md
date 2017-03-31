@@ -104,6 +104,7 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/sven/forge-cli.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/sven/forge-cli.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/svenluijten/forge-cli.svg?style=flat-square
 [ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/forge-cli.svg?style=flat-square
