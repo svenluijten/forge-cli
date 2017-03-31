@@ -24,9 +24,9 @@ class All extends BaseCommand
     public function perform(InputInterface $input, OutputInterface $output)
     {
         $rows = array_map(function (Server $server) {
-            return [$server->id, $server->ipAddress, $server->region, $server->isReady ? 'Yes' : 'No'];
+            return [$server->name, $server->id, $server->ipAddress, $server->region, $server->isReady ? 'Yes' : 'No'];
         }, $this->forge->servers());
 
-        $this->table($output, ['Id', 'IP address', 'Region', 'Ready'], $rows);
+        $this->table($output, ['Name', 'Id', 'IP address', 'Region', 'Ready'], $rows);
     }
 }
