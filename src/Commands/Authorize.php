@@ -12,7 +12,7 @@ class Authorize extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    protected $disableApiKeyCheck = true;
+    protected $needsForge = false;
 
     /**
      * {@inheritdoc}

@@ -13,7 +13,7 @@ abstract class BaseCommand extends Command
     /**
      * @var bool
      */
-    protected $disableApiKeyCheck = false;
+    protected $needsForge = true;
 
     /**
      * @var Forge
@@ -33,7 +33,7 @@ abstract class BaseCommand extends Command
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        if (!$this->disableApiKeyCheck) {
+        if (!$this->needsForge) {
             $this->perform($input, $output);
 
             return;
