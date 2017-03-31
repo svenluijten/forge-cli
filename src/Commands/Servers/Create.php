@@ -13,7 +13,7 @@ class Create extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('make:server')
+        $this->setName('create:server')
             ->setDescription('Create a new server.');
     }
 

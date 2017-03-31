@@ -27,6 +27,6 @@ class All extends BaseCommand
             return [$server->name, $server->id, $server->ipAddress, $server->region, $server->isReady ? 'Yes' : 'No'];
         }, $this->forge->servers());
 
-        $this->table($output, ['Name', 'Id', 'IP address', 'Region', 'Ready'], $rows);
+        $this->table($output, ['Name', 'Id', 'IP Address', 'Region', 'Ready'], $rows);
     }
 }
