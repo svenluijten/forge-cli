@@ -1,9 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-use Sven\ForgeCLI\Sites;
-use Sven\ForgeCLI\Servers;
-use Sven\ForgeCLI\Authorize;
+use Sven\ForgeCLI\Commands\Servers;
+use Sven\ForgeCLI\Commands\Authorize;
 
 if (file_exists(__DIR__.'/../../autoload.php')) {
     require __DIR__.'/../../autoload.php';

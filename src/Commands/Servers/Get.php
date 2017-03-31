@@ -1,8 +1,8 @@
 <?php
 
-namespace Sven\ForgeCLI\Servers;
+namespace Sven\ForgeCLI\Commands\Servers;
 
-use Sven\ForgeCLI\BaseCommand;
+use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -20,7 +20,7 @@ class Get extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function perform(InputInterface $input, OutputInterface $output)
     {
         //
     }
