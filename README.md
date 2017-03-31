@@ -10,8 +10,9 @@
 [![Code Quality][ico-quality]][link-quality]
 [![SensioLabs Insight][ico-insight]][link-insight]
 
-Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites easily with this set of
-commands. An overview of all available commands can be found [here](#usage).
+Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites via the command line with this package. Create and list
+servers, add sites, and install repositories all without leaving the comfort of your command line. An overview of all available commands
+can be found [here](#usage).
 
 ## Installation
 Via [composer](http://getcomposer.org):
@@ -24,6 +25,15 @@ $ composer global require sven/forge-cli
 
 Before using the commands, you have to provide an API token. To generate a new token, visit [this page](https://forge.laravel.com/user/profile#/api),
 give the token a name (like `forge-cli`) and click "Create new token". 
+
+Then, execute the following command on the command line, replacing `{key}` with your own API key:
+
+```bash
+$ forge authorize {key}
+```
+
+If the API key on your Forge account changed, you'll need to run the same command again. The configuration file will be saved to your home
+directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Windows).
 
 ## Usage
 A list of commands with their explanation can be found below.
