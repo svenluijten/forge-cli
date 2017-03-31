@@ -2,11 +2,11 @@
 
 namespace Sven\ForgeCLI\Servers;
 
-use Symfony\Component\Console\Command\Command;
+use Sven\ForgeCLI\BaseCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Update extends Command
+class Update extends BaseCommand
 {
     /**
      * {@inheritdoc}
