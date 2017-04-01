@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2017-04-02
+### Fixed
+- Issue with path to `autoload.php` in `bin/forge` when installing package globally
+
 ## [0.1.0] - 2017-04-01
 ### Added
 - `authorize` command
@@ -22,4 +26,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `delete:site` command
 
 [Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.0...HEAD
+[0.1.1]: https://github.com/svenluijten/forge-cli/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/svenluijten/forge-cli/releases/0.1.0
