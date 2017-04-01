@@ -44,21 +44,72 @@ A list of commands with their explanation can be found below. You can also find 
 and running `forge help` or `forge help {command}`.
 
 ### Servers
+
+#### list:servers
+Show all servers associated with your account.
+
 ```bash
-# Show all servers associated with your account.
 $ forge list:servers
 
-# Show information about one of your servers.
-$ forge show:server {id}
++----------------+--------+----------------+-------------+-------+
+| Name           | Id     | IP Address     | Region      | Ready |
++----------------+--------+----------------+-------------+-------+
+| sparkling-reef | 124833 | 95.85.60.157   | Amsterdam 2 | Yes   |
++----------------+--------+----------------+-------------+-------+
+```
 
-# Update the metadata on one of your servers.
-$ forge update:server {id} --name=sluggish-cheetah
+#### show:server
+Show information about one of your servers.
+
+```bash
+$ forge show:server {serverId}
+
+Name:        sparkling-reef
+IP Address:  95.85.60.157
+Size:        512MB
+Region:      Amsterdam 2
+PHP version: php71
+Created:     2017-03-13 20:59:16
+```
+
+#### update:server
+Update the metadata on one of your servers. This will only update the data in Forge, it won't make any actual
+changes to your server.
+
+```bash
+$ forge update:server {serverId} 
+    --name=sluggish-cheetah
     --size=1GB
     --ip=127.0.0.1
     --private-ip=192.168.1.1
     --max-upload-size=256
-    --network={other-id}
-    --network={another-id}
+    --network={otherServerId}
+    --network={anotherServerId}    
+```
+    
+#### create:server
+Create a new server.
+
+```bash
+$ forge create:server
+    --provider=ocean2
+    --credential={credentialId}
+    --region=ams2
+    --ip=127.0.0.1
+    --private-iop=192.168.1.1
+    --php=php71
+    --database=some_database
+    --install-maria
+    --load-balancer
+    --network={otherServerId}
+    --network={anotherServerId}
+```
+
+#### delete:server
+Delete an existing server. You will need to confirm your action.
+
+```bash
+$forge delete:server {serverId}
 ```
 
 ### Sites
