@@ -39,7 +39,7 @@ abstract class BaseCommand extends Command
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        if (!$this->needsForge) {
+        if (! $this->needsForge) {
             $this->perform($input, $output);
 
             return;
@@ -61,8 +61,7 @@ abstract class BaseCommand extends Command
     {
         $table = new Table($output);
         $table->setHeaders($header)
-            ->setRows($rows)
-        ;
+            ->setRows($rows);
 
         $table->render();
     }
@@ -77,7 +76,7 @@ abstract class BaseCommand extends Command
         $data = [];
 
         foreach ($this->optionMap as $option => $requestKey) {
-            if (!isset($options[$option])) {
+            if (! isset($options[$option])) {
                 continue;
             }
 

@@ -16,8 +16,7 @@ class Get extends BaseCommand
     {
         $this->setName('show:server')
             ->setDescription('Show information about one of your servers.')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to show information about.')
-        ;
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to show information about.');
     }
 
     /**
@@ -28,12 +27,12 @@ class Get extends BaseCommand
         $server = $this->forge->server($input->getArgument('server'));
 
         $output->writeln([
-            '<info>Name:</info>        ' . $server->name,
-            '<info>IP Address:</info>  ' . $server->ipAddress,
-            '<info>Size:</info>        ' . $server->size,
-            '<info>Region:</info>      ' . $server->region,
-            '<info>PHP version:</info> ' . $server->phpVersion,
-            '<info>Created:</info>     ' . $server->createdAt,
+            '<info>Name:</info>        '.$server->name,
+            '<info>IP Address:</info>  '.$server->ipAddress,
+            '<info>Size:</info>        '.$server->size,
+            '<info>Region:</info>      '.$server->region,
+            '<info>PHP version:</info> '.$server->phpVersion,
+            '<info>Created:</info>     '.$server->createdAt,
         ]);
     }
 }

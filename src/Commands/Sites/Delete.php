@@ -18,8 +18,7 @@ class Delete extends BaseCommand
         $this->setName('delete:site')
             ->setDescription('Delete a site.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
-            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete.')
-        ;
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete.');
     }
 
     /**
@@ -30,9 +29,9 @@ class Delete extends BaseCommand
         $site = $input->getArgument('site');
 
         $helper = $this->getHelper('question');
-        $question = new ConfirmationQuestion('Are you sure you want to delete the site with id "' . $site . '"?', false);
+        $question = new ConfirmationQuestion('Are you sure you want to delete the site with id "'.$site.'"?', false);
 
-        if (!$helper->ask($input, $output, $question)) {
+        if (! $helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your site is safe.</info>');
 
             return;

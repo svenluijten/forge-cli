@@ -17,8 +17,7 @@ class Delete extends BaseCommand
     {
         $this->setName('delete:server')
             ->setDescription('Delete a server.')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to delete.')
-        ;
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to delete.');
     }
 
     /**
@@ -29,9 +28,9 @@ class Delete extends BaseCommand
         $server = $input->getArgument('server');
 
         $helper = $this->getHelper('question');
-        $question = new ConfirmationQuestion('Are you sure you want to delete the server with id "' . $server . '"?', false);
+        $question = new ConfirmationQuestion('Are you sure you want to delete the server with id "'.$server.'"?', false);
 
-        if (!$helper->ask($input, $output, $question)) {
+        if (! $helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your server is safe.</info>');
 
             return;

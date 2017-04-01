@@ -15,8 +15,7 @@ class All extends BaseCommand
     public function configure()
     {
         $this->setName('list:servers')
-            ->setDescription('Show all servers associated with your account.')
-        ;
+            ->setDescription('Show all servers associated with your account.');
     }
 
     /**

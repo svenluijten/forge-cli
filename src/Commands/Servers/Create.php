@@ -41,8 +41,7 @@ class Create extends BaseCommand
             ->addOption('database', null, InputOption::VALUE_REQUIRED, 'The name of the database to create when provisioning the server.', 'forge')
             ->addOption('install-maria', null, InputOption::VALUE_NONE, 'Whether MariaDB should be installed. If left out, MySQL will be installed by default.')
             ->addOption('load-balancer', null, InputOption::VALUE_NONE, 'Whether the server should be provisioned as a load balancer.')
-            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.')
-        ;
+            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.');
     }
 
     /**

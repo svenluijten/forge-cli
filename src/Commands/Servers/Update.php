@@ -35,8 +35,7 @@ class Update extends BaseCommand
             ->addOption('ip', null, InputOption::VALUE_REQUIRED, 'The server\'s IP address.')
             ->addOption('private-ip', null, InputOption::VALUE_REQUIRED, 'The server\'s private IP address.')
             ->addOption('max-upload-size', 'M', InputOption::VALUE_REQUIRED, 'The configured max upload size on the server.')
-            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.')
-        ;
+            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.');
     }
 
     /**

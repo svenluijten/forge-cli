@@ -2,9 +2,9 @@
 
 namespace Sven\ForgeCLI\Commands;
 
+use Themsaid\Forge\Resources\Credential;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Themsaid\Forge\Resources\Credential;
 
 class Credentials extends BaseCommand
 {
@@ -14,8 +14,7 @@ class Credentials extends BaseCommand
     public function configure()
     {
         $this->setName('credentials')
-            ->setDescription('Show all credentials associated with your account.')
-        ;
+            ->setDescription('Show all credentials associated with your account.');
     }
 
     /**
