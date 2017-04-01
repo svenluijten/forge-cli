@@ -113,7 +113,50 @@ $forge delete:server {serverId}
 ```
 
 ### Sites
-Sites documentation...
+
+#### list:sites
+Show all sites installed on a server.
+
+```bash
+$ forge list:sites {serverId}
+
++--------+-----------------+------+-----------------------------+--------+
+| Id     | Name            | Type | Repository                  | Branch |
++--------+-----------------+------+-----------------------------+--------+
+| 303243 | default         | php  | -                           | -      |
+| 303246 | svenluijten.com | html | svenluijten/svenluijten.com | master |
+| 303247 | pkgst.co        | php  | svenluijten/slack-packagist | master |
++--------+-----------------+------+-----------------------------+--------+
+```
+
+#### show:site
+Show information about a site on a specified server.
+
+```bash
+$ forge show:site {serverId} {siteId}
+
+Name:            svenluijten.com
+Repository info: svenluijten/svenluijten.com @ master
+Directory:       /build_production
+Quick deploy:    Off
+Status:          installed
+Project type:    html
+Created:         2017-03-13 21:14:19
+```
+
+#### create:site
+Create a new site on one of your servers.
+
+```bash
+$ forge create:site {serverId} 
+    --domain=example.com
+    --type=php
+    --directory=/public
+```
+
+#### update:site
+
+#### delete:site
 
 ### Services
 Services documentation...
