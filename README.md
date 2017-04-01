@@ -163,6 +163,11 @@ $ forge update:site {serverId} {siteId}
 ```
 
 #### delete:site
+Delete a site. You will need to confirm your action.
+
+```bash
+$ forge delete:site {serverId} {siteId}
+```
 
 ### Services
 Services documentation...
