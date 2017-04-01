@@ -81,7 +81,7 @@ $ forge create:server
     --credential={credentialId}
     --region=ams2
     --ip=127.0.0.1
-    --private-iop=192.168.1.1
+    --private-ip=192.168.1.1
     --php=php71
     --database=some_database
     --install-maria
