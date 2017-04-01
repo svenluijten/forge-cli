@@ -8,7 +8,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Code Climate][ico-codeclimate]][link-codeclimate]
 [![Code Quality][ico-quality]][link-quality]
-[![SensioLabs Insight][ico-insight]][link-insight]
+[![StyleCI][ico-styleci]][link-styleci]
 
 Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites via the command line with this package. Create and list
 servers, add sites, and install repositories all without leaving the comfort of your command line. An overview of all available commands
@@ -233,11 +233,11 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-travis]: https://img.shields.io/travis/svenluijten/forge-cli.svg?style=flat-square
 [ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/forge-cli.svg?style=flat-square
 [ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/forge-cli.svg?style=flat-square
-[ico-insight]: https://img.shields.io/sensiolabs/i/:insight.svg?style=flat-square
+[ico-styleci]: https://styleci.io/repos/85804300/shield
 
 [link-packagist]: https://packagist.org/packages/sven/forge-cli
 [link-downloads]: https://packagist.org/packages/sven/forge-cli
 [link-travis]: https://travis-ci.org/svenluijten/forge-cli
 [link-codeclimate]: https://codeclimate.com/github/svenluijten/forge-cli
 [link-quality]: https://scrutinizer-ci.com/g/svenluijten/forge-cli/?branch=master
-[link-insight]: https://insight.sensiolabs.com/projects/:insight
+[link-styleci]: https://styleci.io/repos/85804300
