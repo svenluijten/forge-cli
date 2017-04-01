@@ -2,10 +2,9 @@
 
 namespace Sven\ForgeCLI\Commands;
 
-use GuzzleHttp\Client;
 use Sven\ForgeCLI\Config;
-use Symfony\Component\Console\Helper\Table;
 use Themsaid\Forge\Forge;
+use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
