@@ -49,7 +49,13 @@ $ forge list:servers
 $ forge show:server {id}
 
 # Update the metadata on one of your servers.
-$ forge update:server {id} --name=sluggish-cheetah --size=1GB --ip=127.0.0.1 --private-ip=192.168.1.1 --max-upload-size=256 --network=123,456,789
+$ forge update:server {id} --name=sluggish-cheetah
+    --size=1GB
+    --ip=127.0.0.1
+    --private-ip=192.168.1.1
+    --max-upload-size=256
+    --network={other-id}
+    --network={another-id}
 ```
 
 ### Sites
