@@ -71,21 +71,6 @@ Region:      Amsterdam 2
 PHP version: php71
 Created:     2017-03-13 20:59:16
 ```
-
-#### update:server
-Update the metadata on one of your servers. This will only update the data in Forge, it won't make any actual
-changes to your server.
-
-```bash
-$ forge update:server {serverId} 
-    --name=sluggish-cheetah
-    --size=1GB
-    --ip=127.0.0.1
-    --private-ip=192.168.1.1
-    --max-upload-size=256
-    --network={otherServerId}
-    --network={anotherServerId}    
-```
     
 #### create:server
 Create a new server.
@@ -103,6 +88,21 @@ $ forge create:server
     --load-balancer
     --network={otherServerId}
     --network={anotherServerId}
+```
+
+#### update:server
+Update the metadata on one of your servers. This will only update the data in Forge, it won't make any actual
+changes to your server.
+
+```bash
+$ forge update:server {serverId} 
+    --name=sluggish-cheetah
+    --size=1GB
+    --ip=127.0.0.1
+    --private-ip=192.168.1.1
+    --max-upload-size=256
+    --network={otherServerId}
+    --network={anotherServerId}    
 ```
 
 #### delete:server
