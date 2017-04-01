@@ -109,7 +109,7 @@ $ forge update:server {serverId}
 Delete an existing server. You will need to confirm your action.
 
 ```bash
-$forge delete:server {serverId}
+$ forge delete:server {serverId}
 ```
 
 ### Sites
