@@ -3,6 +3,7 @@
 namespace Sven\ForgeCLI\Commands\Servers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
@@ -15,7 +16,9 @@ class Delete extends BaseCommand
     public function configure()
     {
         $this->setName('delete:server')
-            ->setDescription('Delete a server.');
+            ->setDescription('Delete a server.')
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to delete.')
+        ;
     }
 
     /**
