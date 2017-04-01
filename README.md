@@ -40,7 +40,8 @@ If the API key on your Forge account changed, you'll need to run the same comman
 directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Windows).
 
 ## Usage
-A list of commands with their explanation can be found below.
+A list of commands with their explanation can be found below. You can also find a list of commands and their argument by installing the package
+and running `forge help` or `forge help {command}`.
 
 ### Servers
 ```bash
