@@ -14,7 +14,7 @@ class Credentials extends BaseCommand
     public function configure()
     {
         $this->setName('credentials')
-            ->setDescription('Show all credentials listed in your account.')
+            ->setDescription('Show all credentials associated with your account.')
         ;
     }
 
