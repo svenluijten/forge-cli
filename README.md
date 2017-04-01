@@ -28,11 +28,13 @@ Ensure Composer's global `bin` directory is included in your path. This director
 Before using the commands, you have to provide an API token. To generate a new token, visit [this page](https://forge.laravel.com/user/profile#/api),
 give the token a name (like `ForgeCLI`) and click "Create new token". 
 
-Then, execute the following command on the command line, replacing `{key}` with your own API key:
+Then, execute the following command on the command line:
 
 ```bash
-$ forge authorize {key}
+$ forge authorize
 ```
+
+When prompted for it, paste in your API key.
 
 If the API key on your Forge account changed, you'll need to run the same command again. The configuration file will be saved to your home
 directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Windows).
