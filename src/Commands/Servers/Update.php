@@ -44,26 +44,8 @@ class Update extends BaseCommand
      */
     public function perform(InputInterface $input, OutputInterface $output)
     {
-        $this->forge->updateServer($input->getArgument('server'), $this->fillData($input->getOptions()));
-    }
-
-    /**
-     * @param array $options
-     *
-     * @return array
-     */
-    protected function fillData(array $options)
-    {
-        $data = [];
-
-        foreach ($this->optionMap as $option => $requestKey) {
-            if (!isset($options[$option])) {
-                continue;
-            }
-
-            $data[$requestKey] = $options[$option];
-        }
-
-        return $data;
+        $this->forge->updateServer(
+            $input->getArgument('server'), $this->fillData($input->getOptions())
+        );
     }
 }

@@ -22,6 +22,11 @@ abstract class BaseCommand extends Command
     protected $forge;
 
     /**
+     * @var array
+     */
+    protected $optionMap = [];
+
+    /**
      * @param InputInterface $input
      * @param OutputInterface $output
      *
@@ -60,5 +65,25 @@ abstract class BaseCommand extends Command
         ;
 
         $table->render();
+    }
+
+    /**
+     * @param array $options
+     *
+     * @return array
+     */
+    protected function fillData(array $options)
+    {
+        $data = [];
+
+        foreach ($this->optionMap as $option => $requestKey) {
+            if (!isset($options[$option])) {
+                continue;
+            }
+
+            $data[$requestKey] = $options[$option];
+        }
+
+        return $data;
     }
 }
