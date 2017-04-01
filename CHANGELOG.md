@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Issue with path to `autoload.php` in `bin/forge` when installing package globally
 
+### Changed
+- Some code style fixes by StyleCI
+
 ## [0.1.0] - 2017-04-01
 ### Added
 - `authorize` command
