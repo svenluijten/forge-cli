@@ -155,6 +155,12 @@ $ forge create:site {serverId}
 ```
 
 #### update:site
+Update a site on a specified server.
+
+```bash
+$ forge update:site {serverId} {siteId}
+    --directory=/html
+```
 
 #### delete:site
 
