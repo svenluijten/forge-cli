@@ -3,6 +3,7 @@
 
 use Sven\ForgeCLI\Commands\Servers;
 use Sven\ForgeCLI\Commands\Authorize;
+use Sven\ForgeCLI\Commands\Credentials;
 
 if (file_exists(__DIR__.'/../../autoload.php')) {
     require __DIR__.'/../../autoload.php';
@@ -15,6 +16,7 @@ $app = new Symfony\Component\Console\Application('Forge CLI', '1.0.0');
 // Server-related commands
 $app->addCommands([
     new Authorize,
+    new Credentials,
     new Servers\Create,
     new Servers\All,
     new Servers\Get,
