@@ -3,9 +3,9 @@
 namespace Sven\ForgeCLI\Commands\Sites;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Create extends BaseCommand
@@ -29,8 +29,7 @@ class Create extends BaseCommand
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new site on.')
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site')
             ->addOption('type', null, InputOption::VALUE_REQUIRED, 'The type of application to install on the site. Can be either "php", "html", "Symfony", or "symfony_dev".', 'php')
-            ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The base directory of the site.', '/public')
-        ;
+            ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The base directory of the site.', '/public');
     }
 
     /**

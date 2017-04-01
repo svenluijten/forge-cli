@@ -25,7 +25,6 @@ class Config
 
     /**
      * @param string|int $key
-     *
      * @param string $value
      */
     public function set($key, $value = '')
@@ -40,7 +39,7 @@ class Config
      */
     protected function readFile()
     {
-        if (!is_file($this->file)) {
+        if (! is_file($this->file)) {
             $this->writeToFile('{}');
         }
 
@@ -52,7 +51,7 @@ class Config
      */
     public function writeToFile(string $data)
     {
-        file_put_contents($this->file, $data . PHP_EOL);
+        file_put_contents($this->file, $data.PHP_EOL);
     }
 
     /**
@@ -66,6 +65,6 @@ class Config
             $home = $_SERVER['HOME'];
         }
 
-        return $home . DIRECTORY_SEPARATOR . 'forge.json';
+        return $home.DIRECTORY_SEPARATOR.'forge.json';
     }
 }

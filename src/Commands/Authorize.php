@@ -20,8 +20,7 @@ class Authorize extends BaseCommand
     public function configure()
     {
         $this->setName('authorize')
-            ->setDescription('Set or update the API key used in the commands.')
-        ;
+            ->setDescription('Set or update the API key used in the commands.');
     }
 
     /**
