@@ -23,9 +23,11 @@ $app->addCommands([
     new Servers\Get,
     new Servers\Update,
     new Servers\Delete,
+    new Sites\Create,
     new Sites\All,
     new Sites\Get,
-    new Sites\Create,
+    new Sites\Update,
+    new Sites\Delete,
 ]);
 
 $app->run();
