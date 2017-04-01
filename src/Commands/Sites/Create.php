@@ -40,7 +40,8 @@ class Create extends BaseCommand
     {
         $this->forge->createSite(
             $input->getArgument('server'),
-            $this->fillData($input->getOptions())
+            $this->fillData($input->getOptions()),
+            false
         );
     }
 }
