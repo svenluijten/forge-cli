@@ -206,7 +206,17 @@ Projects documentation...
 Recipes documentation...
 
 ### Credentials
-Credentials documentataion...
+Show all credentials associated with your account.
+
+```bash
+$ forge credentials
+
++-------+----------+--------+
+| Id    | Name     | Type   |
++-------+----------+--------+
+| 15071 | Personal | ocean2 |
++-------+----------+--------+
+```
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
