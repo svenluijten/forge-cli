@@ -25,6 +25,7 @@ $app->addCommands([
     new Servers\Delete,
     new Sites\All,
     new Sites\Get,
+    new Sites\Create,
 ]);
 
 $app->run();
