@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use Sven\ForgeCLI\Commands\Sites;
 use Sven\ForgeCLI\Commands\Servers;
 use Sven\ForgeCLI\Commands\Authorize;
 use Sven\ForgeCLI\Commands\Credentials;
@@ -22,7 +23,7 @@ $app->addCommands([
     new Servers\Get,
     new Servers\Update,
     new Servers\Delete,
-    new Servers\Reboot,
+    new Sites\All,
 ]);
 
 $app->run();
