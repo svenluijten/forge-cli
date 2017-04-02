@@ -170,7 +170,20 @@ $ forge delete:site {serverId} {siteId}
 ```
 
 ### Services
-Services documentation...
+
+#### reboot:service
+Reboot a service on the given server. Supported services are `nginx`, `mysql`, and `postgres`.
+
+```bash
+$ forge reboot:service {service} {serverId}
+```
+
+#### stop:service
+Stop a service on the given server. Supported services are `nginx`, `mysql`, and `postgres`.
+
+```bash
+$ forge stop:service {service} {serverId}
+```
 
 ### Daemons
 Daemons documentation...
