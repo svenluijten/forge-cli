@@ -30,6 +30,7 @@ $app->addCommands([
     new Sites\Update,
     new Sites\Delete,
     new Services\Reboot,
+    new Services\Stop,
 ]);
 
 $app->run();
