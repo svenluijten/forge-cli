@@ -3,6 +3,7 @@
 
 use Sven\ForgeCLI\Commands\Sites;
 use Sven\ForgeCLI\Commands\Servers;
+use Sven\ForgeCLI\Commands\Services;
 use Sven\ForgeCLI\Commands\Authorize;
 use Sven\ForgeCLI\Commands\Credentials;
 
@@ -28,6 +29,7 @@ $app->addCommands([
     new Sites\Get,
     new Sites\Update,
     new Sites\Delete,
+    new Services\Reboot,
 ]);
 
 $app->run();
