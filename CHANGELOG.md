@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `delete:daemon` command
 - `show:daemon` command
 - `reboot:daemon` command
+- `site:deploy` command
+- `site:enable-quickdeploy` command
+- `site:disable-quickdeploy` command
+- `site:get-deploy-script` command
+- `site:update-deploy-script` command
+- `site:deploy-log` command
+- `site:reset-deployment-status` command
 - The `fillData()` method on the `BaseCommand` class now accepts an override array
 
 ### Changed

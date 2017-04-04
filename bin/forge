@@ -6,6 +6,7 @@ use Sven\ForgeCLI\Commands\Daemons;
 use Sven\ForgeCLI\Commands\Servers;
 use Sven\ForgeCLI\Commands\Services;
 use Sven\ForgeCLI\Commands\Authorize;
+use Sven\ForgeCLI\Commands\Deployment;
 use Sven\ForgeCLI\Commands\Credentials;
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -40,6 +41,13 @@ $app->addCommands([
     new Daemons\Delete,
     new Daemons\Get,
     new Daemons\Reboot,
+    new Deployment\Deploy,
+    new Deployment\DisableQuickDeploy,
+    new Deployment\EnableQuickDeploy,
+    new Deployment\GetScript,
+    new Deployment\UpdateScript,
+    new Deployment\Log,
+    new Deployment\ResetStatus,
 ]);
 
 $app->run();
