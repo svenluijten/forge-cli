@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.1.3] - 2017-04-04
 ### Added
 - `install:service` command
 - `uninstall:service` command
@@ -54,7 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `update:site` command
 - `delete:site` command
 
-[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.2...HEAD
+[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.3...HEAD
+[0.1.3]: https://github.com/svenluijten/forge-cli/compare/0.1.2...0.1.3 
 [0.1.2]: https://github.com/svenluijten/forge-cli/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/svenluijten/forge-cli/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/svenluijten/forge-cli/releases/0.1.0
