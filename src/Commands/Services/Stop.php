@@ -16,8 +16,8 @@ class Stop extends BaseCommand
     {
         $this->setName('stop:service')
             ->setDescription('Stop a service on a server.')
-            ->addArgument('service', InputArgument::REQUIRED, 'The service to stop. Can be either "nginx", "mysql" or "postgres".')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to stop the service on.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to stop the service on.')
+            ->addArgument('service', InputArgument::REQUIRED, 'The service to stop. Can be either "nginx", "mysql" or "postgres".');
     }
 
     /**
