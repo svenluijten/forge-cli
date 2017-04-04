@@ -7,10 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - `install:service` command
-- The `fillData()` method on the `BaseCommand` class now accepts an override array.
+- `uninstall:service` command
+- The `fillData()` method on the `BaseCommand` class now accepts an override array
 
 ### Changed
-- `reboot:service` and `stop:service` now accept the server ID as first parameter instead of second.
+- `reboot:service` and `stop:service` now accept the server ID as first parameter instead of second
+- Renamed `Services/Delete.php` to `Services/Uninstall.php`
 
 ## [0.1.2] - 2017-04-02
 ### Added
