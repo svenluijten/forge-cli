@@ -197,6 +197,13 @@ $ forge install:service {serverId} {service}
     --server-token=YOUR_SERVER_TOKEN
 ```
 
+#### uninstall:service
+Uninstall a service from the given server. Supported services are `blackfire` and `papertrail`.
+
+```bash
+$ forge uninstall:service {serverId} {service}
+```
+
 ### Daemons
 Daemons documentation...
 
