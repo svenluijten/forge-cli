@@ -43,6 +43,8 @@ directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Window
 A list of commands with their explanation can be found below. You can also find a list of commands and their arguments by installing the package
 and running `forge list` or `forge help {command}`.
 
+---
+
 ### Servers
 
 #### list:servers
@@ -112,6 +114,8 @@ Delete an existing server. You will need to confirm your action.
 $ forge delete:server {serverId}
 ```
 
+---
+
 ### Sites
 
 #### list:sites
@@ -169,6 +173,8 @@ Delete a site. You will need to confirm your action.
 $ forge delete:site {serverId} {siteId}
 ```
 
+---
+
 ### Services
 
 #### reboot:service
@@ -204,38 +210,62 @@ Uninstall a service from the given server. Supported services are `blackfire` an
 $ forge uninstall:service {serverId} {service}
 ```
 
+---
+
 ### Daemons
 Daemons documentation...
+
+---
 
 ### Firewalls
 Firewalls documentation...
 
+---
+
 ### Scheduled jobs
 Scheduled jobs documentation...
+
+---
 
 ### Databases
 Databases documentation...
 
+---
+
 ### SSL certificates
 SSL certificates documentation...
+
+---
 
 ### SSH keys
 SSH keys documentation...
 
+---
+
 ### Workers
 Workers documentation...
+
+---
 
 ### Deployment
 Deployment documentation...
 
+---
+
 ### Configuration
 Configuration documentation...
+
+---
 
 ### Projects
 Projects documentation...
 
+---
+
 ### Recipes
 Recipes documentation...
+
+---
 
 ### Credentials
 Show all credentials associated with your account.
