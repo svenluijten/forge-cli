@@ -16,8 +16,8 @@ class All extends BaseCommand
     public function configure()
     {
         $this->setName('list:sites')
-            ->setDescription('Show all sites installed on a server.')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list the sites for.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list the sites for.')
+            ->setDescription('Show all sites installed on a server.');
     }
 
     /**

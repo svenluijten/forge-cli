@@ -28,14 +28,14 @@ class Update extends BaseCommand
     public function configure()
     {
         $this->setName('update:server')
-            ->setDescription('Update the metadata on one of your servers.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to update.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the server.')
             ->addOption('size', null, InputOption::VALUE_REQUIRED, 'The amount of RAM the server has.')
             ->addOption('ip', null, InputOption::VALUE_REQUIRED, 'The server\'s IP address.')
             ->addOption('private-ip', null, InputOption::VALUE_REQUIRED, 'The server\'s private IP address.')
             ->addOption('max-upload-size', 'M', InputOption::VALUE_REQUIRED, 'The configured max upload size on the server.')
-            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.');
+            ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.')
+            ->setDescription('Update the metadata on one of your servers.');
     }
 
     /**

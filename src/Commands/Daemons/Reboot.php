@@ -16,9 +16,9 @@ class Reboot extends BaseCommand
     public function configure()
     {
         $this->setName('reboot:daemon')
-            ->setDescription('Delete the given daemon from one of your servers.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the daemon is on.')
-            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to reboot.');
+            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to reboot.')
+            ->setDescription('Delete the given daemon from one of your servers.');
     }
 
     /**

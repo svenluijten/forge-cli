@@ -15,8 +15,8 @@ class Get extends BaseCommand
     public function configure()
     {
         $this->setName('show:server')
-            ->setDescription('Show information about one of your servers.')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to show information about.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to show information about.')
+            ->setDescription('Show information about one of your servers.');
     }
 
     /**

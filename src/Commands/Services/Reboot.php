@@ -15,9 +15,9 @@ class Reboot extends BaseCommand
     public function configure()
     {
         $this->setName('reboot:service')
-            ->setDescription('Reboot a service on a server.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to reboot the service on.')
-            ->addArgument('service', InputArgument::REQUIRED, 'The service to reboot. Can be either "nginx", "mysql" or "postgres".');
+            ->addArgument('service', InputArgument::REQUIRED, 'The service to reboot. Can be either "nginx", "mysql" or "postgres".')
+            ->setDescription('Reboot a service on a server.');
     }
 
     /**

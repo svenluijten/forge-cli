@@ -15,9 +15,9 @@ class Get extends BaseCommand
     public function configure()
     {
         $this->setName('show:daemon')
-            ->setDescription('Show information about the given daemon.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to the daemon is running on.')
-            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to show information about.');
+            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to show information about.')
+            ->setDescription('Show information about the given daemon.');
     }
 
     /**

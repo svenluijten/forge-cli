@@ -16,9 +16,9 @@ class Delete extends BaseCommand
     public function configure()
     {
         $this->setName('delete:daemon')
-            ->setDescription('Delete the given daemon from one of your servers.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the daemon is on.')
-            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to delete.');
+            ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to delete.')
+            ->setDescription('Delete the given daemon from one of your servers.');
     }
 
     /**

@@ -23,10 +23,10 @@ class Update extends BaseCommand
     public function configure()
     {
         $this->setName('update:site')
-            ->setDescription('Update a site on a specified server.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the server to update.')
-            ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The new base directory of the website.');
+            ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The new base directory of the website.')
+            ->setDescription('Update a site on a specified server.');
     }
 
     /**

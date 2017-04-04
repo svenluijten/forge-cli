@@ -16,8 +16,8 @@ class Delete extends BaseCommand
     public function configure()
     {
         $this->setName('delete:server')
-            ->setDescription('Delete a server.')
-            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to delete.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to delete.')
+            ->setDescription('Delete a server.');
     }
 
     /**

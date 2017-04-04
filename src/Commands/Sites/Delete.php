@@ -16,9 +16,9 @@ class Delete extends BaseCommand
     public function configure()
     {
         $this->setName('delete:site')
-            ->setDescription('Delete a site.')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
-            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete.');
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete.')
+            ->setDescription('Delete a site.');
     }
 
     /**
