@@ -185,6 +185,18 @@ Stop a service on the given server. Supported services are `nginx`, `mysql`, and
 $ forge stop:service {serverId} {service}
 ```
 
+#### install:service
+Install a service on the given server. Supported services are `blackfire` and `papertrail`. The `--host` option
+is only required when installing Papertrail, `--server-id` and `--server-token` are only required when installing
+Blackfire.
+
+```bash
+$ forge install:service {serverId} {service}
+    --host=192.168.1.1
+    --server-id=12345
+    --server-token=YOUR_SERVER_TOKEN
+```
+
 ### Daemons
 Daemons documentation...
 
