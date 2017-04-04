@@ -68,14 +68,15 @@ abstract class BaseCommand extends Command
 
     /**
      * @param array $options
+     * @param array $optionMap
      *
      * @return array
      */
-    protected function fillData(array $options)
+    protected function fillData(array $options, array $optionMap = null)
     {
         $data = [];
 
-        foreach ($this->optionMap as $option => $requestKey) {
+        foreach ($optionMap ?: $this->optionMap as $option => $requestKey) {
             if (! isset($options[$option])) {
                 continue;
             }
