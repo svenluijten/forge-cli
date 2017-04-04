@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `install:service` command
 - `uninstall:service` command
+- `list:daemons` command
+- `create:daemon` command
+- `delete:daemon` command
+- `show:daemon` command
+- `reboot:daemon` command
 - The `fillData()` method on the `BaseCommand` class now accepts an override array
 
 ### Changed
