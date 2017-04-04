@@ -2,6 +2,7 @@
 <?php
 
 use Sven\ForgeCLI\Commands\Sites;
+use Sven\ForgeCLI\Commands\Daemons;
 use Sven\ForgeCLI\Commands\Servers;
 use Sven\ForgeCLI\Commands\Services;
 use Sven\ForgeCLI\Commands\Authorize;
@@ -34,6 +35,11 @@ $app->addCommands([
     new Services\Stop,
     new Services\Install,
     new Services\Uninstall,
+    new Daemons\All,
+    new Daemons\Create,
+    new Daemons\Delete,
+    new Daemons\Get,
+    new Daemons\Reboot,
 ]);
 
 $app->run();

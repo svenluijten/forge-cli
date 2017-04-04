@@ -220,7 +220,53 @@ $ forge uninstall:service {serverId} {service}
 ---
 
 ### Daemons
-Daemons documentation...
+
+#### list:daemons
+List all active daemons on the given server.
+
+```bash
+$ forge list:daemons {serverId}
+
++-------+------------+---------------------------------+---------------------+
+| Id    | Status     | Command                         | Created             |
++-------+------------+---------------------------------+---------------------+
+| 12345 | installing | echo 'hello world' >> /dev/null | 2017-03-13 21:14:19 | 
++-------+------------+---------------------------------+---------------------+
+```
+
+#### show:daemon
+Show information about the given daemon.
+
+```bash
+$ forge show:daemon {serverId} {daemonId}
+
+Status:  installing
+Command: echo 'hello world' >> /dev/null
+Created: 2017-03-21 18:26:33
+```
+
+#### create:daemon
+Create a new daemon to run on the given server. If no user is supplied, it defaults to `forge`.
+
+```bash
+$ forge create:daemon {serverId}
+    --command="command to run"
+    --user=root
+```
+
+#### reboot:daemon
+Reboot the given daemon. You will need to confirm your action.
+
+```bash
+$ forge reboot:daemon {serverId} {daemonId}
+```
+
+#### delete:daemon
+Delete the given daemon from the given server. You will need to confirm your action.
+
+```bash
+$ forge delete:daemon {serverId} {daemonId}
+```
 
 ---
 
