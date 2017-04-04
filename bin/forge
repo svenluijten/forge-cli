@@ -24,6 +24,7 @@ $app->addCommands([
     new Servers\Get,
     new Servers\Update,
     new Servers\Delete,
+    new Servers\Reboot,
     new Sites\Create,
     new Sites\All,
     new Sites\Get,

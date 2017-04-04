@@ -107,6 +107,13 @@ $ forge update:server {serverId}
     --network={anotherServerId}    
 ```
 
+#### reboot:server
+Reboot one of your servers. You will need to confirm you action.
+
+```bash
+$ forge reboot:server {serverId}
+```
+
 #### delete:server
 Delete an existing server. You will need to confirm your action.
 
