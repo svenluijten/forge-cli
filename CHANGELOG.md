@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `delete:daemon` command
 - `show:daemon` command
 - `reboot:daemon` command
-- `site:deploy` command
+- `deploy:site` command
 - `site:enable-quickdeploy` command
 - `site:disable-quickdeploy` command
 - `site:get-deploy-script` command

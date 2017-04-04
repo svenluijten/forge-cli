@@ -302,7 +302,7 @@ Workers documentation...
 
 ### Deployment
 
-#### site:deploy
+#### deploy:site
 Deploy the given site.
 
 ```bash
