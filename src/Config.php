@@ -59,11 +59,7 @@ class Config
      */
     protected function configFilePath()
     {
-        if (strncasecmp(PHP_OS, 'WIN', 3) === 0) {
-            $home = $_SERVER['USERPROFILE'];
-        } else {
-            $home = $_SERVER['HOME'];
-        }
+        $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
 
         return $home.DIRECTORY_SEPARATOR.'forge.json';
     }
