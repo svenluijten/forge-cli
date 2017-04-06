@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- `create:rule` command
+- `show:rule` command
+- `list:rules` command
+- `delete:rule` command
 
 ## [0.1.3] - 2017-04-04
 ### Added

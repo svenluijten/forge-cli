@@ -8,6 +8,7 @@ use Sven\ForgeCLI\Commands\Services;
 use Sven\ForgeCLI\Commands\Authorize;
 use Sven\ForgeCLI\Commands\Deployment;
 use Sven\ForgeCLI\Commands\Credentials;
+use Sven\ForgeCLI\Commands\FirewallRules;
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
     require __DIR__.'/../../../autoload.php';
@@ -48,6 +49,10 @@ $app->addCommands([
     new Deployment\UpdateScript,
     new Deployment\Log,
     new Deployment\ResetStatus,
+    new FirewallRules\All,
+    new FirewallRules\Create,
+    new FirewallRules\Delete,
+    new FirewallRules\Get,
 ]);
 
 $app->run();

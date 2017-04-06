@@ -270,8 +270,37 @@ $ forge delete:daemon {serverId} {daemonId}
 
 ---
 
-### Firewalls
-Firewalls documentation...
+### Firewall Rules
+
+#### create:rule
+Create a new firewall rule.
+
+```bash
+$ forge create:rule {serverId}
+    --name="firewall rule"
+    --port=88
+```
+
+#### all:rules
+Show all firewall rules.
+
+```bash
+$ forge all:rules {serverId}
+```
+
+#### show:rule
+Show information about one of your firewall rules.
+
+```bash
+$ forge show:rule {serverId} {ruleId}
+```
+
+#### delete:rule
+Delete a given firewall rule from one of your servers. You will need to confirm your action.
+
+```bash
+$ forge delete:rule {serverId} {ruleId}
+```
 
 ---
 
