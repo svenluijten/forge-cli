@@ -305,7 +305,36 @@ $ forge delete:rule {serverId} {ruleId}
 ---
 
 ### Scheduled jobs
-Scheduled jobs documentation...
+
+#### create:job
+Create a new scheduled job.
+
+```bash
+$ forge create:job {serverId}
+    --command="echo 'hello world' > /dev/null"
+    --frequency="hourly"
+```
+
+#### all:jobs
+Show all scheduled jobs.
+
+```bash
+$ forge all:jobs {serverId}
+```
+
+#### show:job
+Show information about one of your scheduled jobs.
+
+```bash
+$ forge show:job {serverId} {jobId}
+```
+
+#### delete:job
+Delete a given scheduled job from one of your servers. You will need to confirm your action.
+
+```bash
+$ forge delete:job {serverId} {jobId}
+```
 
 ---
 

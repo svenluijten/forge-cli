@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use Sven\ForgeCLI\Commands\Jobs;
 use Sven\ForgeCLI\Commands\Sites;
 use Sven\ForgeCLI\Commands\Daemons;
 use Sven\ForgeCLI\Commands\Servers;
@@ -53,6 +54,10 @@ $app->addCommands([
     new FirewallRules\Create,
     new FirewallRules\Delete,
     new FirewallRules\Get,
+    new Jobs\All,
+    new Jobs\Create,
+    new Jobs\Delete,
+    new Jobs\Get,
 ]);
 
 $app->run();
