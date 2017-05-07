@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `show:rule` command
 - `list:rules` command
 - `delete:rule` command
+- `create:job` command
+- `show:job` command
+- `list:jobs` command
+- `delete:job` command
 
 ## [0.1.3] - 2017-04-04
 ### Added
