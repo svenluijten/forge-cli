@@ -1,15 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-use Sven\ForgeCLI\Commands\Jobs;
-use Sven\ForgeCLI\Commands\Sites;
-use Sven\ForgeCLI\Commands\Daemons;
-use Sven\ForgeCLI\Commands\Servers;
-use Sven\ForgeCLI\Commands\Services;
-use Sven\ForgeCLI\Commands\Authorize;
-use Sven\ForgeCLI\Commands\Deployment;
-use Sven\ForgeCLI\Commands\Credentials;
-use Sven\ForgeCLI\Commands\FirewallRules;
+use Sven\ForgeCLI\Commands\{
+    Authorize, Credentials, Daemons, Databases, Deployment, FirewallRules, Jobs, Servers, Services, Sites
+};
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
     require __DIR__.'/../../../autoload.php';
@@ -58,6 +52,10 @@ $app->addCommands([
     new Jobs\Create,
     new Jobs\Delete,
     new Jobs\Get,
+    new Databases\All,
+    new Databases\Create,
+    new Databases\Delete,
+    new Databases\Get,
 ]);
 
 $app->run();
