@@ -2,7 +2,7 @@
 <?php
 
 use Sven\ForgeCLI\Commands\{
-    Authorize, Credentials, Daemons, Databases, Deployment, FirewallRules, Jobs, Servers, Services, Sites
+    Authorize, Credentials, Daemons, Databases, Deployment, FirewallRules, Jobs, Servers, Services, Sites, Workers
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -56,6 +56,11 @@ $app->addCommands([
     new Databases\Create,
     new Databases\Delete,
     new Databases\Get,
+    new Workers\All,
+    new Workers\Create,
+    new Workers\Delete,
+    new Workers\Get,
+    new Workers\Reboot,
 ]);
 
 $app->run();

@@ -406,7 +406,46 @@ SSH keys documentation...
 ---
 
 ### Workers
-Workers documentation...
+
+#### make:worker
+Create a new worker.
+
+```bash
+$ forge make:worker {serverId} {siteId}
+    --connection=sqs
+    --timeout=90
+    --sleep=10
+    --tries=1
+    --daemon
+```
+
+#### all:workers
+Show all workers installed on a site.
+
+```bash
+$ forge all:workers {serverId} {siteId}
+```
+
+#### show:database
+Show information about one of your databases.
+
+```bash
+$ forge show:worker {serverId} {siteId} {workerId}
+```
+
+#### delete:worker
+Delete a given worker from one of your sites. You will need to confirm your action.
+
+```bash
+$ forge delete:database {serverId} {siteId} {workerId}
+```
+
+#### reboot:worker
+Reboot one of your workers. You will need to confirm you action.
+
+```bash
+$ forge reboot:worker {serverId} {siteId} {workerId}
+```
 
 ---
 
