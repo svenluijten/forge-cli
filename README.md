@@ -426,7 +426,7 @@ Show all workers installed on a site.
 $ forge all:workers {serverId} {siteId}
 ```
 
-#### show:database
+#### show:worker
 Show information about one of your databases.
 
 ```bash
@@ -437,7 +437,7 @@ $ forge show:worker {serverId} {siteId} {workerId}
 Delete a given worker from one of your sites. You will need to confirm your action.
 
 ```bash
-$ forge delete:database {serverId} {siteId} {workerId}
+$ forge delete:worker {serverId} {siteId} {workerId}
 ```
 
 #### reboot:worker
