@@ -39,7 +39,7 @@ class UpdateScript extends BaseCommand
      */
     protected function getFileContent(InputInterface $input)
     {
-        $filename = $input->hasArgument('file') ? $input->getArgument('file') : 'php://stdin';
+        $filename = $input->hasOption('file') ? $input->getOption('file') : 'php://stdin';
 
         if ($filename && ftell(STDIN) === 0) {
             return file_get_contents($filename);
