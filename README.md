@@ -14,6 +14,28 @@ Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites 
 servers, add sites, and install repositories all without leaving the comfort of your command line. An overview of all available commands
 can be found [here](#usage).
 
+## Table of Contents
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+  - [Servers](#servers)
+  - [Sites](#sites)
+  - [Services](#services)
+  - [Daemons](#daemons)
+  - [Firewall Rules](#firewall-rules)
+  - [Scheduled Jobs](#scheduled-jobs)
+  - [Databases](#databases)
+  - [SSL Certificates](#ssl-certificates)
+  - [SSH Keys](#ssh-keys)
+  - [Workers](#workers)
+  - [Deployment](#deployment)
+  - [Configuration](#configuration)
+  - [Projects](#projects)
+  - [Recipes](#recipes)
+  - [Credentials](#credentials)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Installation
 Via [composer](http://getcomposer.org):
 
