@@ -339,7 +339,37 @@ $ forge delete:job {serverId} {jobId}
 ---
 
 ### Databases
-Databases documentation...
+
+#### create:database
+Create a new database. The flags `--user` and `--password` must either both be present or both
+be absent.
+
+```bash
+$ forge create:database {serverId}
+    --user="sven"
+    --password="My_P45sw0rD"
+```
+
+#### all:databases
+Show all databases on a server.
+
+```bash
+$ forge all:databases {serverId}
+```
+
+#### show:database
+Show information about one of your databases.
+
+```bash
+$ forge show:database {serverId} {databaseId}
+```
+
+#### delete:database
+Delete a given database from one of your servers. You will need to confirm your action.
+
+```bash
+$ forge delete:database {serverId} {databaseId}
+```
 
 ---
 
