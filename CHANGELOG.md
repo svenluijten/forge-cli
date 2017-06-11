@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## Unreleased
+
+## [0.1.5] - 2017-06-12
 ### Added
 - `make:worker` command
 - `show:worker` command
@@ -86,7 +88,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `update:site` command
 - `delete:site` command
 
-[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.4...HEAD
+[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.5...HEAD
+[0.1.5]: https://github.com/svenluijten/forge-cli/compare/0.1.4...0.1.5
 [0.1.4]: https://github.com/svenluijten/forge-cli/compare/0.1.3...0.1.4
 [0.1.3]: https://github.com/svenluijten/forge-cli/compare/0.1.2...0.1.3 
 [0.1.2]: https://github.com/svenluijten/forge-cli/compare/0.1.1...0.1.2
