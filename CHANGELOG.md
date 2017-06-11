@@ -6,11 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- `create:worker` command
+- `make:worker` command
 - `show:worker` command
 - `list:workers` command
 - `delete:worker` command
 - `reboot:worker` command
+- `make:recipe` command
+- `show:recipe` command
+- `list:recipes` command
+- `delete:recipe` command
+- `run:recipe` command
+- `update:recipe` command
 
 ## [0.1.4] - 2017-06-11
 ### Changed

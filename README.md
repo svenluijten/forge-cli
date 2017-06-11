@@ -532,7 +532,52 @@ Projects documentation...
 ---
 
 ### Recipes
-Recipes documentation...
+
+#### make:recipe
+Create a new recipe.
+
+```bash
+$ forge make:recipe
+    --name="My Recipe"
+    --user=forge
+    --script="echo 'hi' >> /dev/null"
+```
+
+If you do not supply the `--script` option, the command will look in `STDIN` for any input:
+
+```bash
+$ forge make:recipe --name="My Recipe" --user=forge < file.txt
+```
+
+#### all:recipes
+Show all recipes in your Forge account.
+
+```bash
+$ forge all:recipes
+```
+
+#### show:recipe
+Show information about one of your recipes.
+
+```bash
+$ forge show:recipe {recipeId}
+```
+
+#### run:recipe
+Run the given recipe on the specified server(s).
+
+```bash
+$ forge run:recipe {recipeId}
+    --server=1234
+    --server=5678
+```
+
+#### delete:recipe
+Delete the given recipe. You will need to confirm your action.
+
+```bash
+$ forge delete:recipe {recipeId}
+```
 
 ---
 
