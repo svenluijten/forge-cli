@@ -304,7 +304,7 @@ $ forge delete:rule {serverId} {ruleId}
 
 ---
 
-### Scheduled jobs
+### Scheduled Jobs
 
 #### make:job
 Create a new scheduled job.
@@ -373,12 +373,12 @@ $ forge delete:database {serverId} {databaseId}
 
 ---
 
-### SSL certificates
+### SSL Certificates
 SSL certificates documentation...
 
 ---
 
-### SSH keys
+### SSH Keys
 SSH keys documentation...
 
 ---
