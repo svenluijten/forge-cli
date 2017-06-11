@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `show:job` command
 - `list:jobs` command
 - `delete:job` command
+- `create:database` command
+- `show:database` command
+- `list:databases` command
+- `delete:database` command
 
 ## [0.1.3] - 2017-04-04
 ### Added
