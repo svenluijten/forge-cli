@@ -86,4 +86,21 @@ abstract class BaseCommand extends Command
 
         return $data;
     }
+
+    /**
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     * @param string                                          $option
+     *
+     * @return bool|string
+     */
+    protected function getFileContent(InputInterface $input, $option)
+    {
+        $filename = $input->hasOption($option) ? $input->getOption($option) : 'php://stdin';
+
+        if ($filename && ftell(STDIN) === 0) {
+            return file_get_contents($filename);
+        }
+
+        throw new \InvalidArgumentException('This command requires either the "--'.$option.'" option to be set or an input from STDIN.');
+    }
 }

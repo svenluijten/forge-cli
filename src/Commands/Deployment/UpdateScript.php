@@ -28,23 +28,7 @@ class UpdateScript extends BaseCommand
     public function perform(InputInterface $input, OutputInterface $output)
     {
         $this->forge->updateSiteDeploymentScript(
-            $input->getArgument('server'), $input->getArgument('site'), $this->getFileContent($input)
+            $input->getArgument('server'), $input->getArgument('site'), $this->getFileContent($input, 'file')
         );
-    }
-
-    /**
-     * @param InputInterface $input
-     *
-     * @return bool|string
-     */
-    protected function getFileContent(InputInterface $input)
-    {
-        $filename = $input->hasOption('file') ? $input->getOption('file') : 'php://stdin';
-
-        if ($filename && ftell(STDIN) === 0) {
-            return file_get_contents($filename);
-        }
-
-        throw new \InvalidArgumentException('This command requires either the "--file" option to be set or an input from STDIN.');
     }
 }
