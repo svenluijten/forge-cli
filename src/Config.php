@@ -14,7 +14,7 @@ class Config
 
     /**
      * @param string|int $key
-     * @param null $default
+     * @param mixed      $default
      *
      * @return string
      */
@@ -24,8 +24,8 @@ class Config
     }
 
     /**
-     * @param string|int $key
-     * @param string $value
+     * @param string|int  $key
+     * @param mixed       $value
      */
     public function set($key, $value = '')
     {

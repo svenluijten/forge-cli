@@ -57,8 +57,8 @@ class Create extends BaseCommand
     }
 
     /**
-     * @param InputInterface $input
-     * @param array ...$keys
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     * @param array                                           ...$keys
      *
      * @throws \RuntimeException
      */

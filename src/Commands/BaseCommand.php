@@ -17,7 +17,7 @@ abstract class BaseCommand extends Command
     protected $needsForge = true;
 
     /**
-     * @var Forge
+     * @var \Themsaid\Forge\Forge
      */
     protected $forge;
 
@@ -27,8 +27,8 @@ abstract class BaseCommand extends Command
     protected $optionMap = [];
 
     /**
-     * @param InputInterface $input
-     * @param OutputInterface $output
+     * @param \Symfony\Component\Console\Input\InputInterface   $input
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
      *
      * @return mixed
      */
@@ -53,9 +53,9 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * @param OutputInterface $output
-     * @param array $header
-     * @param array $rows
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param array                                             $header
+     * @param array                                             $rows
      */
     protected function table(OutputInterface $output, array $header, array $rows)
     {
@@ -67,8 +67,8 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * @param array $options
-     * @param array $optionMap
+     * @param array      $options
+     * @param array|null $optionMap
      *
      * @return array
      */
