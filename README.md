@@ -74,11 +74,11 @@ PHP version: php71
 Created:     2017-03-13 20:59:16
 ```
     
-#### create:server
+#### make:server
 Create a new server.
 
 ```bash
-$ forge create:server
+$ forge make:server
     --provider=ocean2
     --credential={credentialId}
     --region=ams2
@@ -155,11 +155,11 @@ Project type:    html
 Created:         2017-03-13 21:14:19
 ```
 
-#### create:site
+#### make:site
 Create a new site on one of your servers.
 
 ```bash
-$ forge create:site {serverId} 
+$ forge make:site {serverId} 
     --domain=example.com
     --type=php
     --directory=/public
@@ -245,11 +245,11 @@ Command: echo 'hello world' >> /dev/null
 Created: 2017-03-21 18:26:33
 ```
 
-#### create:daemon
+#### make:daemon
 Create a new daemon to run on the given server. If no user is supplied, it defaults to `forge`.
 
 ```bash
-$ forge create:daemon {serverId}
+$ forge make:daemon {serverId}
     --command="command to run"
     --user=root
 ```
@@ -272,11 +272,11 @@ $ forge delete:daemon {serverId} {daemonId}
 
 ### Firewall Rules
 
-#### create:rule
+#### make:rule
 Create a new firewall rule.
 
 ```bash
-$ forge create:rule {serverId}
+$ forge make:rule {serverId}
     --name="firewall rule"
     --port=88
 ```
@@ -306,11 +306,11 @@ $ forge delete:rule {serverId} {ruleId}
 
 ### Scheduled jobs
 
-#### create:job
+#### make:job
 Create a new scheduled job.
 
 ```bash
-$ forge create:job {serverId}
+$ forge make:job {serverId}
     --command="echo 'hello world' > /dev/null"
     --frequency="hourly"
 ```
@@ -340,12 +340,12 @@ $ forge delete:job {serverId} {jobId}
 
 ### Databases
 
-#### create:database
+#### make:database
 Create a new database. The flags `--user` and `--password` must either both be present or both
 be absent.
 
 ```bash
-$ forge create:database {serverId}
+$ forge make:database {serverId}
     --user="sven"
     --password="My_P45sw0rD"
 ```

@@ -23,7 +23,7 @@ class Create extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('create:rule')
+        $this->setName('make:rule')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the firewall rule on.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the firewall rule.')
             ->addOption('port', null, InputOption::VALUE_REQUIRED, 'The port to create the firewall rule for.')

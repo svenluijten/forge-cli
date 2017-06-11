@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Renamed `create:*` commands to `make:*` ([#5](https://github.com/svenluijten/forge-cli/issues/5))
+
 ### Added
 - `create:rule` command
 - `show:rule` command

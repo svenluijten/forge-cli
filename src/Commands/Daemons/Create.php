@@ -23,7 +23,7 @@ class Create extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('create:daemon')
+        $this->setName('make:daemon')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the daemon on.')
             ->addOption('command', null, InputOption::VALUE_REQUIRED, 'The command to run.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The user to run the command as.', 'forge')

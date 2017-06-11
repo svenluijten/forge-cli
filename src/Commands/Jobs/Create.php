@@ -28,7 +28,7 @@ class Create extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('create:job')
+        $this->setName('make:job')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to schedule a new job for.')
             ->addOption('command', null, InputOption::VALUE_REQUIRED, 'The command to schedule.')
             ->addOption('frequency', null, InputOption::VALUE_REQUIRED, 'With what frequency should the command run? Valid values are "minutely", "hourly", "nightly", "weekly", "monthly", and "custom".', 'custom')
