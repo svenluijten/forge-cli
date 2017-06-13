@@ -39,15 +39,11 @@ abstract class BaseCommand extends Command
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        if (! $this->needsForge) {
-            $this->perform($input, $output);
+        if ($this->needsForge) {
+            $key = (new Config)->get('key');
 
-            return;
+            $this->forge = new Forge($key);
         }
-
-        $key = (new Config)->get('key');
-
-        $this->forge = new Forge($key);
 
         $this->perform($input, $output);
     }
