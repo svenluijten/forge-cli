@@ -516,7 +516,7 @@ $ forge site:deploy-log {serverId} {siteId} > file.log
 Reset the status of the deployment.
 
 ```bash
-$ forge site:reset-deployment-status
+$ forge site:reset-deployment-status {serverId} {siteId}
 ```
 
 ---
