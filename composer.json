@@ -1,7 +1,7 @@
 {
     "name": "sven/forge-cli",
-    "description": "A set of commands to interact with your Laravel Forge servers & sites",
-    "keywords": ["laravel", "forge", "command", "cli"],
+    "description": "A set of commands to interact with your Laravel Forge servers, sites, and more",
+    "keywords": ["laravel", "forge", "command", "cli", "laravel forge", "forge api", "laravel api"],
     "license": "MIT",
     "authors": [
         {
