@@ -14,7 +14,7 @@ class DisableQuickDeploy extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('site:disable-quickdeploy')
+        $this->setName('disable:quickdeploy')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to disable quick deployment for.')
             ->setDescription('Disable quick deployment on the given site.');

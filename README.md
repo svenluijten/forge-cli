@@ -458,58 +458,58 @@ Deploy the given site.
 $ forge deploy:site {serverId} {siteId}
 ```
 
-#### site:enable-quickdeploy
+#### enable:quickdeploy
 Enable quick deployment for the given site.
 
 ```bash
-$ forge site:enable-quickdeploy {serverId} {siteId}
+$ forge enable:quickdeploy {serverId} {siteId}
 ```
 
-#### site:disable-quickdeploy
+#### disable:quickdeploy
 Disable quick deployment for the given site.
 
 ```bash
-$ forge site:disable-quickdeploy {serverId} {siteId}
+$ forge disable:quickdeploy {serverId} {siteId}
 ```
 
-#### site:get-deploy-script
+#### get:deploy-script
 Get the deployment script of the given site.
 
 ```bash
-$ forge site:get-deploy-script {serverId} {siteId}
+$ forge get:deploy-script {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge site:get-deploy-script {serverId} {siteId} > file.txt
+$ forge get:deploy-script {serverId} {siteId} > file.txt
 ```
 
-#### site:update-deploy-script
+#### update:deploy-script
 Update the deployment script of the given site.
 
 ```bash
-$ forge site:update-deploy-script {serverId} {siteId}
+$ forge update:deploy-script {serverId} {siteId}
     --file=file.txt
 ```
 
 If you do not supply the `--file` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge site:update-deploy-script {serverId} {siteId} < file.txt
+$ forge update:deploy-script {serverId} {siteId} < file.txt
 ```
 
-#### site:deploy-log
+#### get:deploy-log
 Show the deployment log.
 
 ```bash
-$ forge site:deploy-log {serverId} {siteId}
+$ forge get:deploy-log {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge site:deploy-log {serverId} {siteId} > file.log
+$ forge get:deploy-log {serverId} {siteId} > file.log
 ```
 
 #### site:reset-deployment-status

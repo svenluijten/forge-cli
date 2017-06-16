@@ -15,7 +15,7 @@ class UpdateScript extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('site:update-deploy-script')
+        $this->setName('update:deploy-script')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to update the deployment script of.')
             ->addOption('file', null, InputOption::VALUE_REQUIRED, 'The file your new deployment script is in.')

@@ -14,7 +14,7 @@ class GetScript extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('site:get-deploy-script')
+        $this->setName('get:deploy-script')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the deployment script of.')
             ->setDescription('Output the deployment script used for the given site.');

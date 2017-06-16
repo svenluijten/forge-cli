@@ -14,7 +14,7 @@ class Log extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('site:deploy-log')
+        $this->setName('get:deploy-log')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the deployment log for.')
             ->setDescription('Get latest deployment log of the given site.');

@@ -14,7 +14,7 @@ class EnableQuickDeploy extends BaseCommand
      */
     public function configure()
     {
-        $this->setName('site:enable-quickdeploy')
+        $this->setName('enable:quickdeploy')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to enable quick deployment for.')
             ->setDescription('Enable quick deployment on the given site.');
