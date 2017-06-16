@@ -27,25 +27,15 @@ abstract class BaseCommand extends Command
     protected $optionMap = [];
 
     /**
-     * @param \Symfony\Component\Console\Input\InputInterface   $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return mixed
+     * @param \Themsaid\Forge\Forge|null $forge
      */
-    abstract public function perform(InputInterface $input, OutputInterface $output);
-
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function __construct(Forge $forge = null)
     {
+        parent::__construct();
+
         if ($this->needsForge) {
-            $key = (new Config)->get('key');
-
-            $this->forge = new Forge($key);
+            $this->forge = $forge ?: new Forge((new Config)->get('key'));
         }
-
-        $this->perform($input, $output);
     }
 
     /**

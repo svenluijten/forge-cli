@@ -23,7 +23,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $rows = array_map(function (MysqlDatabase $database) {
             return [$database->id, $database->name, $database->status, $database->createdAt];

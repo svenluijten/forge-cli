@@ -23,7 +23,7 @@ class Deploy extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->deploySite(
             $input->getArgument('server'), $input->getArgument('site')

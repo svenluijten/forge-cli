@@ -23,7 +23,7 @@ class ResetStatus extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->resetDeploymentState(
             $input->getArgument('server'), $input->getArgument('site')

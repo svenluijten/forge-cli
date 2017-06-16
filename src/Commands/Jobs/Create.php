@@ -43,7 +43,7 @@ class Create extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         if (strtolower($input->getOption('frequency')) !== 'custom') {
             $this->requireOptions($input, 'minute', 'hour', 'day', 'month', 'weekday');

@@ -23,7 +23,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $rows = array_map(function (Daemon $daemon) {
             return [$daemon->id, $daemon->status, $daemon->command, $daemon->createdAt];

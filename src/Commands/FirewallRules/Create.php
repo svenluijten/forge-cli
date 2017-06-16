@@ -33,7 +33,7 @@ class Create extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createFirewallRule(
             $input->getArgument('server'), $this->fillData($input->getOptions()), false

@@ -23,7 +23,7 @@ class GetScript extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $script = $this->forge->siteDeploymentScript(
             $input->getArgument('server'), $input->getArgument('site')

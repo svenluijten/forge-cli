@@ -21,7 +21,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->table($output, ['Id', 'Command', 'User', 'Created'], array_map(function (Recipe $recipe) {
             return [$recipe->id, $recipe->name, $recipe->user, $recipe->createdAt];

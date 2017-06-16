@@ -26,7 +26,7 @@ class Authorize extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $helper = $this->getHelper('question');
         $question = new Question('What is your API key? ');

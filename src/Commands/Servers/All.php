@@ -21,7 +21,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $rows = array_map(function (Server $server) {
             return [$server->name, $server->id, $server->ipAddress, $server->region, $server->isReady ? 'Yes' : 'No'];

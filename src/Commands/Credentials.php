@@ -20,7 +20,7 @@ class Credentials extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->table($output, ['Id', 'Name', 'Type'], array_map(function (Credential $credential) {
             return [$credential->id, $credential->name, $credential->type];

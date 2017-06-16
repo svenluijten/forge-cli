@@ -23,7 +23,7 @@ class Get extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $daemon = $this->forge->daemon(
             $input->getArgument('server'), $input->getArgument('daemon')

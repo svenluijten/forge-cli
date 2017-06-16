@@ -23,7 +23,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->table($output, ['Id', 'Command', 'User', 'Frequency', 'Created'], array_map(function (Job $job) {
             return [$job->id, $job->name, $job->user, $job->frequency, $job->createdAt];

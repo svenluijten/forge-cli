@@ -23,7 +23,7 @@ class Get extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $env = $this->forge->siteEnvironmentFile(
             $input->getArgument('server'), $input->getArgument('site')

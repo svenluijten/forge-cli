@@ -24,7 +24,7 @@ class Delete extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $rule = $input->getArgument('rule');
 

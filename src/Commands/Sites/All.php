@@ -23,7 +23,7 @@ class All extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->table($output, ['Id', 'Name', 'Type', 'Repository', 'Branch'], array_map(function (Site $site) {
             return [$site->id, $site->name, $site->projectType, $site->repository ?: '-', $site->repositoryBranch ?: '-'];

@@ -24,7 +24,7 @@ class Get extends BaseCommand
     /**
      * {@inheritdoc}
      */
-    public function perform(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output)
     {
         $worker = $this->forge->worker(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('worker')
