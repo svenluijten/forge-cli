@@ -26,7 +26,7 @@ class Create extends BaseCommand
     {
         $this->setName('make:site')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new site on.')
-            ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site')
+            ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site.')
             ->addOption('type', null, InputOption::VALUE_REQUIRED, 'The type of application to install on the site. Can be either "php", "html", "Symfony", or "symfony_dev".', 'php')
             ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The base directory of the site.', '/public')
             ->setDescription('Create a new site on one of your servers.');
