@@ -427,7 +427,7 @@ $ forge all:workers {serverId} {siteId}
 ```
 
 #### show:worker
-Show information about one of your databases.
+Show information about one of your workers.
 
 ```bash
 $ forge show:worker {serverId} {siteId} {workerId}
