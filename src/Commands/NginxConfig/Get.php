@@ -15,9 +15,9 @@ class Get extends BaseCommand
     public function configure()
     {
         $this->setName('get:nginx-config')
-             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the config script for.')
-             ->setDescription('Show the nginx configuration file.');
+            ->setDescription('Show the nginx configuration file.');
     }
 
     /**

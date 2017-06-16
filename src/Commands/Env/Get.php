@@ -15,9 +15,9 @@ class Get extends BaseCommand
     public function configure()
     {
         $this->setName('get:env')
-             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the .env file for.')
-             ->setDescription('Show the .env file.');
+            ->setDescription('Show the .env file.');
     }
 
     /**
