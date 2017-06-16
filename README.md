@@ -522,7 +522,60 @@ $ forge site:reset-deployment-status {serverId} {siteId}
 ---
 
 ### Configuration
-Configuration documentation...
+
+#### get:env
+Get the environment file of one of your sites.
+
+```bash
+$ forge get:env {serverId} {siteId}
+```
+
+The output will be written to `STDOUT`, so you can save it to a file directly:
+
+```bash
+$ forge get:env {serverId} {siteId} > env-file.txt
+```
+
+#### update:env
+Update the environment file for one of your sites.
+
+```bash
+$ forge update:env {serverId} {siteId}
+    --file=new-env.txt
+```
+
+If you do not supply the `--file` option, the command will look in `STDIN` for any input:
+
+```bash
+$ forge update:env {serverId} {siteId} < new-env.txt
+```
+
+#### get:nginx-config
+Get the nginx config file of one of your sites.
+
+```bash
+$ forge get:nginx-config {serverId} {siteId}
+```
+
+The output will be written to `STDOUT`, so you can save it to a file directly:
+
+```bash
+$ forge get:nginx-config {serverId} {siteId} > nginx.conf
+```
+
+#### update:nginx-config
+Update the nginx config file for one of your sites.
+
+```bash
+$ forge update:nginx-config {serverId} {siteId}
+    --file=new.conf
+```
+
+If you do not supply the `--file` option, the command will look in `STDIN` for any input:
+
+```bash
+$ forge update:nginx-config {serverId} {siteId} < new.conf
+```
 
 ---
 

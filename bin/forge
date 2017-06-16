@@ -2,9 +2,9 @@
 <?php
 
 use Sven\ForgeCLI\Commands\{
-    Authorize, Credentials, Daemons, Databases, Deployment,
-    FirewallRules, Jobs, Recipes, Servers, Services, Sites,
-    Workers
+    Authorize, Credentials, Daemons, Databases, Deployment, Env,
+    FirewallRules, Jobs, NginxConfig, Recipes, Servers, Services,
+    Sites, Workers
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -68,6 +68,10 @@ $app->addCommands([
     new Recipes\Get,
     new Recipes\Run,
     new Recipes\Update,
+    new NginxConfig\Get,
+    new NginxConfig\Update,
+    new Env\Get,
+    new Env\Update,
 ]);
 
 $app->run();

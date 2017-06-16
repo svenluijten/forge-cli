@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+### Added
+- `get:env` command
+- `update:env` command
+- `get:nginx-config` command
+- `update:nginx-config` command
 
 ## [0.1.5] - 2017-06-12
 ### Added
