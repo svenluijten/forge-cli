@@ -401,7 +401,42 @@ SSL certificates documentation...
 ---
 
 ### SSH Keys
-SSH keys documentation...
+
+#### make:key
+Create a new SSH key and add it to a server.
+
+```bash
+$ forge make:key {serverId}
+    --name="Macbook"
+    --file="~/.ssh/id_rsa.pub"
+```
+
+If you do not supply the `--file` option, the command will look in `STDIN` for any input:
+
+```bash
+$ forge make:key {serverId} --name="Macbook" < ~/.ssh/id_rsa.pub
+```
+
+#### all:keys
+Show all SSH keys installed on a server.
+
+```bash
+$ forge all:keys {serverId}
+```
+
+#### show:key
+Show information about one of your SSH keys.
+
+```bash
+$ forge show:key {serverId} {keyId}
+```
+
+#### delete:key
+Delete a given SSH key from one of your servers. You will need to confirm your action.
+
+```bash
+$ forge delete:key {serverId} {keyId}
+```
 
 ---
 

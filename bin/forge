@@ -4,7 +4,7 @@
 use Sven\ForgeCLI\Commands\{
     Authorize, Credentials, Daemons, Databases, Deployment, Env,
     FirewallRules, Jobs, NginxConfig, Recipes, Servers, Services,
-    Sites, Workers
+    SshKeys, Sites, Workers
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -72,6 +72,10 @@ $app->addCommands([
     new NginxConfig\Update,
     new Env\Get,
     new Env\Update,
+    new SshKeys\All,
+    new SshKeys\Create,
+    new SshKeys\Delete,
+    new SshKeys\Get,
 ]);
 
 $app->run();
