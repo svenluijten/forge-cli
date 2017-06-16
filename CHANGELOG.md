@@ -10,6 +10,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `update:env` command
 - `get:nginx-config` command
 - `update:nginx-config` command
+- `make:key` command
+- `show:key` command
+- `list:keys` command
+- `delete:key` command
+
+### Changed
+- Remove need for custom `->execute()` method on commands
+
+### Fixed
+- Minor typos in documentation
 
 ## [0.1.5] - 2017-06-12
 ### Added
