@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
+## [Unreleased]
+
+## [0.2.0] - 2017-06-23
 ### Added
 - `get:env` command
 - `update:env` command
@@ -17,6 +19,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Remove need for custom `->execute()` method on commands
+- Loads of the commands' namespaces
+- Folder structure in `/src/Commands`
 
 ### Fixed
 - Minor typos in documentation
@@ -103,7 +107,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `update:site` command
 - `delete:site` command
 
-[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.1.5...HEAD
+[Unreleased]: https://github.com/svenluijten/forge-cli/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/svenluijten/forge-cli/compare/0.1.5...0.2.0
 [0.1.5]: https://github.com/svenluijten/forge-cli/compare/0.1.4...0.1.5
 [0.1.4]: https://github.com/svenluijten/forge-cli/compare/0.1.3...0.1.4
 [0.1.3]: https://github.com/svenluijten/forge-cli/compare/0.1.2...0.1.3 
