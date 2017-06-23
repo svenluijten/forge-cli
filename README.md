@@ -547,11 +547,11 @@ The output will be written to `STDOUT`, so you can save it to a file directly:
 $ forge get:deploy-log {serverId} {siteId} > file.log
 ```
 
-#### site:reset-deployment-status
-Reset the status of the deployment.
+#### reset:deploy-state
+Reset the state of the deployment.
 
 ```bash
-$ forge site:reset-deployment-status {serverId} {siteId}
+$ forge reset:deploy-state {serverId} {siteId}
 ```
 
 ---

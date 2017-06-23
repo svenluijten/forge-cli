@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\Deployment;
+namespace Sven\ForgeCLI\Commands\DeployScript;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputOption;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class UpdateScript extends BaseCommand
+class Update extends BaseCommand
 {
     /**
      * {@inheritdoc}

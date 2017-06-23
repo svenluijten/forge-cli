@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\Deployment;
+namespace Sven\ForgeCLI\Commands\Sites;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;

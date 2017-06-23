@@ -7,17 +7,17 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Log extends BaseCommand
+class ResetState extends BaseCommand
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('get:deploy-log')
+        $this->setName('reset:deploy-state')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
-            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the deployment log for.')
-            ->setDescription('Get latest deployment log of the given site.');
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to reset the deployment state of.')
+            ->setDescription('Reset the deployment state of the given site.');
     }
 
     /**
@@ -25,7 +25,7 @@ class Log extends BaseCommand
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->forge->siteDeploymentLog(
+        $this->forge->resetDeploymentState(
             $input->getArgument('server'), $input->getArgument('site')
         );
     }

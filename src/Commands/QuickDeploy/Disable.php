@@ -1,23 +1,23 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\Deployment;
+namespace Sven\ForgeCLI\Commands\QuickDeploy;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class GetScript extends BaseCommand
+class Disable extends BaseCommand
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('get:deploy-script')
+        $this->setName('disable:quickdeploy')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
-            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to get the deployment script of.')
-            ->setDescription('Output the deployment script used for the given site.');
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to disable quick deployment for.')
+            ->setDescription('Disable quick deployment on the given site.');
     }
 
     /**
@@ -25,10 +25,8 @@ class GetScript extends BaseCommand
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $script = $this->forge->siteDeploymentScript(
+        $this->forge->disableQuickDeploy(
             $input->getArgument('server'), $input->getArgument('site')
         );
-
-        $output->writeln($script);
     }
 }
