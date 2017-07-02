@@ -83,6 +83,10 @@ abstract class BaseCommand extends Command
     {
         $filename = $input->hasOption($option) ? $input->getOption($option) : 'php://stdin';
 
+        if (! file_exists($filename)) {
+            return $filename;
+        }
+
         if ($filename && ftell(STDIN) === 0) {
             return file_get_contents($filename);
         }

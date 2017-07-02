@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `delete:git` command
 - `install:wordpress` command
 - `delete:wordpress` command
+- Ability to inline file contents to `make:recipe`, `env:update`, etc.
 
 ## [0.2.0] - 2017-06-23
 ### Added
