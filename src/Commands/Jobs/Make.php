@@ -55,23 +55,4 @@ class Make extends BaseCommand
             false
         );
     }
-
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param array                                           ...$keys
-     *
-     * @throws \RuntimeException
-     */
-    protected function requireOptions(InputInterface $input, ...$keys)
-    {
-        foreach ($keys as $key) {
-            if ($input->hasOption($key)) {
-                continue;
-            }
-
-            throw new \RuntimeException(
-                sprintf('The option "%s" is required.', $key)
-            );
-        }
-    }
 }
