@@ -628,7 +628,7 @@ $ forge install:git {serverId} {siteId}
 The `provider` option can be either `github` (default) or `custom`.
 
 #### delete:git
-Remove a git project from the given site.
+Remove a git project from the given site. You will need to confirm your action.
 
 ```bash
 $ forge delete:git {serverId} {siteId}
@@ -644,7 +644,7 @@ $ forge install:wordpress {serverId} {siteId}
 ```
 
 #### remove:wordpress
-Remove a WordPress project from the given site.
+Remove a WordPress project from the given site. You will need to confirm your action.
 
 ```bash
 $ forge delete:wordpress {serverId} {siteId}
