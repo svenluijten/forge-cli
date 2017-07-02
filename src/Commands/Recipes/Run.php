@@ -26,7 +26,6 @@ class Run extends BaseCommand
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        // @todo themaid/forge-sdk needs to accept the 'servers' payload.
         $this->forge->runRecipe(
             $input->getArgument('recipe'), $input->getOption('server')
         );
