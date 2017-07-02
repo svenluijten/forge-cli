@@ -615,7 +615,40 @@ $ forge update:nginx-config {serverId} {siteId} < new.conf
 ---
 
 ### Projects
-Projects documentation...
+
+#### install:git
+Install a git project on the given site.
+
+```bash
+$ forge install:git {serverId} {siteId}
+    --provider="github"
+    --repository="username/repository"
+```
+
+The `provider` option can be either `github` (default) or `custom`.
+
+#### delete:git
+Remove a git project from the given site.
+
+```bash
+$ forge delete:git {serverId} {siteId}
+```
+
+#### install:wordpress
+Install WordPress on the given site.
+
+```bash
+$ forge install:wordpress {serverId} {siteId}
+    --database="name_of_database"
+    --user="your_username"
+```
+
+#### remove:wordpress
+Remove a WordPress project from the given site.
+
+```bash
+$ forge delete:wordpress {serverId} {siteId}
+```
 
 ---
 

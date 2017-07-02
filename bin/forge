@@ -3,8 +3,8 @@
 
 use Sven\ForgeCLI\Commands\{
     Authorize, Credentials, Daemons, Databases, Deployment, DeployScript,
-    Env, FirewallRules, Jobs, NginxConfig, QuickDeploy, Recipes, Servers,
-    Services, SshKeys, Sites, Workers
+    Env, FirewallRules, Jobs, NginxConfig, Projects, QuickDeploy, Recipes,
+    Servers, Services, SshKeys, Sites, Workers
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -76,6 +76,10 @@ $app->addCommands([
     new SshKeys\Make,
     new SshKeys\Delete,
     new SshKeys\Show,
+    new Projects\DeleteGit,
+    new Projects\DeleteWordpress,
+    new Projects\InstallGit,
+    new Projects\InstallWordpress,
 ]);
 
 $app->run();
