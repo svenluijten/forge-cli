@@ -396,7 +396,54 @@ $ forge delete:database {serverId} {databaseId}
 ---
 
 ### SSL Certificates
-SSL certificates documentation...
+
+#### list:certificates
+Show all certificates installed on the given site.
+
+```bash
+$ forge list:certificates {serverId} {siteId}
+```
+
+#### show:certificate
+Show information about the specified certificate.
+
+```bash
+$ forge show:certificate {serverId} {siteId} {certificateId}
+```
+
+#### make:certificate
+Create a new certificate for one of your sites.
+
+```bash
+$ forge make:certificate {serverId} {siteId}
+    --domain="www.example.com"
+    --country="US"
+    --state="NY"
+    --city="New York"
+    --organization="Acme, Inc."
+    --department="Development"
+```
+
+#### activate:certificate
+Activate a currently installed SSL certificate.
+
+```bash
+$ forge activate:certificate {serverId} {siteId} {certificateId}
+```
+
+#### install:certificate
+Install a certificate on the given site.
+
+```bash
+$ forge install:certificate {serverId} {siteId} {certificateId}
+```
+
+#### delete:certificate
+Revoke and remove a certificate from the given site. You will need to confirm you action.
+
+```bash
+$ forge delete:certificate {serverId} {siteId} {certificateId}
+```
 
 ---
 

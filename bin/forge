@@ -2,9 +2,9 @@
 <?php
 
 use Sven\ForgeCLI\Commands\{
-    Authorize, Credentials, Daemons, Databases, Deployment, DeployScript,
-    Env, FirewallRules, Jobs, NginxConfig, Projects, QuickDeploy, Recipes,
-    Servers, Services, SshKeys, Sites, Workers
+    Authorize, Certificates, Credentials, Daemons, Databases, Deployment,
+    DeployScript, Env, FirewallRules, Jobs, NginxConfig, Projects, QuickDeploy,
+    Recipes, Servers, Services, SshKeys, Sites, Workers
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -80,6 +80,12 @@ $app->addCommands([
     new Projects\DeleteWordpress,
     new Projects\InstallGit,
     new Projects\InstallWordpress,
+    new Certificates\Activate,
+    new Certificates\All,
+    new Certificates\Delete,
+    new Certificates\Install,
+    new Certificates\Make,
+    new Certificates\Show,
 ]);
 
 $app->run();
