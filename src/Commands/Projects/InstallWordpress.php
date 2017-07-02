@@ -16,11 +16,11 @@ class InstallWordpress extends BaseCommand
     public function configure()
     {
         $this->setName('install:wordpress')
-             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
-             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to install the WordPress project on.')
-             ->addOption('database', null, InputOption::VALUE_REQUIRED, 'The name of the database to use.')
-             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The name of the user to create.')
-             ->setDescription('Install a new WordPress project on a site.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to install the WordPress project on.')
+            ->addOption('database', null, InputOption::VALUE_REQUIRED, 'The name of the database to use.')
+            ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The name of the user to create.')
+            ->setDescription('Install a new WordPress project on a site.');
     }
 
     /**

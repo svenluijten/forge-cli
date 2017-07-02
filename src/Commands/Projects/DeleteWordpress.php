@@ -16,9 +16,9 @@ class DeleteWordpress extends BaseCommand
     public function configure()
     {
         $this->setName('delete:wordpress')
-             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
-             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete the WordPress project from.')
-             ->setDescription('Delete a WordPress project from a site.');
+            ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete the WordPress project from.')
+            ->setDescription('Delete a WordPress project from a site.');
     }
 
     /**
