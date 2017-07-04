@@ -102,7 +102,7 @@ Create a new server.
 ```bash
 $ forge make:server
     --provider=ocean2
-    --credential={credentialId}
+    --credentials={credentialId}
     --region=ams2
     --ip=127.0.0.1
     --private-ip=192.168.1.1
