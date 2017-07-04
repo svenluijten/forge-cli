@@ -3,10 +3,10 @@
 namespace Sven\ForgeCLI\Tests;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase as BaseTestCase;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Tester\CommandTester;
 use Themsaid\Forge\Forge;
+use Symfony\Component\Console\Application;
+use PHPUnit\Framework\TestCase as BaseTestCase;
+use Symfony\Component\Console\Tester\CommandTester;
 
 abstract class TestCase extends BaseTestCase
 {

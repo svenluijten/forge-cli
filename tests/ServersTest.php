@@ -2,11 +2,14 @@
 
 namespace Sven\ForgeCLI\Tests;
 
-use Sven\ForgeCLI\Commands\Servers\{
-    All, Delete, Make, Reboot, Show, Update
-};
-use Symfony\Component\Console\Tester\CommandTester;
 use Themsaid\Forge\Resources\Server;
+use Sven\ForgeCLI\Commands\Servers\All;
+use Sven\ForgeCLI\Commands\Servers\Make;
+use Sven\ForgeCLI\Commands\Servers\Show;
+use Sven\ForgeCLI\Commands\Servers\Delete;
+use Sven\ForgeCLI\Commands\Servers\Reboot;
+use Sven\ForgeCLI\Commands\Servers\Update;
+use Symfony\Component\Console\Tester\CommandTester;
 
 class ServersTest extends TestCase
 {
@@ -14,7 +17,7 @@ class ServersTest extends TestCase
     public function it_lists_all_servers()
     {
         $this->forge->shouldReceive('servers')->andReturn([
-            new Server([])
+            new Server([]),
         ]);
 
         $this->command(All::class)->execute([]);
