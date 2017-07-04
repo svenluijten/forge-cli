@@ -130,7 +130,7 @@ $ forge update:server {serverId}
 ```
 
 #### reboot:server
-Reboot one of your servers. You will need to confirm you action.
+Reboot one of your servers. You will need to confirm your action.
 
 ```bash
 $ forge reboot:server {serverId}
@@ -523,7 +523,7 @@ $ forge delete:worker {serverId} {siteId} {workerId}
 ```
 
 #### reboot:worker
-Reboot one of your workers. You will need to confirm you action.
+Reboot one of your workers. You will need to confirm your action.
 
 ```bash
 $ forge reboot:worker {serverId} {siteId} {workerId}
