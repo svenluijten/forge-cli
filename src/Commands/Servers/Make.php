@@ -32,7 +32,7 @@ class Make extends BaseCommand
     {
         $this->setName('make:server')
             ->addOption('provider', null, InputOption::VALUE_REQUIRED, 'The provider to provision the server on. Can be either "ocean2", "linode", "aws", or "custom".', 'ocean2')
-            ->addOption('credential', 'C', InputOption::VALUE_REQUIRED, 'Credentials to use. Not required when using the "custom" provider.')
+            ->addOption('credentials', 'C', InputOption::VALUE_REQUIRED, 'Credentials to use. Not required when using the "custom" provider.')
             ->addOption('region', null, InputOption::VALUE_REQUIRED, 'The region to provision the server in. Not required when using the "custom" provider.')
             ->addOption('ip', null, InputOption::VALUE_REQUIRED, 'IP address of the server. Required when using the "custom" provider.')
             ->addOption('private-ip', null, InputOption::VALUE_REQUIRED, 'Private IP address of the server. Required when using the "custom" provider.')
