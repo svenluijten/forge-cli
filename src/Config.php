@@ -5,6 +5,11 @@ namespace Sven\ForgeCLI;
 class Config
 {
     /**
+     * @var string
+     */
+    protected $file;
+    
+    /**
      * Config constructor.
      */
     public function __construct()
