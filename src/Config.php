@@ -8,7 +8,7 @@ class Config
      * @var string
      */
     protected $file;
-    
+
     /**
      * Config constructor.
      */
