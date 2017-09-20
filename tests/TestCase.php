@@ -41,7 +41,7 @@ abstract class TestCase extends BaseTestCase
     {
         $app = new Application('Forge CLI Testing');
 
-        $command = new $abstract($forge ?? $this->forge);
+        $command = new $abstract($this->forge);
 
         $app->add($command);
 
