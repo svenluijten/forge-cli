@@ -6,6 +6,5 @@
 /.travis.yml     export-ignore
 /.styleci.yml    export-ignore
 /phpunit.xml     export-ignore
-/README.md       export-ignore
 /CONTRIBUTING.md export-ignore
 /CHANGELOG.md    export-ignore
