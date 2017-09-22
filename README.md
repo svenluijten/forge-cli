@@ -5,9 +5,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Code Climate][ico-codeclimate]][link-codeclimate]
-[![Code Quality][ico-quality]][link-quality]
+[![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
 Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites via the command line with this package. Create and list
@@ -774,14 +772,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/forge-cli.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/forge-cli.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/svenluijten/forge-cli.svg?style=flat-square
-[ico-codeclimate]: https://img.shields.io/codeclimate/github/svenluijten/forge-cli.svg?style=flat-square
-[ico-quality]: https://img.shields.io/scrutinizer/g/svenluijten/forge-cli.svg?style=flat-square
+[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/forge-cli.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/85804300/shield
 
 [link-packagist]: https://packagist.org/packages/sven/forge-cli
 [link-downloads]: https://packagist.org/packages/sven/forge-cli
-[link-travis]: https://travis-ci.org/svenluijten/forge-cli
-[link-codeclimate]: https://codeclimate.com/github/svenluijten/forge-cli
-[link-quality]: https://scrutinizer-ci.com/g/svenluijten/forge-cli/?branch=master
+[link-circleci]: https://circleci.com/gh/svenluijten/artisan-view
 [link-styleci]: https://styleci.io/repos/85804300
