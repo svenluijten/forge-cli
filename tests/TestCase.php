@@ -11,7 +11,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @var \Themsaid\Forge\Forge
+     * @var \Mockery\Mock
      */
     protected $forge;
 
