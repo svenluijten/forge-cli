@@ -777,5 +777,5 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 
 [link-packagist]: https://packagist.org/packages/sven/forge-cli
 [link-downloads]: https://packagist.org/packages/sven/forge-cli
-[link-circleci]: https://circleci.com/gh/svenluijten/artisan-view
+[link-circleci]: https://circleci.com/gh/svenluijten/forge-cli
 [link-styleci]: https://styleci.io/repos/85804300
