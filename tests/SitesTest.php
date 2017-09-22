@@ -62,7 +62,7 @@ class SitesTest extends TestCase
             ->with(12345, [
                 'domain' => 'example.com',
                 'project_type' => 'symfony_dev',
-                'directory' => '/public'
+                'directory' => '/public',
             ], false);
 
         $this->command(Make::class)->execute([
@@ -80,7 +80,7 @@ class SitesTest extends TestCase
             ->with(12345, [
                 'domain' => 'example.com',
                 'project_type' => 'php',
-                'directory' => '/public_html'
+                'directory' => '/public_html',
             ], false);
 
         $this->command(Make::class)->execute([
