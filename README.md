@@ -301,11 +301,11 @@ $ forge make:rule {serverId}
     --port=88
 ```
 
-#### all:rules
+#### list:rules
 Show all firewall rules.
 
 ```bash
-$ forge all:rules {serverId}
+$ forge list:rules {serverId}
 ```
 
 #### show:rule
@@ -335,11 +335,11 @@ $ forge make:job {serverId}
     --frequency="hourly"
 ```
 
-#### all:jobs
+#### list:jobs
 Show all scheduled jobs.
 
 ```bash
-$ forge all:jobs {serverId}
+$ forge list:jobs {serverId}
 ```
 
 #### show:job
@@ -370,11 +370,11 @@ $ forge make:database {serverId}
     --password="My_P45sw0rD"
 ```
 
-#### all:databases
+#### list:databases
 Show all databases on a server.
 
 ```bash
-$ forge all:databases {serverId}
+$ forge list:databases {serverId}
 ```
 
 #### show:database
@@ -462,11 +462,11 @@ If you do not supply the `--file` option, the command will look in `STDIN` for a
 $ forge make:key {serverId} --name="Macbook" < ~/.ssh/id_rsa.pub
 ```
 
-#### all:keys
+#### list:keys
 Show all SSH keys installed on a server.
 
 ```bash
-$ forge all:keys {serverId}
+$ forge list:keys {serverId}
 ```
 
 #### show:key
@@ -499,11 +499,11 @@ $ forge make:worker {serverId} {siteId}
     --daemon
 ```
 
-#### all:workers
+#### list:workers
 Show all workers installed on a site.
 
 ```bash
-$ forge all:workers {serverId} {siteId}
+$ forge list:workers {serverId} {siteId}
 ```
 
 #### show:worker
@@ -715,11 +715,11 @@ If you do not supply the `--script` option, the command will look in `STDIN` for
 $ forge make:recipe --name="My Recipe" --user=forge < file.txt
 ```
 
-#### all:recipes
+#### list:recipes
 Show all recipes in your Forge account.
 
 ```bash
-$ forge all:recipes
+$ forge list:recipes
 ```
 
 #### show:recipe
