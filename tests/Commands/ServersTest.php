@@ -17,7 +17,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_lists_all_servers()
     {
-        $this->forge->shouldReceive('servers')->andReturn([
+        $this->forge->expects($this->once())->method('servers')->willReturn([
             new Server([]),
         ]);
 
@@ -27,7 +27,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_deletes_a_server()
     {
-        $this->forge->shouldReceive('deleteServer')->with('1234');
+        $this->forge->expects($this->once())->method('deleteServer')->with('1234');
 
         $tester = $this->command(Delete::class, function (CommandTester $tester) {
             $tester->setInputs(['yes']);
@@ -41,7 +41,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_creates_a_server()
     {
-        $this->forge->shouldReceive('createServer')->with([
+        $this->forge->expects($this->once())->method('createServer')->with([
             'provider' => 'ocean2',
             'credential_id' => '1234',
             'region' => 'AMS2',
@@ -68,7 +68,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_reboots_the_server()
     {
-        $this->forge->shouldReceive('rebootServer')->with('12345');
+        $this->forge->expects($this->once())->method('rebootServer')->with('12345');
 
         $tester = $this->command(Reboot::class, function (CommandTester $tester) {
             $tester->setInputs(['yes']);
@@ -82,7 +82,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_shows_information_about_a_server()
     {
-        $this->forge->shouldReceive('server')->with('12345')->andReturn(
+        $this->forge->expects($this->once())->method('server')->with('12345')->willReturn(
             new Server([])
         );
 
@@ -96,7 +96,7 @@ class ServersTest extends TestCase
     /** @test */
     public function it_updates_a_server()
     {
-        $this->forge->shouldReceive('updateServer')->with('12345', [
+        $this->forge->expects($this->once())->method('updateServer')->with('12345', [
             'name' => 'New Name',
             'size' => '512MB',
             'ip_address' => '127.0.0.1',

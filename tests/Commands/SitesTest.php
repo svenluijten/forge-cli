@@ -17,9 +17,9 @@ class SitesTest extends TestCase
     /** @test */
     public function it_lists_all_sites()
     {
-        $this->forge->shouldReceive('sites')
+        $this->forge->expects($this->once())->method('sites')
             ->with('12345')
-            ->andReturn([
+            ->willReturn([
                 new Site([]),
             ]);
 
@@ -31,7 +31,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_deletes_a_site()
     {
-        $this->forge->shouldReceive('deleteSite')
+        $this->forge->expects($this->once())->method('deleteSite')
             ->with('12345', '6789');
 
         $tester = $this->command(Delete::class, function (CommandTester $tester) {
@@ -47,7 +47,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_deploys_a_site()
     {
-        $this->forge->shouldReceive('deploySite')
+        $this->forge->expects($this->once())->method('deploySite')
             ->with('12345', '6789');
 
         $this->command(Deploy::class)->execute([
@@ -59,7 +59,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_creates_a_site()
     {
-        $this->forge->shouldReceive('createSite')
+        $this->forge->expects($this->once())->method('createSite')
             ->with(12345, [
                 'domain' => 'example.com',
                 'project_type' => 'symfony_dev',
@@ -77,7 +77,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_defaults_to_php_site_when_not_supplying_the_option()
     {
-        $this->forge->shouldReceive('createSite')
+        $this->forge->expects($this->once())->method('createSite')
             ->with(12345, [
                 'domain' => 'example.com',
                 'project_type' => 'php',
@@ -94,7 +94,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_defaults_to_public_directory_when_not_supplying_the_option()
     {
-        $this->forge->shouldReceive('createSite')
+        $this->forge->expects($this->once())->method('createSite')
             ->with(12345, [
                 'domain' => 'example.com',
                 'project_type' => 'Symfony',
@@ -111,9 +111,9 @@ class SitesTest extends TestCase
     /** @test */
     public function it_shows_information_about_a_site()
     {
-        $this->forge->shouldReceive('site')
+        $this->forge->expects($this->once())->method('site')
             ->with(12345, 6789)
-            ->andReturn(new Site([], $this->forge));
+            ->willReturn(new Site([], $this->forge));
 
         $this->command(Show::class)->execute([
             'server' => 12345,
@@ -124,7 +124,7 @@ class SitesTest extends TestCase
     /** @test */
     public function it_updates_a_site()
     {
-        $this->forge->shouldReceive('updateSite')
+        $this->forge->expects($this->once())->method('updateSite')
             ->with(12345, 6789, [
                 'directory' => '/public_html',
             ]);

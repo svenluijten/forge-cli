@@ -2,7 +2,6 @@
 
 namespace Sven\ForgeCLI\Tests;
 
-use Mockery as m;
 use Themsaid\Forge\Forge;
 use Symfony\Component\Console\Application;
 use PHPUnit\Framework\TestCase as BaseTestCase;
@@ -11,7 +10,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @var \Mockery\Mock
+     * @var \PHPUnit_Framework_MockObject_MockObject
      */
     protected $forge;
 
@@ -20,15 +19,7 @@ abstract class TestCase extends BaseTestCase
      */
     public function setUp()
     {
-        $this->forge = m::mock(Forge::class);
-    }
-
-    /**
-     * Tear down the testing suite.
-     */
-    public function tearDown()
-    {
-        m::close();
+        $this->forge = $this->createMock(Forge::class);
     }
 
     /**
