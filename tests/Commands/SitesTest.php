@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Tests;
+namespace Sven\ForgeCLI\Tests\Commands;
 
 use Sven\ForgeCLI\Commands\Sites\All;
 use Sven\ForgeCLI\Commands\Sites\Delete;
@@ -8,6 +8,7 @@ use Sven\ForgeCLI\Commands\Sites\Deploy;
 use Sven\ForgeCLI\Commands\Sites\Make;
 use Sven\ForgeCLI\Commands\Sites\Show;
 use Sven\ForgeCLI\Commands\Sites\Update;
+use Sven\ForgeCLI\Tests\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use Themsaid\Forge\Resources\Site;
 

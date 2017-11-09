@@ -1,7 +1,8 @@
 <?php
 
-namespace Sven\ForgeCLI\Tests;
+namespace Sven\ForgeCLI\Tests\Commands;
 
+use Sven\ForgeCLI\Tests\TestCase;
 use Themsaid\Forge\Resources\Server;
 use Sven\ForgeCLI\Commands\Servers\All;
 use Sven\ForgeCLI\Commands\Servers\Make;
