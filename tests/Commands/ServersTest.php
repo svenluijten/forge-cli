@@ -17,17 +17,28 @@ class ServersTest extends TestCase
     /** @test */
     public function it_lists_all_servers()
     {
-        $this->forge->expects($this->once())->method('servers')->willReturn([
-            new Server([]),
-        ]);
+        $this->forge->expects($this->once())
+            ->method('servers')
+            ->willReturn([
+                new Server(['id' => '1234', 'ip_address' => '127.0.0.1']),
+            ]);
 
-        $this->command(All::class)->execute([]);
+        $tester = $this->command(All::class);
+
+        $tester->execute([]);
+
+        $output = $tester->getDisplay();
+
+        $this->assertContains('1234', $output);
+        $this->assertContains('127.0.0.1', $output);
     }
 
     /** @test */
     public function it_deletes_a_server()
     {
-        $this->forge->expects($this->once())->method('deleteServer')->with('1234');
+        $this->forge->expects($this->once())
+            ->method('deleteServer')
+            ->with('1234');
 
         $tester = $this->command(Delete::class, function (CommandTester $tester) {
             $tester->setInputs(['yes']);
@@ -41,18 +52,20 @@ class ServersTest extends TestCase
     /** @test */
     public function it_creates_a_server()
     {
-        $this->forge->expects($this->once())->method('createServer')->with([
-            'provider' => 'ocean2',
-            'credential_id' => '1234',
-            'region' => 'AMS2',
-            'ip_address' => '127.0.0.1',
-            'private_ip_address' => '192.168.1.1',
-            'php_version' => 'php71',
-            'database' => 'testing',
-            'maria' => false,
-            'load_balancer' => false,
-            'network' => [],
-        ]);
+        $this->forge->expects($this->once())
+            ->method('createServer')
+            ->with([
+                'provider' => 'ocean2',
+                'credential_id' => '1234',
+                'region' => 'AMS2',
+                'ip_address' => '127.0.0.1',
+                'private_ip_address' => '192.168.1.1',
+                'php_version' => 'php71',
+                'database' => 'testing',
+                'maria' => false,
+                'load_balancer' => false,
+                'network' => [],
+            ]);
 
         $this->command(Make::class)->execute([
             '--provider' => 'ocean2',
@@ -68,7 +81,9 @@ class ServersTest extends TestCase
     /** @test */
     public function it_reboots_the_server()
     {
-        $this->forge->expects($this->once())->method('rebootServer')->with('12345');
+        $this->forge->expects($this->once())
+            ->method('rebootServer')
+            ->with('12345');
 
         $tester = $this->command(Reboot::class, function (CommandTester $tester) {
             $tester->setInputs(['yes']);
@@ -80,30 +95,57 @@ class ServersTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_information_about_a_server()
+    public function it_does_not_reboot_the_server_if_no_is_answered()
     {
-        $this->forge->expects($this->once())->method('server')->with('12345')->willReturn(
-            new Server([])
-        );
+        $this->forge->expects($this->exactly(0))
+            ->method('rebootServer')
+            ->with('12345');
 
-        $this->command(Show::class)->execute([
+        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
+            $tester->setInputs(['no']);
+        });
+
+        $tester->execute([
             'server' => '12345',
         ]);
 
-        // @todo verify that all required info is ouput to the screen?
+        $this->assertContains('aborting', $tester->getDisplay());
+    }
+
+    /** @test */
+    public function it_shows_information_about_a_server()
+    {
+        $this->forge->expects($this->once())
+            ->method('server')
+            ->with('12345')
+            ->willReturn(
+                new Server(['id' => '12345', 'name' => 'Name of the server'])
+            );
+
+        $tester = $this->command(Show::class);
+
+        $tester->execute([
+            'server' => '12345',
+        ]);
+
+        $output = preg_replace('/\s{2,}/', ' ', $tester->getDisplay());
+
+        $this->assertContains('Name: Name of the server', $output);
     }
 
     /** @test */
     public function it_updates_a_server()
     {
-        $this->forge->expects($this->once())->method('updateServer')->with('12345', [
-            'name' => 'New Name',
-            'size' => '512MB',
-            'ip_address' => '127.0.0.1',
-            'private_ip_address' => '192.168.1.1',
-            'max_upload_size' => '2GB',
-            'network' => [],
-        ]);
+        $this->forge->expects($this->once())
+            ->method('updateServer')
+            ->with('12345', [
+                'name' => 'New Name',
+                'size' => '512MB',
+                'ip_address' => '127.0.0.1',
+                'private_ip_address' => '192.168.1.1',
+                'max_upload_size' => '2GB',
+                'network' => [],
+            ]);
 
         $this->command(Update::class)->execute([
             'server' => '12345',
