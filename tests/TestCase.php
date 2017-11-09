@@ -28,7 +28,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @return \Symfony\Component\Console\Tester\CommandTester
      */
-    public function command($abstract, callable $callback = null)
+    public function command($abstract, $callback = null)
     {
         $app = new Application('Forge CLI Testing');
 
