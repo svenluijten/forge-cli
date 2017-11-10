@@ -6,6 +6,7 @@ use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Uninstall extends BaseCommand
 {
@@ -26,8 +27,18 @@ class Uninstall extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $server = $input->getArgument('server');
+        $service = strtolower($input->getArgument('service'));
 
-        switch (strtolower($input->getArgument('service'))) {
+        $helper = $this->getHelper('question');
+        $question = new ConfirmationQuestion('Are you sure you want to uninstall '.$service.' from the server with id '.$server.'?', false);
+
+        if (! $helper->ask($input, $output, $question)) {
+            $output->writeln('<info>Ok, aborting.</info>');
+
+            return;
+        }
+
+        switch ($service) {
             case 'blackfire':
                 $this->forge->removeBlackfire($server);
                 break;
