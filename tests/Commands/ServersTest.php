@@ -10,7 +10,6 @@ use Sven\ForgeCLI\Commands\Servers\Show;
 use Sven\ForgeCLI\Commands\Servers\Delete;
 use Sven\ForgeCLI\Commands\Servers\Reboot;
 use Sven\ForgeCLI\Commands\Servers\Update;
-use Symfony\Component\Console\Tester\CommandTester;
 
 class ServersTest extends TestCase
 {
@@ -40,13 +39,11 @@ class ServersTest extends TestCase
             ->method('deleteServer')
             ->with('1234');
 
-        $tester = $this->command(Delete::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
-
-        $tester->execute([
-            'server' => '1234',
-        ]);
+        $this->command(Delete::class)
+            ->setInputs(['yes'])
+            ->execute([
+                'server' => '1234',
+            ]);
     }
 
     /** @test */
@@ -85,13 +82,11 @@ class ServersTest extends TestCase
             ->method('rebootServer')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
-
-        $tester->execute([
-            'server' => '12345',
-        ]);
+        $this->command(Reboot::class)
+            ->setInputs(['yes'])
+            ->execute([
+                'server' => '12345',
+            ]);
     }
 
     /** @test */
@@ -101,9 +96,7 @@ class ServersTest extends TestCase
             ->method('rebootServer')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',

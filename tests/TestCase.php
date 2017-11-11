@@ -2,10 +2,10 @@
 
 namespace Sven\ForgeCLI\Tests;
 
-use Themsaid\Forge\Forge;
-use Symfony\Component\Console\Application;
 use PHPUnit\Framework\TestCase as BaseTestCase;
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+use Themsaid\Forge\Forge;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -23,25 +23,16 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * @param string   $abstract
-     * @param callable $callback
+     * @param string $abstract
      *
      * @return \Symfony\Component\Console\Tester\CommandTester
      */
-    public function command($abstract, $callback = null)
+    public function command($abstract)
     {
-        $app = new Application('Forge CLI Testing');
-
         $command = new $abstract($this->forge);
 
-        $app->add($command);
+        (new Application('Forge CLI Testing'))->add($command);
 
-        $tester = new CommandTester($command);
-
-        if (is_callable($callback)) {
-            $callback($tester);
-        }
-
-        return $tester;
+        return new CommandTester($command);
     }
 }

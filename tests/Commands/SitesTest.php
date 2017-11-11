@@ -9,7 +9,6 @@ use Sven\ForgeCLI\Commands\Sites\Make;
 use Sven\ForgeCLI\Commands\Sites\Show;
 use Sven\ForgeCLI\Commands\Sites\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Symfony\Component\Console\Tester\CommandTester;
 use Themsaid\Forge\Resources\Site;
 
 class SitesTest extends TestCase
@@ -43,14 +42,12 @@ class SitesTest extends TestCase
             ->method('deleteSite')
             ->with('12345', '6789');
 
-        $tester = $this->command(Delete::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
-
-        $tester->execute([
-            'server' => 12345,
-            'site' => 6789,
-        ]);
+        $this->command(Delete::class)
+            ->setInputs(['yes'])
+            ->execute([
+                'server' => 12345,
+                'site' => 6789,
+            ]);
     }
 
     /** @test */
@@ -60,9 +57,7 @@ class SitesTest extends TestCase
             ->method('deleteSite')
             ->with('12345', '6789');
 
-        $tester = $this->command(Delete::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Delete::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => 12345,

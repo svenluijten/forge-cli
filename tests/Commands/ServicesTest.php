@@ -7,7 +7,6 @@ use Sven\ForgeCLI\Commands\Services\Reboot;
 use Sven\ForgeCLI\Commands\Services\Stop;
 use Sven\ForgeCLI\Commands\Services\Uninstall;
 use Sven\ForgeCLI\Tests\TestCase;
-use Symfony\Component\Console\Tester\CommandTester;
 
 class ServicesTest extends TestCase
 {
@@ -36,9 +35,7 @@ class ServicesTest extends TestCase
             ->method('removeBlackfire')
             ->with('12345');
 
-        $tester = $this->command(Uninstall::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Uninstall::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -53,9 +50,7 @@ class ServicesTest extends TestCase
             ->method('removeBlackfire')
             ->with('12345');
 
-        $tester = $this->command(Uninstall::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Uninstall::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -88,9 +83,7 @@ class ServicesTest extends TestCase
             ->method('removePapertrail')
             ->with('12345');
 
-        $tester = $this->command(Uninstall::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Uninstall::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -105,9 +98,7 @@ class ServicesTest extends TestCase
             ->method('removePapertrail')
             ->with('12345');
 
-        $tester = $this->command(Uninstall::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Uninstall::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -124,9 +115,7 @@ class ServicesTest extends TestCase
             ->method('rebootMysql')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -141,9 +130,7 @@ class ServicesTest extends TestCase
             ->method('rebootMysql')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -160,9 +147,7 @@ class ServicesTest extends TestCase
             ->method('stopMysql')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -177,9 +162,7 @@ class ServicesTest extends TestCase
             ->method('stopMysql')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -196,9 +179,7 @@ class ServicesTest extends TestCase
             ->method('rebootPostgres')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -213,9 +194,7 @@ class ServicesTest extends TestCase
             ->method('rebootPostgres')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -232,9 +211,7 @@ class ServicesTest extends TestCase
             ->method('stopPostgres')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -249,9 +226,7 @@ class ServicesTest extends TestCase
             ->method('stopPostgres')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -268,9 +243,7 @@ class ServicesTest extends TestCase
             ->method('rebootNginx')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -285,9 +258,7 @@ class ServicesTest extends TestCase
             ->method('rebootNginx')
             ->with('12345');
 
-        $tester = $this->command(Reboot::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Reboot::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
@@ -304,9 +275,7 @@ class ServicesTest extends TestCase
             ->method('stopNginx')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['yes']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['yes']);
 
         $tester->execute([
             'server' => '12345',
@@ -321,9 +290,7 @@ class ServicesTest extends TestCase
             ->method('stopNginx')
             ->with('12345');
 
-        $tester = $this->command(Stop::class, function (CommandTester $tester) {
-            $tester->setInputs(['no']);
-        });
+        $tester = $this->command(Stop::class)->setInputs(['no']);
 
         $tester->execute([
             'server' => '12345',
