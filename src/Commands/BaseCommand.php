@@ -87,7 +87,7 @@ abstract class BaseCommand extends Command
             return $filename;
         }
 
-        if ($filename && ftell(STDIN) === 0) {
+        if ($filename && ftell(STDIN)) {
             return file_get_contents($filename);
         }
 

@@ -10,6 +10,15 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallGit extends BaseCommand
 {
+
+    /**
+     * @var array
+     */
+    protected $optionMap = [
+        'provider' => 'provider',
+        'repository' => 'repository',
+    ];
+
     /**
      * {@inheritdoc}
      */
