@@ -11,6 +11,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Update extends BaseCommand
 {
     /**
+     * @var array
+     */
+    protected $optionMap = [
+        'file' => 'file',
+    ];
+
+    /**
      * {@inheritdoc}
      */
     public function configure()
