@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "symfony/console": "~3.0",
-        "symfony/process": "~3.0",
+        "symfony/console": "^4.0 || ^3.0",
+        "symfony/process": "^4.0 || ^3.0",
         "themsaid/forge-sdk": "^1.2"
     },
     "require-dev": {
