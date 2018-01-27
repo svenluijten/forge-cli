@@ -2,12 +2,15 @@
 
 namespace Sven\ForgeCLI\Commands;
 
-use Sven\ForgeCLI\Config;
-use Themsaid\Forge\Forge;
-use Symfony\Component\Console\Helper\Table;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\File;
+use League\Flysystem\Filesystem;
+use Sven\FileConfig\Json;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Forge;
 
 abstract class BaseCommand extends Command
 {
@@ -22,19 +25,29 @@ abstract class BaseCommand extends Command
     protected $forge;
 
     /**
+     * @var \Sven\FileConfig\Json
+     */
+    protected $config;
+
+    /**
      * @var array
      */
     protected $optionMap = [];
 
     /**
      * @param \Themsaid\Forge\Forge|null $forge
+     *
+     * @throws \Symfony\Component\Console\Exception\LogicException
+     * @throws \LogicException
      */
     public function __construct(Forge $forge = null)
     {
         parent::__construct();
 
+        $this->config = $this->getFileConfig();
+
         if ($this->needsForge) {
-            $this->forge = $forge ?: new Forge((new Config)->get('key'));
+            $this->forge = $forge ?: new Forge($this->config->get('key'));
         }
     }
 
@@ -111,5 +124,20 @@ abstract class BaseCommand extends Command
                 sprintf('The option "%s" is required.', $key)
             );
         }
+    }
+
+    /**
+     * @return \Sven\FileConfig\Json
+     * @throws \LogicException
+     */
+    protected function getFileConfig()
+    {
+        $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
+
+        $adapter = new Local($home);
+        $filesystem = new Filesystem($adapter);
+        $file = new File($filesystem, 'forge.json');
+
+        return new Json($file);
     }
 }
