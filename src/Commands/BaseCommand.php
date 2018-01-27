@@ -137,8 +137,13 @@ abstract class BaseCommand extends Command
 
         $adapter = new Local($home);
         $filesystem = new Filesystem($adapter);
-        $file = new File($filesystem, 'forge.json');
 
-        return new Json($file);
+        if (!$filesystem->has('forge.json')) {
+            $filesystem->write('forge.json', '');
+        }
+
+        return new Json(
+            new File($filesystem, 'forge.json')
+        );
     }
 }

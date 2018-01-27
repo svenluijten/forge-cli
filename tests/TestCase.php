@@ -20,6 +20,22 @@ abstract class TestCase extends BaseTestCase
     public function setUp()
     {
         $this->forge = $this->createMock(Forge::class);
+
+        /** @see \Sven\ForgeCLI\Commands\BaseCommand::getFileConfig */
+        $_SERVER['USERPROFILE'] = __DIR__.'/fixtures';
+        $_SERVER['HOME'] = __DIR__.'/fixtures';
+    }
+
+    /**
+     * Tear down the testing suite.
+     */
+    public function tearDown()
+    {
+        $configFile = __DIR__.'/fixtures/forge.json';
+
+        if (file_exists($configFile)) {
+            unlink($configFile);
+        }
     }
 
     /**
