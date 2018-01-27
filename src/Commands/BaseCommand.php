@@ -127,8 +127,9 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * @return \Sven\FileConfig\Json
      * @throws \LogicException
+     *
+     * @return \Sven\FileConfig\Json
      */
     protected function getFileConfig()
     {
