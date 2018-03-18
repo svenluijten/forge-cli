@@ -3,9 +3,9 @@
 namespace Sven\ForgeCLI\Commands;
 
 use League\Flysystem\Adapter\Local;
-use League\Flysystem\File;
 use League\Flysystem\Filesystem;
-use Sven\FileConfig\Json;
+use Sven\FileConfig\File;
+use Sven\FileConfig\Stores\Json;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -25,7 +25,7 @@ abstract class BaseCommand extends Command
     protected $forge;
 
     /**
-     * @var \Sven\FileConfig\Json
+     * @var \Sven\FileConfig\Stores\Json
      */
     protected $config;
 
@@ -129,7 +129,7 @@ abstract class BaseCommand extends Command
     /**
      * @throws \LogicException
      *
-     * @return \Sven\FileConfig\Json
+     * @return \Sven\FileConfig\Stores\Json
      */
     protected function getFileConfig()
     {
@@ -143,7 +143,7 @@ abstract class BaseCommand extends Command
         }
 
         return new Json(
-            new File($filesystem, 'forge.json')
+            new File($home.DIRECTORY_SEPARATOR.'forge.json')
         );
     }
 }
