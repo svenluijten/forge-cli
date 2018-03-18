@@ -16,9 +16,9 @@ class ServersTest extends TestCase
     /** @test */
     public function it_lists_all_servers()
     {
-        $this->forge->expects($this->once())
-            ->method('servers')
-            ->willReturn([
+        $this->forge->shouldReceive()
+            ->servers()
+            ->andReturn([
                 new Server(['id' => '1234', 'ip_address' => '127.0.0.1']),
             ]);
 
@@ -35,9 +35,8 @@ class ServersTest extends TestCase
     /** @test */
     public function it_deletes_a_server()
     {
-        $this->forge->expects($this->once())
-            ->method('deleteServer')
-            ->with('1234');
+        $this->forge->shouldReceive()
+            ->deleteServer('1234');
 
         $this->command(Delete::class)
             ->setInputs(['yes'])
@@ -49,9 +48,8 @@ class ServersTest extends TestCase
     /** @test */
     public function it_creates_a_server()
     {
-        $this->forge->expects($this->once())
-            ->method('createServer')
-            ->with([
+        $this->forge->shouldReceive()
+            ->createServer([
                 'provider' => 'ocean2',
                 'credential_id' => '1234',
                 'region' => 'AMS2',
@@ -78,9 +76,8 @@ class ServersTest extends TestCase
     /** @test */
     public function it_reboots_the_server()
     {
-        $this->forge->expects($this->once())
-            ->method('rebootServer')
-            ->with('12345');
+        $this->forge->shouldReceive()
+            ->rebootServer('12345');
 
         $this->command(Reboot::class)
             ->setInputs(['yes'])
@@ -92,9 +89,8 @@ class ServersTest extends TestCase
     /** @test */
     public function it_does_not_reboot_the_server_if_no_is_answered()
     {
-        $this->forge->expects($this->exactly(0))
-            ->method('rebootServer')
-            ->with('12345');
+        $this->forge->shouldNotReceive()
+            ->rebootServer();
 
         $tester = $this->command(Reboot::class)->setInputs(['no']);
 
@@ -108,10 +104,9 @@ class ServersTest extends TestCase
     /** @test */
     public function it_shows_information_about_a_server()
     {
-        $this->forge->expects($this->once())
-            ->method('server')
-            ->with('12345')
-            ->willReturn(
+        $this->forge->shouldReceive()
+            ->server('12345')
+            ->andReturn(
                 new Server(['id' => '12345', 'name' => 'Name of the server'])
             );
 
@@ -129,9 +124,8 @@ class ServersTest extends TestCase
     /** @test */
     public function it_updates_a_server()
     {
-        $this->forge->expects($this->once())
-            ->method('updateServer')
-            ->with('12345', [
+        $this->forge->shouldReceive()
+            ->updateServer('12345', [
                 'name' => 'New Name',
                 'size' => '512MB',
                 'ip_address' => '127.0.0.1',

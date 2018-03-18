@@ -6,11 +6,12 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Themsaid\Forge\Forge;
+use Mockery as m;
 
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var \Mockery\MockInterface
      */
     protected $forge;
 
@@ -19,7 +20,7 @@ abstract class TestCase extends BaseTestCase
      */
     public function setUp()
     {
-        $this->forge = $this->createMock(Forge::class);
+        $this->forge = m::mock(Forge::class);
 
         /** @see \Sven\ForgeCLI\Commands\BaseCommand::getFileConfig */
         $_SERVER['USERPROFILE'] = __DIR__.'/fixtures';
