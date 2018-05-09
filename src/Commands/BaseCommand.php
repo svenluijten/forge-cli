@@ -138,7 +138,7 @@ abstract class BaseCommand extends Command
         $adapter = new Local($home);
         $filesystem = new Filesystem($adapter);
 
-        if (!$filesystem->has('forge.json')) {
+        if (! $filesystem->has('forge.json')) {
             $filesystem->write('forge.json', '');
         }
 
