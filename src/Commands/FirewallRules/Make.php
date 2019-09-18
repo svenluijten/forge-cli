@@ -27,6 +27,7 @@ class Make extends BaseCommand
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the firewall rule on.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the firewall rule.')
             ->addOption('port', null, InputOption::VALUE_REQUIRED, 'The port to create the firewall rule for.')
+            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
             ->setDescription('Create a new firewall rule.');
     }
 
@@ -36,7 +37,7 @@ class Make extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createFirewallRule(
-            $input->getArgument('server'), $this->fillData($input->getOptions()), false
+            $input->getArgument('server'), $this->fillData($input->getOptions()), ($input->getOption('wait') !== false)
         );
     }
 }
