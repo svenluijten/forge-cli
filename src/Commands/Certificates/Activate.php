@@ -5,6 +5,7 @@ namespace Sven\ForgeCLI\Commands\Certificates;
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Activate extends BaseCommand
@@ -18,6 +19,7 @@ class Activate extends BaseCommand
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the certificate should be activated on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the certificate to activate.')
+            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
             ->setDescription('Activate one of the SSL certificates on the given site.');
     }
 
@@ -27,7 +29,7 @@ class Activate extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->activateCertificate(
-            $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), false
+            $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), ($input->getOption('wait') !== false)
         );
     }
 }
