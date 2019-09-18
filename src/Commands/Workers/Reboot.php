@@ -19,6 +19,7 @@ class Reboot extends BaseCommand
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the worker to reboot is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the worker to reboot is on.')
             ->addArgument('worker', InputArgument::REQUIRED, 'The id of the worker to reboot.')
+            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
             ->setDescription('Reboot one of your workers.');
     }
 
@@ -39,7 +40,7 @@ class Reboot extends BaseCommand
         }
 
         $this->forge->restartWorker(
-            $input->getArgument('server'), $input->getArgument('site'), $worker, false
+            $input->getArgument('server'), $input->getArgument('site'), $worker, ($input->getOption('wait') !== false)
         );
     }
 }
