@@ -34,6 +34,7 @@ class Make extends BaseCommand
             ->addOption('sleep', null, InputOption::VALUE_REQUIRED, 'The time in seconds to sleep if the queue is empty.', 60)
             ->addOption('tries', null, InputOption::VALUE_REQUIRED, 'How often the worker should try processing a job.', null)
             ->addOption('daemon', null, InputOption::VALUE_NONE, 'Whether the worker should be installed as a daemon.')
+            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
             ->setDescription('Create a new worker.');
     }
 
@@ -43,7 +44,7 @@ class Make extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createWorker(
-            $input->getArgument('server'), $input->getArgument('site'), $this->fillData($input->getOptions()), false
+            $input->getArgument('server'), $input->getArgument('site'), $this->fillData($input->getOptions()), ($input->getOption('wait') !== false)
         );
     }
 }
