@@ -16,6 +16,7 @@ class InstallGit extends BaseCommand
     protected $optionMap = [
         'provider' => 'provider',
         'repository' => 'repository',
+        'branch' => 'branch',
     ];
 
     /**
@@ -28,6 +29,7 @@ class InstallGit extends BaseCommand
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to install the git project on.')
             ->addOption('provider', null, InputOption::VALUE_REQUIRED, 'The provider to use. Must be either "github" or "custom".', 'github')
             ->addOption('repository', null, InputOption::VALUE_REQUIRED, 'The repository to install. Must be in the format "username/repository".')
+            ->addOption('branch', null, InputOption::VALUE_OPTIONAL, 'The branch to install. Must be in the format "master".', 'master')
             ->setDescription('Install a new git project on a site.');
     }
 
