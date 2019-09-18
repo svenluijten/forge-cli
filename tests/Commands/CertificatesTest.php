@@ -27,7 +27,6 @@ class CertificatesTest extends TestCase
         ]);
     }
 
-
     /** @test */
     public function it_can_wait_for_activation_of_a_certificate()
     {
@@ -41,9 +40,7 @@ class CertificatesTest extends TestCase
             'server' => '12345',
             'site' => '67890',
             'certificate' => '13579',
-            '--wait' => ''
+            '--wait' => '',
         ]);
     }
-
-
 }

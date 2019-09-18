@@ -29,7 +29,7 @@ class Install extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->installCertificate(
-            $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), [] , ($input->getOption('wait') !== false)
+            $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), [], ($input->getOption('wait') !== false)
         );
     }
 }
