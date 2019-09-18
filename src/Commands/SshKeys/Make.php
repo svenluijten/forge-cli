@@ -26,6 +26,7 @@ class Make extends BaseCommand
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new SSH key on.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of your new SSH key.')
             ->addOption('file', null, InputOption::VALUE_REQUIRED, 'The path to the SSH key to install on the server.')
+            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
             ->setDescription('Install a new SSH key on one of your servers.');
     }
 
@@ -39,7 +40,7 @@ class Make extends BaseCommand
         $data['key'] = $this->getFileContent($input, 'file');
 
         $this->forge->createSSHKey(
-            $input->getArgument('server'), $data, false
+            $input->getArgument('server'), $data, ($input->getOption('wait') !== false)
         );
     }
 }
