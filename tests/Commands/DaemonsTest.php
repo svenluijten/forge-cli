@@ -69,7 +69,7 @@ class DaemonsTest extends TestCase
             ->createDaemon('12345', [
                 'command' => 'echo \'hello world\' >> /dev/null',
                 'user' => 'forge',
-            ]);
+            ], false);
 
         $this->command(Make::class)->execute([
             'server' => '12345',
@@ -82,7 +82,7 @@ class DaemonsTest extends TestCase
     public function it_reboots_a_running_daemon()
     {
         $this->forge->shouldReceive()
-            ->restartDaemon('12345', '67890');
+            ->restartDaemon('12345', '67890', false);
 
         $this->command(Reboot::class)
             ->setInputs(['yes'])

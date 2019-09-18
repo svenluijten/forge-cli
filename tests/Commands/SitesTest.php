@@ -68,7 +68,7 @@ class SitesTest extends TestCase
     public function it_deploys_a_site()
     {
         $this->forge->shouldReceive()
-            ->deploySite('12345', '6789');
+            ->deploySite('12345', '6789', false);
 
         $this->command(Deploy::class)->execute([
             'server' => '12345',
