@@ -18,7 +18,7 @@ class Deploy extends BaseCommand
         $this->setName('deploy:site')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site to deploy is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to deploy.')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Deploy the given website.');
     }
 
@@ -28,7 +28,7 @@ class Deploy extends BaseCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->deploySite(
-            $input->getArgument('server'), $input->getArgument('site'), ($input->getOption('wait') !== false)
+            $input->getArgument('server'), $input->getArgument('site'), $input->getOption('wait')
         );
     }
 }
