@@ -3,11 +3,12 @@
 namespace Sven\ForgeCLI\Commands\Deployment;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class GetLog extends BaseCommand
+class GetLog extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}

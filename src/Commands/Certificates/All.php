@@ -3,12 +3,13 @@
 namespace Sven\ForgeCLI\Commands\Certificates;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Themsaid\Forge\Resources\Certificate;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class All extends BaseCommand
+class All extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}

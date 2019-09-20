@@ -5,6 +5,7 @@ namespace Sven\ForgeCLI\Commands;
 use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,11 +14,6 @@ use Themsaid\Forge\Forge;
 
 abstract class BaseCommand extends Command
 {
-    /**
-     * @var bool
-     */
-    protected $needsForge = true;
-
     /**
      * @var \Themsaid\Forge\Forge
      */
@@ -45,7 +41,7 @@ abstract class BaseCommand extends Command
 
         $this->config = $this->getFileConfig();
 
-        if ($this->needsForge) {
+        if ($this instanceof NeedsForge) {
             $this->forge = $forge ?: new Forge($this->config->get('key'));
         }
     }

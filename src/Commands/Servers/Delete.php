@@ -3,12 +3,13 @@
 namespace Sven\ForgeCLI\Commands\Servers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
-class Delete extends BaseCommand
+class Delete extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}

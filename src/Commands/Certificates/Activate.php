@@ -3,11 +3,12 @@
 namespace Sven\ForgeCLI\Commands\Certificates;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Activate extends BaseCommand
+class Activate extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}

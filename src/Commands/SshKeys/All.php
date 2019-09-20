@@ -2,13 +2,14 @@
 
 namespace Sven\ForgeCLI\Commands\SshKeys;
 
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Themsaid\Forge\Resources\SSHKey;
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class All extends BaseCommand
+class All extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
