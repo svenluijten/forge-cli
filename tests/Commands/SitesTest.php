@@ -30,8 +30,8 @@ class SitesTest extends TestCase
 
         $output = $tester->getDisplay();
 
-        $this->assertContains('A site name', $output);
-        $this->assertContains('12345', $output);
+        $this->assertStringContainsString('A site name', $output);
+        $this->assertStringContainsString('12345', $output);
     }
 
     /** @test */
@@ -61,7 +61,7 @@ class SitesTest extends TestCase
             'site' => '6789',
         ]);
 
-        $this->assertContains('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('aborting', $tester->getDisplay());
     }
 
     /** @test */

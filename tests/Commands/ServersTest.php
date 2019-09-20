@@ -28,8 +28,8 @@ class ServersTest extends TestCase
 
         $output = $tester->getDisplay();
 
-        $this->assertContains('1234', $output);
-        $this->assertContains('127.0.0.1', $output);
+        $this->assertStringContainsString('1234', $output);
+        $this->assertStringContainsString('127.0.0.1', $output);
     }
 
     /** @test */
@@ -98,7 +98,7 @@ class ServersTest extends TestCase
             'server' => '12345',
         ]);
 
-        $this->assertContains('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('aborting', $tester->getDisplay());
     }
 
     /** @test */
@@ -118,7 +118,7 @@ class ServersTest extends TestCase
 
         $output = preg_replace('/\s{2,}/', ' ', $tester->getDisplay());
 
-        $this->assertContains('Name: Name of the server', $output);
+        $this->assertStringContainsString('Name: Name of the server', $output);
     }
 
     /** @test */

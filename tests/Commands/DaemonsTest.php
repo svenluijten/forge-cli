@@ -30,8 +30,8 @@ class DaemonsTest extends TestCase
 
         $output = $tester->getDisplay();
 
-        $this->assertContains('67890', $output);
-        $this->assertContains('echo \'hello world\' >> /dev/null', $output);
+        $this->assertStringContainsString('67890', $output);
+        $this->assertStringContainsString('echo \'hello world\' >> /dev/null', $output);
     }
 
     /** @test */
@@ -122,7 +122,7 @@ class DaemonsTest extends TestCase
             'daemon' => '67890',
         ]);
 
-        $this->assertContains('\'hello world\'', $tester->getDisplay());
-        $this->assertContains('active', $tester->getDisplay());
+        $this->assertStringContainsString('\'hello world\'', $tester->getDisplay());
+        $this->assertStringContainsString('active', $tester->getDisplay());
     }
 }

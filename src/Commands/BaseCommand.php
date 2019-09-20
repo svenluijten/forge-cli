@@ -130,7 +130,7 @@ abstract class BaseCommand extends Command
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
         if (! file_exists($configFile)) {
-            file_put_contents($configFile, '');
+            file_put_contents($configFile, '{}');
         }
 
         return new Store(new File($configFile), new Json());
