@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) Sven Luijten <svenluijten1995@gmail.com>
+Copyright (c) Sven Luijten <sven@luijten.co>
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal

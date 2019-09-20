@@ -5,7 +5,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-circleci]][link-circleci]
+[![Build Status][ico-build]][link-build]
 [![StyleCI][ico-styleci]][link-styleci]
 
 Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites via the command line with this package. Create and list
@@ -772,10 +772,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/forge-cli.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/forge-cli.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/forge-cli.svg?style=flat-square
+[ico-build]: https://img.shields.io/travis/svenluijten/forge-cli?style=flat-square
 [ico-styleci]: https://styleci.io/repos/85804300/shield
 
 [link-packagist]: https://packagist.org/packages/sven/forge-cli
 [link-downloads]: https://packagist.org/packages/sven/forge-cli
-[link-circleci]: https://circleci.com/gh/svenluijten/forge-cli
+[link-build]: https://travis-ci.org/svenluijten/forge-cli
 [link-styleci]: https://styleci.io/repos/85804300

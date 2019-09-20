@@ -3,12 +3,13 @@
 namespace Sven\ForgeCLI\Commands\Services;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 
-class Stop extends BaseCommand
+class Stop extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}

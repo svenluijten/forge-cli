@@ -11,14 +11,11 @@ use Mockery as m;
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @var \Mockery\MockInterface
+     * @var \Mockery\MockInterface&\Themsaid\Forge\Forge
      */
     protected $forge;
 
-    /**
-     * Set up the testing suite.
-     */
-    public function setUp()
+    public function setUp(): void
     {
         $this->forge = m::mock(Forge::class);
 
@@ -27,10 +24,7 @@ abstract class TestCase extends BaseTestCase
         $_SERVER['HOME'] = __DIR__.'/fixtures';
     }
 
-    /**
-     * Tear down the testing suite.
-     */
-    public function tearDown()
+    public function tearDown(): void
     {
         $configFile = __DIR__.'/fixtures/forge.json';
 
@@ -39,12 +33,7 @@ abstract class TestCase extends BaseTestCase
         }
     }
 
-    /**
-     * @param string $abstract
-     *
-     * @return \Symfony\Component\Console\Tester\CommandTester
-     */
-    public function command($abstract)
+    public function command(string $abstract): CommandTester
     {
         $command = new $abstract($this->forge);
 

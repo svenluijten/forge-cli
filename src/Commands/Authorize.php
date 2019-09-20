@@ -2,17 +2,13 @@
 
 namespace Sven\ForgeCLI\Commands;
 
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Authorize extends BaseCommand
+class Authorize extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $needsForge = false;
-
     /**
      * {@inheritdoc}
      */
@@ -32,6 +28,7 @@ class Authorize extends BaseCommand
         $question->setHidden(true);
 
         $this->config->set('key', $helper->ask($input, $output, $question));
+        $this->config->persist();
 
         $output->write('<info>Your API key has successfully been set.</info>');
     }

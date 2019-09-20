@@ -2,10 +2,10 @@
 
 namespace Sven\ForgeCLI\Commands;
 
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
+use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
-use Sven\FileConfig\Stores\Json;
+use Sven\FileConfig\Store;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,17 +15,12 @@ use Themsaid\Forge\Forge;
 abstract class BaseCommand extends Command
 {
     /**
-     * @var bool
-     */
-    protected $needsForge = true;
-
-    /**
      * @var \Themsaid\Forge\Forge
      */
     protected $forge;
 
     /**
-     * @var \Sven\FileConfig\Stores\Json
+     * @var \Sven\FileConfig\Store
      */
     protected $config;
 
@@ -46,7 +41,7 @@ abstract class BaseCommand extends Command
 
         $this->config = $this->getFileConfig();
 
-        if ($this->needsForge) {
+        if ($this instanceof NeedsForge) {
             $this->forge = $forge ?: new Forge($this->config->get('key'));
         }
     }
@@ -104,7 +99,7 @@ abstract class BaseCommand extends Command
             return file_get_contents($filename);
         }
 
-        throw new \InvalidArgumentException('This command requires either the "--'.$option.'" option to be set or an input from STDIN.');
+        throw new \InvalidArgumentException('This command requires either the "--'.$option.'" option to be set, or an input from STDIN.');
     }
 
     /**
@@ -127,23 +122,17 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * @throws \LogicException
-     *
-     * @return \Sven\FileConfig\Stores\Json
+     * @return \Sven\FileConfig\Store
      */
     protected function getFileConfig()
     {
         $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
+        $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
-        $adapter = new Local($home);
-        $filesystem = new Filesystem($adapter);
-
-        if (! $filesystem->has('forge.json')) {
-            $filesystem->write('forge.json', '');
+        if (! file_exists($configFile)) {
+            file_put_contents($configFile, '{}');
         }
 
-        return new Json(
-            new File($home.DIRECTORY_SEPARATOR.'forge.json')
-        );
+        return new Store(new File($configFile), new Json());
     }
 }
