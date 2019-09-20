@@ -32,6 +32,7 @@ class Authorize extends BaseCommand
         $question->setHidden(true);
 
         $this->config->set('key', $helper->ask($input, $output, $question));
+        $this->config->persist();
 
         $output->write('<info>Your API key has successfully been set.</info>');
     }
