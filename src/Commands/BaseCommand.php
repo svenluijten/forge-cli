@@ -99,7 +99,7 @@ abstract class BaseCommand extends Command
             return file_get_contents($filename);
         }
 
-        throw new \InvalidArgumentException('This command requires either the "--'.$option.'" option to be set or an input from STDIN.');
+        throw new \InvalidArgumentException('This command requires either the "--'.$option.'" option to be set, or an input from STDIN.');
     }
 
     /**
