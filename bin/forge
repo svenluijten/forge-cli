@@ -4,7 +4,7 @@
 use Sven\ForgeCLI\Commands\{
     Authorize, Certificates, Credentials, Daemons, Databases, Deployment,
     DeployScript, Env, FirewallRules, Jobs, NginxConfig, Projects, QuickDeploy,
-    Recipes, Servers, Services, SshKeys, Sites, Workers
+    Recipes, Servers, Services, SshKeys, Sites, Workers, MakeAlias
 };
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
@@ -16,6 +16,7 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
 $app = new Symfony\Component\Console\Application('Forge CLI', '0.2.0');
 
 $app->addCommands([
+    new MakeAlias,
     new Authorize,
     new Credentials,
     new Servers\Make,
