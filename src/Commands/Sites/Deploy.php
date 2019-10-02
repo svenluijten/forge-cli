@@ -66,7 +66,9 @@ class Deploy extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->deploySite(
-            $input->getArgument('server'), $input->getArgument('site'), $input->getOption('wait')
+            $input->getArgument('server'),
+            $input->getArgument('site'),
+            $input->getOption('wait')
         );
     }
 }

@@ -38,7 +38,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('day', null, InputOption::VALUE_REQUIRED, 'The day to run the scheduled job on. Only required when using the "custom" frequency.', '*')
             ->addOption('month', null, InputOption::VALUE_REQUIRED, 'The month to run the scheduled job on. Only required when using the "custom" frequency.', '*')
             ->addOption('weekday', null, InputOption::VALUE_REQUIRED, 'The weekday to run the scheduled job on. Only required when using the "custom" frequency.', '*')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Schedule a new job on one of your servers.');
     }
 
@@ -54,7 +54,7 @@ class Make extends BaseCommand implements NeedsForge
         $this->forge->createJob(
             $input->getArgument('server'),
             $this->fillData($input->getOptions()),
-            ($input->getOption('wait') !== false)
+            $input->getOption('wait')
         );
     }
 }

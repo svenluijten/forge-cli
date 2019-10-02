@@ -30,7 +30,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site.')
             ->addOption('type', null, InputOption::VALUE_REQUIRED, 'The type of application to install on the site. Can be either "php", "html", "Symfony", or "symfony_dev".', 'php')
             ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The base directory of the site.', '/public')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Create a new site on one of your servers.');
     }
 
@@ -42,7 +42,7 @@ class Make extends BaseCommand implements NeedsForge
         $this->forge->createSite(
             $input->getArgument('server'),
             $this->fillData($input->getOptions()),
-            ($input->getOption('wait') !== false)
+            $input->getOption('wait')
         );
     }
 }

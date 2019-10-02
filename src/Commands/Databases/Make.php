@@ -30,7 +30,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The username of an (optional) database user to create.', null)
             ->addOption('password', null, InputOption::VALUE_REQUIRED, 'The password of the database user. Required with "user".', null)
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the database.', null)
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Create a new database.');
     }
 
@@ -40,7 +40,9 @@ class Make extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createMysqlDatabase(
-            $input->getArgument('server'), $this->fillData($input->getOptions()), ($input->getOption('wait') !== false)
+            $input->getArgument('server'),
+            $this->fillData($input->getOptions()),
+            $input->getOption('wait')
         );
     }
 }

@@ -28,7 +28,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the firewall rule on.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the firewall rule.')
             ->addOption('port', null, InputOption::VALUE_REQUIRED, 'The port to create the firewall rule for.')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Create a new firewall rule.');
     }
 
@@ -38,7 +38,9 @@ class Make extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createFirewallRule(
-            $input->getArgument('server'), $this->fillData($input->getOptions()), ($input->getOption('wait') !== false)
+            $input->getArgument('server'),
+            $this->fillData($input->getOptions()),
+            $input->getOption('wait')
         );
     }
 }

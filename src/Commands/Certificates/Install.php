@@ -20,7 +20,7 @@ class Install extends BaseCommand implements NeedsForge
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the SSL certificate to install is on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the SSL certificate to install.')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Install the given SSL certificate on a site.');
     }
 
@@ -30,7 +30,11 @@ class Install extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->installCertificate(
-            $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), [], ($input->getOption('wait') !== false)
+            $input->getArgument('server'),
+            $input->getArgument('site'),
+            $input->getArgument('certificate'),
+            [],
+            $input->getOption('wait')
         );
     }
 }

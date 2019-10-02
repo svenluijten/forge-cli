@@ -28,7 +28,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the daemon on.')
             ->addOption('command', null, InputOption::VALUE_REQUIRED, 'The command to run.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The user to run the command as.', 'forge')
-            ->addOption('wait', null, InputOption::VALUE_OPTIONAL, 'Boolean if you want to wait for execution', false)
+            ->addOption('wait', null, InputOption::VALUE_NONE, 'If we should wait for execution')
             ->setDescription('Create and start a new daemon.');
     }
 
@@ -38,7 +38,9 @@ class Make extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $this->forge->createDaemon(
-            $input->getArgument('server'), $this->fillData($input->getOptions()), ($input->getOption('wait') !== false)
+            $input->getArgument('server'),
+            $this->fillData($input->getOptions()),
+            $input->getOption('wait')
         );
     }
 }
