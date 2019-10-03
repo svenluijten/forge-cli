@@ -3,14 +3,17 @@
 namespace Sven\ForgeCLI\Commands\Certificates;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Commands\ConfirmableTrait;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
+    use ConfirmableTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -20,6 +23,7 @@ class Delete extends BaseCommand implements NeedsForge
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the SSL certificate to delete is on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the SSL certificate to delete.')
+            ->addOption('force', null, InputOption::VALUE_NONE, 'If we want to execute without interaction')
             ->setDescription('Delete an SSL certificate.');
     }
 
@@ -30,12 +34,7 @@ class Delete extends BaseCommand implements NeedsForge
     {
         $certificate = $input->getArgument('certificate');
 
-        $helper = $this->getHelper('question');
-        $question = new ConfirmationQuestion('Are you sure you want to delete the SSL certificate with id "'.$certificate.'"?', false);
-
-        if (! $helper->ask($input, $output, $question)) {
-            $output->writeln('<info>Ok, aborting. Your SSL certificate is safe.</info>');
-
+        if (! $this->confirmToProceed("You are going to delete the SSL certificate with id {$certificate}.")) {
             return;
         }
 
