@@ -7,7 +7,6 @@ use Sven\ForgeCLI\Tests\TestCase;
 
 class SshKeysTest extends TestCase
 {
-    
     /** @test */
     public function it_deletes_a_SshKey()
     {

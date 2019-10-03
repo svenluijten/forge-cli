@@ -13,6 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Delete extends BaseCommand implements NeedsForge
 {
     use ConfirmableTrait;
+
     /**
      * {@inheritdoc}
      */
