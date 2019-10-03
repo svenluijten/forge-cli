@@ -40,7 +40,7 @@ class CertificatesTest extends TestCase
             'server' => '12345',
             'site' => '67890',
             'certificate' => '13579',
-            '--wait' => '',
+            '--wait' => true,
         ]);
     }
 }
