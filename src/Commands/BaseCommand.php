@@ -48,6 +48,10 @@ abstract class BaseCommand extends Command
 
     public function initialize(InputInterface $input, OutputInterface $output)
     {
+        if (!$input->hasArgument('server')) {
+            return;
+        }
+
         // If the 'site' argument is present, the user probably did not
         // use an alias, so we will return early. If it is missing,
         // resolve the alias and set the arguments accordingly.
