@@ -75,7 +75,7 @@ class SitesTest extends TestCase
             'site' => '6789',
         ]);
     }
-    
+
     /** @test */
     public function it_deploys_a_site_and_waits_for_execution()
     {
