@@ -46,6 +46,45 @@ abstract class BaseCommand extends Command
         }
     }
 
+    public function initialize(InputInterface $input, OutputInterface $output)
+    {
+        // If the 'site' argument is present, the user probably did not
+        // use an alias, so we will return early. If it is missing,
+        // resolve the alias and set the arguments accordingly.
+        if ($input->hasArgument('site') && $input->getArgument('site') !== null) {
+            return;
+        }
+
+        $alias = $this->config->get(
+            'aliases.'.$input->getArgument('server')
+        );
+
+        // No alias was found by that name, so we will
+        // continue executing the command here. This
+        // will cause a validation error later on.
+        if ($alias === null) {
+            $output->writeln("<error>No alias found for '{$input->getArgument('server')}'.</error>");
+
+            return;
+        }
+
+        // Could not find alias for site, continue executing the
+        // command to cause an error later on by Symfony's own
+        // validation that takes place after this method.
+        if ($input->hasArgument('site') && ! isset($alias['site'])) {
+            $output->writeln("<error>No site alias found, but a site is required for this command.</error>");
+
+            return;
+        }
+
+        if (! $output->isQuiet()) {
+            $output->writeln("<comment>Using aliased server '{$alias['server']}' and site '{$alias['site']}'.</comment>");
+        }
+
+        $input->setArgument('server', $alias['server']);
+        $input->setArgument('site', $alias['site']);
+    }
+
     /**
      * @param \Symfony\Component\Console\Output\OutputInterface $output
      * @param array                                             $header
