@@ -2,7 +2,6 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use DateTime;
 use Sven\ForgeCLI\Commands\Workers\All;
 use Sven\ForgeCLI\Commands\Workers\Delete;
 use Sven\ForgeCLI\Commands\Workers\Make;
@@ -40,7 +39,7 @@ class WorkersTest extends TestCase
     public function it_deletes_a_worker()
     {
         $this->forge->shouldReceive()
-            ->deleteWorker('12345', '6789','10');
+            ->deleteWorker('12345', '6789', '10');
 
         $this->command(Delete::class)
             ->setInputs(['yes'])
@@ -133,7 +132,7 @@ class WorkersTest extends TestCase
     public function it_reboots_a_worker()
     {
         $this->forge->shouldReceive()
-            ->restartWorker('12345', '6789','10', false);
+            ->restartWorker('12345', '6789', '10', false);
 
         $this->command(Reboot::class)
             ->setInputs(['yes'])
@@ -161,11 +160,11 @@ class WorkersTest extends TestCase
         $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
-     /** @test */
-     public function it_force_reboot_a_worker_if_option_is_set()
-     {
+    /** @test */
+    public function it_force_reboot_a_worker_if_option_is_set()
+    {
         $this->forge->shouldReceive()
-            ->restartWorker('12345', '6789','10', false);
+            ->restartWorker('12345', '6789', '10', false);
 
         $tester = $this->command(Reboot::class);
 
@@ -175,8 +174,7 @@ class WorkersTest extends TestCase
             'worker' => '10',
             '--force' => true,
         ]);
-
-     }
+    }
 
     /** @test */
     public function it_shows_information_about_a_site()
@@ -194,13 +192,13 @@ class WorkersTest extends TestCase
                 $this->forge));
 
         $tester = $this->command(Show::class);
-        
+
         $tester->execute([
             'server' => '12345',
             'site' => '6789',
             'worker' => '10',
             ]);
-        
+
         $output = $tester->getDisplay();
 
         $this->assertStringContainsString('test-status', $output);
@@ -209,5 +207,4 @@ class WorkersTest extends TestCase
         $this->assertStringContainsString('test-command', $output);
         $this->assertStringContainsString('Yes', $output);
     }
-    
 }
