@@ -67,7 +67,7 @@ abstract class BaseCommand extends Command
         // continue executing the command here. This
         // will cause a validation error later on.
         if ($alias === null) {
-            $output->writeln("<error>No alias found for '{$input->getArgument('server')}'.</error>");
+            $output->writeln('<error>No alias found for "'.$input->getArgument('server').'".</error>');
 
             return;
         }
@@ -75,14 +75,14 @@ abstract class BaseCommand extends Command
         // Could not find alias for site, continue executing the
         // command to cause an error later on by Symfony's own
         // validation that takes place after this method.
-        if ($input->hasArgument('site') && ! isset($alias['site'])) {
-            $output->writeln("<error>No site alias found, but a site is required for this command.</error>");
+        if (!isset($alias['site']) && $input->hasArgument('site')) {
+            $output->writeln('<error>No site alias found, but a site is required for this command.</error>');
 
             return;
         }
 
-        if (! $output->isQuiet()) {
-            $output->writeln("<comment>Using aliased server '{$alias['server']}' and site '{$alias['site']}'.</comment>");
+        if (!$output->isQuiet()) {
+            $output->writeln('<comment>Using aliased server "'.$alias['server'].'" and site "'.$alias['site'].'".</comment>');
         }
 
         $input->setArgument('server', $alias['server']);
@@ -114,7 +114,7 @@ abstract class BaseCommand extends Command
         $data = [];
 
         foreach ($optionMap ?: $this->optionMap as $option => $requestKey) {
-            if (! isset($options[$option])) {
+            if (!isset($options[$option])) {
                 continue;
             }
 
@@ -134,7 +134,7 @@ abstract class BaseCommand extends Command
     {
         $filename = $input->hasOption($option) ? $input->getOption($option) : 'php://stdin';
 
-        if (! file_exists($filename)) {
+        if (!file_exists($filename)) {
             return $filename;
         }
 
@@ -159,7 +159,7 @@ abstract class BaseCommand extends Command
             }
 
             throw new \RuntimeException(
-                sprintf('The option "%s" is required.', $key)
+                'The option "'.$key.'" is required.'
             );
         }
     }
@@ -172,7 +172,7 @@ abstract class BaseCommand extends Command
         $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
-        if (! file_exists($configFile)) {
+        if (!file_exists($configFile)) {
             file_put_contents($configFile, '{}');
         }
 
