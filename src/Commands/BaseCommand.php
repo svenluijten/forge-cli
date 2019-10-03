@@ -169,7 +169,7 @@ abstract class BaseCommand extends Command
      */
     protected function getFileConfig()
     {
-        $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
+        $home = PHP_OS_FAMILY === 'Windows' ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
         if (!file_exists($configFile)) {
