@@ -49,6 +49,20 @@ class SitesTest extends TestCase
     }
 
     /** @test */
+    public function it_forces_deletition_of_a_site()
+    {
+        $this->forge->shouldReceive()
+            ->deleteSite('12345', '6789');
+
+        $this->command(Delete::class)
+            ->execute([
+                'server' => '12345',
+                'site' => '6789',
+                '--force' => true,
+            ]);
+    }
+
+    /** @test */
     public function it_does_not_delete_a_site_if_no_is_answered()
     {
         $this->forge->shouldNotReceive()
@@ -61,7 +75,7 @@ class SitesTest extends TestCase
             'site' => '6789',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
