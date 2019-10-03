@@ -87,6 +87,19 @@ class ServersTest extends TestCase
     }
 
     /** @test */
+    public function it_forces_to_reboot_the_server()
+    {
+        $this->forge->shouldReceive()
+            ->rebootServer('12345');
+
+        $this->command(Reboot::class)
+            ->execute([
+                'server' => '12345',
+                '--force' => true,
+            ]);
+    }
+
+    /** @test */
     public function it_does_not_reboot_the_server_if_no_is_answered()
     {
         $this->forge->shouldNotReceive()
@@ -98,7 +111,7 @@ class ServersTest extends TestCase
             'server' => '12345',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
