@@ -6,15 +6,12 @@ use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Commands\ConfirmableTrait;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
     use ConfirmableTrait;
-    
+
     protected $name = 'delete:site';
 
     protected $description = 'Delete a site.';
@@ -40,7 +37,7 @@ class Delete extends BaseCommand implements NeedsForge
     protected function getOptions()
     {
         return [
-            ['force', null, InputOption::VALUE_NONE, 'If we want to execute without interaction']
+            ['force', null, InputOption::VALUE_NONE, 'If we want to execute without interaction'],
         ];
     }
 
@@ -51,7 +48,6 @@ class Delete extends BaseCommand implements NeedsForge
         if (! $this->confirmToProceed("You are going to delete the site with id {$site}.")) {
             return;
         }
-       
 
         $this->forge->deleteSite($this->argument('server'), $site);
     }

@@ -26,7 +26,7 @@ abstract class BaseCommand extends Command
      * @var \Sven\FileConfig\Store
      */
     protected $config;
-    
+
     /**
      * The input interface implementation.
      *
@@ -62,13 +62,13 @@ abstract class BaseCommand extends Command
             $this->forge = $forge ?: new Forge($this->config->get('key'));
         }
 
-        if(isset($this->description)) {
+        if (isset($this->description)) {
             $this->setDescription($this->description);
         }
 
         $this->specifyParameters();
     }
-    
+
     /**
      * Specify the arguments and options on the command.
      *
@@ -95,7 +95,7 @@ abstract class BaseCommand extends Command
             }
         }
     }
-    
+
     /**
      * Get the console command arguments.
      *
@@ -140,9 +140,9 @@ abstract class BaseCommand extends Command
      * execute() method, you set the code to execute by passing
      * a Closure to the setCode() method.
      *
-     * @return int|null null or 0 if everything went fine, or an error code
-     *
      * @throws LogicException When this abstract method is not implemented
+     *
+     * @return int|null null or 0 if everything went fine, or an error code
      *
      * @see setCode()
      */
@@ -150,6 +150,7 @@ abstract class BaseCommand extends Command
     {
         $this->handle();
     }
+
     /**
      * @param \Symfony\Component\Console\Output\OutputInterface $output
      * @param array                                             $header
@@ -244,6 +245,7 @@ abstract class BaseCommand extends Command
      * Determine if the given option is present.
      *
      * @param  string  $name
+     *
      * @return bool
      */
     public function hasOption($name)
@@ -255,6 +257,7 @@ abstract class BaseCommand extends Command
      * Get the value of a command option.
      *
      * @param  string|null  $key
+     *
      * @return string|array|bool|null
      */
     public function option($key = null)
@@ -280,6 +283,7 @@ abstract class BaseCommand extends Command
      * Determine if the given argument is present.
      *
      * @param  string|int  $name
+     *
      * @return bool
      */
     public function hasArgument($name)
@@ -291,6 +295,7 @@ abstract class BaseCommand extends Command
      * Get the value of a command argument.
      *
      * @param  string|null  $key
+     *
      * @return string|array|null
      */
     public function argument($key = null)
@@ -316,6 +321,7 @@ abstract class BaseCommand extends Command
      * Write a string in an alert box.
      *
      * @param  string  $string
+     *
      * @return void
      */
     public function alert($string)
@@ -334,6 +340,7 @@ abstract class BaseCommand extends Command
      *
      * @param  string  $string
      * @param  int|string|null  $verbosity
+     *
      * @return void
      */
     public function comment($string)
@@ -346,6 +353,7 @@ abstract class BaseCommand extends Command
      *
      * @param  string  $string
      * @param  int|string|null  $verbosity
+     *
      * @return void
      */
     public function info($string)
@@ -359,6 +367,7 @@ abstract class BaseCommand extends Command
      * @param  string  $string
      * @param  string|null  $style
      * @param  int|string|null  $verbosity
+     *
      * @return void
      */
     public function line($string, $style = null)
@@ -373,6 +382,7 @@ abstract class BaseCommand extends Command
      *
      * @param  string  $question
      * @param  bool    $default
+     *
      * @return bool
      */
     public function confirm($question, $default = false)
@@ -385,6 +395,7 @@ abstract class BaseCommand extends Command
      *
      * @param  string  $question
      * @param  string|null  $default
+     *
      * @return mixed
      */
     public function ask($question, $default = null)

@@ -11,6 +11,7 @@ trait ConfirmableTrait
      *
      * @param  string  $warning
      * @param  \Closure|bool|null  $callback
+     *
      * @return bool
      */
     public function confirmToProceed($warning = 'Destructive Command running!')
@@ -31,5 +32,4 @@ trait ConfirmableTrait
 
         return true;
     }
-
 }
