@@ -54,7 +54,7 @@ class ServicesTest extends TestCase
             'service' => 'blackfire',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -99,7 +99,7 @@ class ServicesTest extends TestCase
             'service' => 'papertrail',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -129,7 +129,7 @@ class ServicesTest extends TestCase
             'service' => 'mysql',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -159,7 +159,7 @@ class ServicesTest extends TestCase
             'service' => 'mysql',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -189,7 +189,7 @@ class ServicesTest extends TestCase
             'service' => 'postgres',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -219,7 +219,7 @@ class ServicesTest extends TestCase
             'service' => 'postgres',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -249,7 +249,7 @@ class ServicesTest extends TestCase
             'service' => 'nginx',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 
     /** @test */
@@ -279,6 +279,6 @@ class ServicesTest extends TestCase
             'service' => 'nginx',
         ]);
 
-        $this->assertStringContainsString('aborting', $tester->getDisplay());
+        $this->assertStringContainsString('Command Cancelled!', $tester->getDisplay());
     }
 }
