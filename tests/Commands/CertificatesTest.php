@@ -48,4 +48,25 @@ class CertificatesTest extends TestCase
 
         $this->assertStringContainsString('13579', $tester->getDisplay());
     }
+
+    /** @test */
+    public function it_can_obtain_letsencrypt_certificate_with_multiple_domains()
+    {   
+        $this->forge->shouldReceive()
+            ->obtainLetsEncryptCertificate('12345', '67890', ['domains' => ['domain.com', 'www.domain.com']], false)
+            ->once()
+            ->andReturn(
+                new Certificate(['id' => '13579', 'serverId' => '12345', 'siteId' => '67890'])
+            );
+
+        $tester = $this->command(MakeLetsEncrypt::class);
+
+        $tester->execute([
+            'server' => '12345',
+            'site' => '67890',
+            '--domains' => 'domain.com,www.domain.com',
+        ]);
+
+        $this->assertStringContainsString('13579', $tester->getDisplay());
+    }
 }

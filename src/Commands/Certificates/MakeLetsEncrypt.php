@@ -28,7 +28,7 @@ class MakeLetsEncrypt extends BaseCommand implements NeedsForge
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $domains = [$input->getOption('domains')];
+        $domains = explode(',',$input->getOption('domains'));
 
         $certificate = $this->forge->obtainLetsEncryptCertificate(
             $input->getArgument('server'),
