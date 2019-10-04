@@ -86,6 +86,7 @@ $app->addCommands([
     new Certificates\Delete,
     new Certificates\Install,
     new Certificates\Make,
+    new Certificates\MakeLetsEncrypt,
     new Certificates\Show,
 ]);
 
