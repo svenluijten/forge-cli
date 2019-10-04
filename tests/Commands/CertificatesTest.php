@@ -30,7 +30,7 @@ class CertificatesTest extends TestCase
 
     /** @test */
     public function it_can_obtain_letsencrypt_certificates()
-    {   
+    {
         $this->forge->shouldReceive()
             ->obtainLetsEncryptCertificate('12345', '67890', ['domains' => ['domain.com']], false)
             ->once()
@@ -51,7 +51,7 @@ class CertificatesTest extends TestCase
 
     /** @test */
     public function it_can_obtain_letsencrypt_certificate_with_multiple_domains()
-    {   
+    {
         $this->forge->shouldReceive()
             ->obtainLetsEncryptCertificate('12345', '67890', ['domains' => ['domain.com', 'www.domain.com']], false)
             ->once()
