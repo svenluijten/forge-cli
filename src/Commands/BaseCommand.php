@@ -48,7 +48,7 @@ abstract class BaseCommand extends Command
 
     public function initialize(InputInterface $input, OutputInterface $output)
     {
-        if (!$input->hasArgument('server')) {
+        if (! $input->hasArgument('server')) {
             return;
         }
 
@@ -75,13 +75,13 @@ abstract class BaseCommand extends Command
         // Could not find alias for site, continue executing the
         // command to cause an error later on by Symfony's own
         // validation that takes place after this method.
-        if (!isset($alias['site']) && $input->hasArgument('site')) {
+        if (! isset($alias['site']) && $input->hasArgument('site')) {
             $output->writeln('<error>No site alias found, but a site is required for this command.</error>');
 
             return;
         }
 
-        if (!$output->isQuiet()) {
+        if (! $output->isQuiet()) {
             $output->writeln('<comment>Using aliased server "'.$alias['server'].'" and site "'.$alias['site'].'".</comment>');
         }
 
@@ -114,7 +114,7 @@ abstract class BaseCommand extends Command
         $data = [];
 
         foreach ($optionMap ?: $this->optionMap as $option => $requestKey) {
-            if (!isset($options[$option])) {
+            if (! isset($options[$option])) {
                 continue;
             }
 
@@ -134,7 +134,7 @@ abstract class BaseCommand extends Command
     {
         $filename = $input->hasOption($option) ? $input->getOption($option) : 'php://stdin';
 
-        if (!file_exists($filename)) {
+        if (! file_exists($filename)) {
             return $filename;
         }
 
@@ -172,7 +172,7 @@ abstract class BaseCommand extends Command
         $home = PHP_OS_FAMILY === 'Windows' ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
-        if (!file_exists($configFile)) {
+        if (! file_exists($configFile)) {
             file_put_contents($configFile, '{}');
         }
 
