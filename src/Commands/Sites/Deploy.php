@@ -21,43 +21,6 @@ class Deploy extends BaseCommand implements NeedsForge
             ->setDescription('Deploy the given website.');
     }
 
-    public function initialize(InputInterface $input, OutputInterface $output)
-    {
-        // If the 'site' argument is present, the user probably did not
-        // use an alias, so we will return early. If it is missing,
-        // resolve the alias and set the arguments accordingly.
-        if ($input->getArgument('site') !== null) {
-            return;
-        }
-
-        $alias = $this->config->get(
-            'aliases.'.$input->getArgument('server')
-        );
-
-        // No alias was found by that name, so we will
-        // continue executing the command here. This
-        // will cause a validation error later on.
-        if ($alias === null) {
-            $output->writeln("<error>No alias found for '{$input->getArgument('server')}'</error>");
-
-            return;
-        }
-
-        // The alias is misconfigured, let the user know and continue executing the command.
-        if (! isset($alias['server']) || ! isset($alias['site'])) {
-            $output->writeln('<error>No server/site set!</error>');
-
-            return;
-        }
-
-        if (! $output->isQuiet()) {
-            $output->writeln("<comment>Using aliased server '{$alias['server']}' and site '{$alias['site']}'</comment>");
-        }
-
-        $input->setArgument('server', $alias['server']);
-        $input->setArgument('site', $alias['site']);
-    }
-
     /**
      * {@inheritdoc}
      */

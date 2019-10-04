@@ -116,21 +116,6 @@ abstract class BaseCommand extends Command
         return [];
     }
 
-    /**
-     * Initializes the command after the input has been bound and before the input
-     * is validated.
-     *
-     * This is mainly useful when a lot of commands extends one main command
-     * where some things need to be initialized based on the input arguments and options.
-     *
-     * @see InputInterface::bind()
-     * @see InputInterface::validate()
-     */
-    protected function initialize(InputInterface $input, OutputInterface $output)
-    {
-        $this->input = $input;
-        $this->output = new SymfonyStyle($input, $output);
-    }
 
     /**
      * Executes the current command.
@@ -149,6 +134,52 @@ abstract class BaseCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->handle();
+    }
+
+    public function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $this->input = $input;
+        $this->output = new SymfonyStyle($input, $output);
+
+        if (! $this->hasArgument('server')) {
+            return;
+        }
+
+        // If the 'site' argument is present, the user probably did not
+        // use an alias, so we will return early. If it is missing,
+        // resolve the alias and set the arguments accordingly.
+        if ($this->hasArgument('site') && $this->argument('site') !== null) {
+            return;
+        }
+
+        $alias = $this->config->get(
+            'aliases.'.$this->argument('server')
+        );
+
+        // No alias was found by that name, so we will
+        // continue executing the command here. This
+        // will cause a validation error later on.
+        if ($alias === null) {
+            $this->error("No alias found for {$this->argument('server')}");
+
+            return;
+        }
+
+        // Could not find alias for site, continue executing the
+        // command to cause an error later on by Symfony's own
+        // validation that takes place after this method.
+        if (! isset($alias['site']) && $this->hasArgument('site')) {
+            $this->error('No site alias found, but a site is required for this command.');
+
+            return;
+        }
+
+        if (! $output->isQuiet()) {
+            $this->comment('Using aliased server "'.$alias['server'].'" and site "'.$alias['site'].'.');
+        }
+
+        $this->input->setArgument('server', $alias['server']);
+        $this->input->setArgument('site', $alias['site']);
     }
 
     /**
@@ -221,7 +252,7 @@ abstract class BaseCommand extends Command
             }
 
             throw new \RuntimeException(
-                sprintf('The option "%s" is required.', $key)
+                'The option "'.$key.'" is required.'
             );
         }
     }
@@ -231,7 +262,7 @@ abstract class BaseCommand extends Command
      */
     protected function getFileConfig()
     {
-        $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
+        $home = PHP_OS_FAMILY === 'Windows' ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
         if (! file_exists($configFile)) {
@@ -401,5 +432,17 @@ abstract class BaseCommand extends Command
     public function ask($question, $default = null)
     {
         return $this->output->ask($question, $default);
+    }
+
+    /**
+     * Write a string as error output.
+     *
+     * @param  string  $string
+     * @param  int|string|null  $verbosity
+     * @return void
+     */
+    public function error($string, $verbosity = null)
+    {
+        $this->line($string, 'error', $verbosity);
     }
 }
