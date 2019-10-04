@@ -25,7 +25,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('city', null, InputOption::VALUE_REQUIRED, 'The city you currently live in.')
             ->addOption('organization', null, InputOption::VALUE_REQUIRED, 'The organization the SSL certificate should be issued to.')
             ->addOption('department', null, InputOption::VALUE_REQUIRED, 'The department you work in.')
-            ->setDescription('Create a new SSL certificate.');
+            ->setDescription('Create a Certificate Signing Request.');
     }
 
     /**
