@@ -63,8 +63,14 @@ abstract class BaseCommand extends Command
             return;
         }
 
-        if (!$output->isQuiet()) {
-            $output->writeln('<comment>Using aliased server "'.$alias['server'].'" and site "'.$alias['site'].'".</comment>');
+        if (! $output->isQuiet()) {
+            $message = 'Using aliased server "'.$alias['server'].'"';
+
+            if ($input->hasArgument('site')) {
+                $message .= ' and site "'.$alias['site'].'"';
+            }
+
+            $output->writeln('<comment>'.$message.'.</comment>');
         }
 
         $input->setArgument('server', $alias['server']);
