@@ -68,7 +68,7 @@ class MakeAlias extends BaseCommand
 
     protected function getMessage(string $alias, string $server, ?string $site): string
     {
-        $message = "Successfully created alias '$alias' for server '$server'";
+        $message = 'Successfully created alias "'.$alias.'" for server "'.$server.'"';
 
         if ($site !== null) {
             $message .= " and site '$site'";
