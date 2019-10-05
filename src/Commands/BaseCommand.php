@@ -31,6 +31,52 @@ abstract class BaseCommand extends Command
         }
     }
 
+    public function initialize(InputInterface $input, OutputInterface $output)
+    {
+        if (!$input->hasArgument('server')) {
+            return;
+        }
+
+        // If the 'site' argument is present, the user probably did not
+        // use an alias, so we will return early. If it is missing,
+        // resolve the alias and set the arguments accordingly.
+        if ($input->hasArgument('site') && $input->getArgument('site') !== null) {
+            return;
+        }
+
+        $alias = $this->config->get(
+            'aliases.'.$input->getArgument('server')
+        );
+
+        // No alias was found by that name, so we will
+        // continue executing the command here. This
+        // will cause a validation error later on.
+        if ($alias === null) {
+            $output->writeln('<error>No alias found for "'.$input->getArgument('server').'".</error>');
+
+            return;
+        }
+
+        // Could not find alias for site, continue executing the
+        // command to cause an error later on by Symfony's own
+        // validation that takes place after this method.
+        if (!isset($alias['site']) && $input->hasArgument('site')) {
+            $output->writeln('<error>No site alias found, but a site is required for this command.</error>');
+
+            return;
+        }
+
+        if (!$output->isQuiet()) {
+            $output->writeln('<comment>Using aliased server "'.$alias['server'].'" and site "'.$alias['site'].'".</comment>');
+        }
+
+        $input->setArgument('server', $alias['server']);
+
+        if ($input->hasArgument('site')) {
+            $input->setArgument('site', $alias['site']);
+        }
+    }
+
     protected function table(OutputInterface $output, array $header, array $rows)
     {
         $table = new Table($output);
