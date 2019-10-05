@@ -17,14 +17,11 @@ use Laravel\Forge\Forge;
 abstract class BaseCommand extends Command
 {
     protected Forge $forge;
-    protected Store $config;
     protected array $optionMap = [];
 
-    public function __construct(?Forge $forge = null)
+    public function __construct(protected Store $config, ?Forge $forge = null)
     {
         parent::__construct();
-
-        $this->config = $this->getFileConfig();
 
         if ($this instanceof NeedsForge) {
             $this->forge = $forge ?: new Forge($this->config->get('key'));

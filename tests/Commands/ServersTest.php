@@ -46,6 +46,21 @@ class ServersTest extends TestCase
     }
 
     /** @test */
+    public function it_deletes_an_aliased_server(): void
+    {
+        $this->forge->shouldReceive()
+            ->deleteServer('1234');
+
+        $this->config->set('aliases.server-name', ['server' => '1234']);
+
+        $this->command(Delete::class)
+            ->setInputs(['yes'])
+            ->execute([
+                'server' => 'server-name',
+            ]);
+    }
+
+    /** @test */
     public function it_creates_a_server()
     {
         $this->forge->shouldReceive()
@@ -87,6 +102,21 @@ class ServersTest extends TestCase
     }
 
     /** @test */
+    public function it_reboots_an_aliased_server(): void
+    {
+        $this->forge->shouldReceive()
+            ->rebootServer('12345');
+
+        $this->config->set('aliases.server-name', ['server' => '12345']);
+
+        $this->command(Reboot::class)
+            ->setInputs(['yes'])
+            ->execute([
+                'server' => 'server-name',
+            ]);
+    }
+
+    /** @test */
     public function it_does_not_reboot_the_server_if_no_is_answered()
     {
         $this->forge->shouldNotReceive()
@@ -122,6 +152,28 @@ class ServersTest extends TestCase
     }
 
     /** @test */
+    public function it_shows_information_about_an_aliased_server(): void
+    {
+        $this->forge->shouldReceive()
+            ->server('12345')
+            ->andReturn(
+                new Server(['id' => '12345', 'name' => 'Name of the server'])
+            );
+
+        $this->config->set('aliases.an-alias', ['server' => '12345']);
+
+        $tester = $this->command(Show::class);
+
+        $tester->execute([
+            'server' => 'an-alias',
+        ]);
+
+        $output = preg_replace('/\s{2,}/', ' ', $tester->getDisplay());
+
+        $this->assertStringContainsString('Name: Name of the server', $output);
+    }
+
+    /** @test */
     public function it_updates_a_server()
     {
         $this->forge->shouldReceive()
@@ -142,5 +194,31 @@ class ServersTest extends TestCase
             '--private-ip' => '192.168.1.1',
             '--max-upload-size' => '2GB',
         ]);
+    }
+
+    /** @test */
+    public function it_updates_an_aliased_server(): void
+    {
+        $this->forge->shouldReceive()
+            ->updateServer('12345', [
+                'name' => 'New Name',
+                'size' => '512MB',
+                'ip_address' => '127.0.0.1',
+                'private_ip_address' => '192.168.1.1',
+                'max_upload_size' => '2GB',
+                'network' => [],
+            ]);
+
+        $this->config->set('aliases.an-alias', ['server' => '12345']);
+
+        $this->command(Update::class)
+            ->execute([
+                'server' => 'an-alias',
+                '--name' => 'New Name',
+                '--size' => '512MB',
+                '--ip' => '127.0.0.1',
+                '--private-ip' => '192.168.1.1',
+                '--max-upload-size' => '2GB',
+            ]);
     }
 }
