@@ -51,6 +51,10 @@ class MakeAlias extends BaseCommand
             return $site;
         }
 
+        if ($output->isQuiet()) {
+            return null;
+        }
+
         return $this->ask('What site would you like to alias? (Leave blank to skip)', $input, $output);
     }
 
