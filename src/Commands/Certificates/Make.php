@@ -39,7 +39,7 @@ class Make extends BaseCommand implements NeedsForge
         $output->writeln([
             '<info>Domain:</info>            '.$certificate->domain,
             '<info>Status:</info>            '.$certificate->status,
-            '<info>Exists:</info>            '.$certificate->existing ? 'Yes' : 'No',
+            '<info>Exists:</info>            '.($certificate->existing ? 'Yes' : 'No'),
             '<info>Activation Status:</info> '.$certificate->activationStatus,
             '<info>Created:</info>           '.$certificate->createdAt,
         ]);
