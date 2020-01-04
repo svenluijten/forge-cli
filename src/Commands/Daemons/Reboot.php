@@ -16,7 +16,7 @@ class Reboot extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('reboot:daemon')
+        $this->setName('daemon:reboot')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the daemon is on.')
             ->addArgument('daemon', InputArgument::REQUIRED, 'The id of the daemon to reboot.')
             ->setDescription('Restart the given daemon on one of your servers.');

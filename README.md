@@ -241,11 +241,11 @@ $ forge uninstall:service {serverId} {service}
 
 ### Daemons
 
-#### list:daemons
+#### daemon:list
 List all active daemons on the given server.
 
 ```bash
-$ forge list:daemons {serverId}
+$ forge daemon:list {serverId}
 
 +-------+------------+---------------------------------+---------------------+
 | Id    | Status     | Command                         | Created             |
@@ -254,7 +254,7 @@ $ forge list:daemons {serverId}
 +-------+------------+---------------------------------+---------------------+
 ```
 
-#### show:daemon
+#### daemon:show
 Show information about the given daemon.
 
 ```bash
@@ -265,7 +265,7 @@ Command: echo 'hello world' >> /dev/null
 Created: 2017-03-21 18:26:33
 ```
 
-#### make:daemon
+#### daemon:make
 Create a new daemon to run on the given server. If no user is supplied, it defaults to `forge`.
 
 ```bash
@@ -274,14 +274,14 @@ $ forge make:daemon {serverId}
     --user=root
 ```
 
-#### reboot:daemon
+#### daemon:reboot
 Reboot the given daemon. You will need to confirm your action.
 
 ```bash
 $ forge reboot:daemon {serverId} {daemonId}
 ```
 
-#### delete:daemon
+#### daemon:delete
 Delete the given daemon from the given server. You will need to confirm your action.
 
 ```bash
