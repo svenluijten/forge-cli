@@ -9,14 +9,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\Job;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:jobs')
+        $this->setName('job:list')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list the jobs for.')
             ->setDescription('Show all jobs configured on a server.');
     }
