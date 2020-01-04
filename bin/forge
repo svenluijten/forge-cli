@@ -44,7 +44,7 @@ $app->addCommands([
     new Deployment\GetLog,
     new Deployment\ResetState,
     new DeployScript\Get,
-    new DeployScript\Update,
+    new DeployScript\Set,
     new FirewallRules\All,
     new FirewallRules\Make,
     new FirewallRules\Delete,
