@@ -9,14 +9,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\FirewallRule;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:rules')
+        $this->setName('rule:list')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list firewall rules for.')
             ->setDescription('Show all firewall rules on a server.');
     }

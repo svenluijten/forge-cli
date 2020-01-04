@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:rule')
+        $this->setName('rule:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the firewall rule to show information about is on.')
             ->addArgument('rule', InputArgument::REQUIRED, 'The id of the firewall rule to show information about.')
             ->setDescription('Show information about the given firewall rule.');

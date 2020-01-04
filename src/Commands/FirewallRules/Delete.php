@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:rule')
+        $this->setName('rule:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the firewall rule to delete is on.')
             ->addArgument('rule', InputArgument::REQUIRED, 'The id of the firewall rule to delete.')
             ->setDescription('Delete a firewall rule.');
