@@ -33,7 +33,7 @@ class Reboot extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to reboot the worker with id "'.$worker.'"?', false);
 
-        if (! $helper->ask($input, $output, $question)) {
+        if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting.</info>');
 
             return;

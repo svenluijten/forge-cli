@@ -32,7 +32,7 @@ class DeleteWordpress extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to delete the WordPress project from the site with id "'.$site.'"?', false);
 
-        if (! $helper->ask($input, $output, $question)) {
+        if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your WordPress project is safe.</info>');
 
             return;

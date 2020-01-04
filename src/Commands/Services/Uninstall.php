@@ -33,7 +33,7 @@ class Uninstall extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to uninstall '.$service.' from the server with id '.$server.'?', false);
 
-        if (! $helper->ask($input, $output, $question)) {
+        if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting.</info>');
 
             return;

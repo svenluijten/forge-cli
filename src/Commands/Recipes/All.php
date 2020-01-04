@@ -2,11 +2,11 @@
 
 namespace Sven\ForgeCLI\Commands\Recipes;
 
-use Sven\ForgeCLI\Contracts\NeedsForge;
-use Themsaid\Forge\Resources\Recipe;
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Resources\Recipe;
 
 class All extends BaseCommand implements NeedsForge
 {

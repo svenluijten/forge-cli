@@ -4,9 +4,9 @@ namespace Sven\ForgeCLI\Commands\Env;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Update extends BaseCommand implements NeedsForge

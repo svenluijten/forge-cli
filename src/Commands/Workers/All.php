@@ -2,12 +2,12 @@
 
 namespace Sven\ForgeCLI\Commands\Workers;
 
-use Sven\ForgeCLI\Contracts\NeedsForge;
-use Themsaid\Forge\Resources\Worker;
 use Sven\ForgeCLI\Commands\BaseCommand;
+use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Resources\Worker;
 
 class All extends BaseCommand implements NeedsForge
 {

@@ -4,10 +4,10 @@ namespace Sven\ForgeCLI\Commands\Databases;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Themsaid\Forge\Resources\MysqlDatabase;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Resources\MysqlDatabase;
 
 class All extends BaseCommand implements NeedsForge
 {

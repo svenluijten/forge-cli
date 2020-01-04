@@ -2,14 +2,14 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Sven\ForgeCLI\Commands\Servers\All;
+use Sven\ForgeCLI\Commands\Servers\Delete;
+use Sven\ForgeCLI\Commands\Servers\Make;
+use Sven\ForgeCLI\Commands\Servers\Reboot;
+use Sven\ForgeCLI\Commands\Servers\Show;
+use Sven\ForgeCLI\Commands\Servers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
 use Themsaid\Forge\Resources\Server;
-use Sven\ForgeCLI\Commands\Servers\All;
-use Sven\ForgeCLI\Commands\Servers\Make;
-use Sven\ForgeCLI\Commands\Servers\Show;
-use Sven\ForgeCLI\Commands\Servers\Delete;
-use Sven\ForgeCLI\Commands\Servers\Reboot;
-use Sven\ForgeCLI\Commands\Servers\Update;
 
 class ServersTest extends TestCase
 {
