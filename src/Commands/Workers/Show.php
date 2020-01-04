@@ -30,7 +30,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Connection:</info> '.$worker->connection,
             '<info>Timeout:</info>    '.$worker->timeout,
             '<info>Command:</info>    '.$worker->command,
-            '<info>Daemon:</info>     '.$worker->daemon ? 'Yes' : 'No',
+            '<info>Daemon:</info>     '.($worker->daemon ? 'Yes' : 'No'),
             '<info>Created:</info>    '.$worker->createdAt,
         ]);
 
