@@ -49,7 +49,7 @@ $app->addCommands([
     new FirewallRules\Make,
     new FirewallRules\Delete,
     new FirewallRules\Show,
-    new Jobs\All,
+    new Jobs\ListAll,
     new Jobs\Make,
     new Jobs\Delete,
     new Jobs\Show,

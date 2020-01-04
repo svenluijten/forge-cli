@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:job')
+        $this->setName('job:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
             ->addArgument('job', InputArgument::REQUIRED, 'The id of the job to delete.')
             ->setDescription('Delete a scheduled job.');

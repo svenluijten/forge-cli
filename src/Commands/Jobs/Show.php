@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:job')
+        $this->setName('job:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the scheduled job is on.')
             ->addArgument('job', InputArgument::REQUIRED, 'The id of the scheduled job to show information about.')
             ->setDescription('Show information about a scheduled job on a specified server.');

@@ -326,34 +326,34 @@ $ forge rule:delete {serverId} {ruleId}
 
 ### Scheduled Jobs
 
-#### make:job
+#### job:make
 Create a new scheduled job.
 
 ```bash
-$ forge make:job {serverId}
+$ forge job:make {serverId}
     --command="echo 'hello world' > /dev/null"
     --frequency="hourly"
 ```
 
-#### list:jobs
+#### job:list
 Show all scheduled jobs.
 
 ```bash
-$ forge list:jobs {serverId}
+$ forge job:list {serverId}
 ```
 
-#### show:job
+#### job:show
 Show information about one of your scheduled jobs.
 
 ```bash
-$ forge show:job {serverId} {jobId}
+$ forge job:show {serverId} {jobId}
 ```
 
-#### delete:job
+#### job:delete
 Delete a given scheduled job from one of your servers. You will need to confirm your action.
 
 ```bash
-$ forge delete:job {serverId} {jobId}
+$ forge job:delete {serverId} {jobId}
 ```
 
 ---
