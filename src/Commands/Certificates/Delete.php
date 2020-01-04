@@ -33,7 +33,7 @@ class Delete extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to delete the SSL certificate with id "'.$certificate.'"?', false);
 
-        if (! $helper->ask($input, $output, $question)) {
+        if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your SSL certificate is safe.</info>');
 
             return;

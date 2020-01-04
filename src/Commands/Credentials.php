@@ -3,9 +3,9 @@
 namespace Sven\ForgeCLI\Commands;
 
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Themsaid\Forge\Resources\Credential;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Resources\Credential;
 
 class Credentials extends BaseCommand implements NeedsForge
 {

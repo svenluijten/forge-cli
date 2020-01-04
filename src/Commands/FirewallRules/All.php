@@ -4,10 +4,10 @@ namespace Sven\ForgeCLI\Commands\FirewallRules;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Themsaid\Forge\Resources\FirewallRule;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Themsaid\Forge\Resources\FirewallRule;
 
 class All extends BaseCommand implements NeedsForge
 {

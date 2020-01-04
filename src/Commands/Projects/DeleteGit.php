@@ -32,7 +32,7 @@ class DeleteGit extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to delete the git project from the site with id "'.$site.'"?', false);
 
-        if (! $helper->ask($input, $output, $question)) {
+        if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your git project is safe.</info>');
 
             return;

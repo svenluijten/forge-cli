@@ -71,7 +71,7 @@ abstract class BaseCommand extends Command
         $data = [];
 
         foreach ($optionMap ?: $this->optionMap as $option => $requestKey) {
-            if (! isset($options[$option])) {
+            if (!isset($options[$option])) {
                 continue;
             }
 
@@ -91,7 +91,7 @@ abstract class BaseCommand extends Command
     {
         $filename = $input->hasOption($option) ? $input->getOption($option) : 'php://stdin';
 
-        if (! file_exists($filename)) {
+        if (!file_exists($filename)) {
             return $filename;
         }
 
@@ -129,7 +129,7 @@ abstract class BaseCommand extends Command
         $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
         $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
 
-        if (! file_exists($configFile)) {
+        if (!file_exists($configFile)) {
             file_put_contents($configFile, '{}');
         }
 
