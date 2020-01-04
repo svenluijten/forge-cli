@@ -15,7 +15,7 @@ class Deploy extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('deploy:site')
+        $this->setName('site:deploy')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site to deploy is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to deploy.')
             ->setDescription('Deploy the given website.');

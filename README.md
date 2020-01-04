@@ -26,7 +26,6 @@ can be found [here](#usage).
   - [SSL Certificates](#ssl-certificates)
   - [SSH Keys](#ssh-keys)
   - [Workers](#workers)
-  - [Deployment](#deployment)
   - [Configuration](#configuration)
   - [Projects](#projects)
   - [Recipes](#recipes)
@@ -145,11 +144,11 @@ $ forge server:delete {serverId}
 
 ### Sites
 
-#### list:sites
+#### site:list
 Show all sites installed on a server.
 
 ```bash
-$ forge list:sites {serverId}
+$ forge site:list {serverId}
 
 +--------+-----------------+------+-----------------------------+--------+
 | Id     | Name            | Type | Repository                  | Branch |
@@ -160,11 +159,11 @@ $ forge list:sites {serverId}
 +--------+-----------------+------+-----------------------------+--------+
 ```
 
-#### show:site
+#### site:show
 Show information about a site on a specified server.
 
 ```bash
-$ forge show:site {serverId} {siteId}
+$ forge site:show {serverId} {siteId}
 
 Name:            svenluijten.com
 Repository info: svenluijten/svenluijten.com @ master
@@ -175,29 +174,36 @@ Project type:    html
 Created:         2017-03-13 21:14:19
 ```
 
-#### make:site
+#### site:make
 Create a new site on one of your servers.
 
 ```bash
-$ forge make:site {serverId} 
+$ forge site:make {serverId} 
     --domain=example.com
     --type=php
     --directory=/public
 ```
 
-#### update:site
+#### site:update
 Update a site on a specified server.
 
 ```bash
-$ forge update:site {serverId} {siteId}
+$ forge site:update {serverId} {siteId}
     --directory=/html
 ```
 
-#### delete:site
+#### deploy:site
+Deploy the given site.
+
+```bash
+$ forge deploy:site {serverId} {siteId}
+```
+
+#### site:delete
 Delete a site. You will need to confirm your action.
 
 ```bash
-$ forge delete:site {serverId} {siteId}
+$ forge site:delete {serverId} {siteId}
 ```
 
 ---
@@ -528,15 +534,6 @@ $ forge reboot:worker {serverId} {siteId} {workerId}
 ```
 
 ---
-
-### Deployment
-
-#### deploy:site
-Deploy the given site.
-
-```bash
-$ forge deploy:site {serverId} {siteId}
-```
 
 #### quickdeploy:enable
 Enable quick deployment for the given site.
