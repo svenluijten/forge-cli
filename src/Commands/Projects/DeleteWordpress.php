@@ -16,7 +16,7 @@ class DeleteWordpress extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:wordpress')
+        $this->setName('wordpress:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete the WordPress project from.')
             ->setDescription('Delete a WordPress project from a site.');

@@ -16,7 +16,7 @@ class DeleteGit extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:git')
+        $this->setName('git:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to delete the git project from.')
             ->setDescription('Delete a git project from a site.');

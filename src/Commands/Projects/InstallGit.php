@@ -25,7 +25,7 @@ class InstallGit extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('install:git')
+        $this->setName('git:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to install the git project on.')
             ->addOption('provider', null, InputOption::VALUE_REQUIRED, 'The provider to use. Must be either "github" or "custom".', 'github')
