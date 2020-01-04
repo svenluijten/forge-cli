@@ -23,7 +23,7 @@ class Update extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('update:env')
+        $this->setName('env:set')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to update the .env file of.')
             ->addOption('file', null, InputOption::VALUE_REQUIRED, 'The path to your new .env file.')

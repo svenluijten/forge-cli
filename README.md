@@ -603,31 +603,31 @@ $ forge reset:deploy-state {serverId} {siteId}
 
 ### Configuration
 
-#### get:env
+#### env:get
 Get the environment file of one of your sites.
 
 ```bash
-$ forge get:env {serverId} {siteId}
+$ forge env:get {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge get:env {serverId} {siteId} > env-file.txt
+$ forge env:get {serverId} {siteId} > env-file.txt
 ```
 
-#### update:env
+#### env:set
 Update the environment file for one of your sites.
 
 ```bash
-$ forge update:env {serverId} {siteId}
+$ forge env:set {serverId} {siteId}
     --file=new-env.txt
 ```
 
 If you do not supply the `--file` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge update:env {serverId} {siteId} < new-env.txt
+$ forge env:set {serverId} {siteId} < new-env.txt
 ```
 
 #### get:nginx-config
