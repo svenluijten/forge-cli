@@ -2,8 +2,8 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Commands\Servers\ListAll;
 use Sven\ForgeCLI\Commands\Servers\Delete;
+use Sven\ForgeCLI\Commands\Servers\ListAll;
 use Sven\ForgeCLI\Commands\Servers\Make;
 use Sven\ForgeCLI\Commands\Servers\Reboot;
 use Sven\ForgeCLI\Commands\Servers\Show;
