@@ -16,7 +16,7 @@ class Uninstall extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('uninstall:service')
+        $this->setName('service:uninstall')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to uninstall the service from.')
             ->addArgument('service', InputArgument::REQUIRED, 'The service to be uninstalled. Can be "blackfire" or "papertrail".')
             ->setDescription('Uninstall a service from a server.');

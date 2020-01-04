@@ -16,7 +16,7 @@ class Stop extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('stop:service')
+        $this->setName('service:stop')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to stop the service on.')
             ->addArgument('service', InputArgument::REQUIRED, 'The service to stop. Can be either "nginx", "mysql" or "postgres".')
             ->setDescription('Stop a service on a server.');
