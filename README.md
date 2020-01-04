@@ -493,11 +493,11 @@ $ forge key:delete {serverId} {keyId}
 
 ### Workers
 
-#### make:worker
+#### worker:make
 Create a new worker.
 
 ```bash
-$ forge make:worker {serverId} {siteId}
+$ forge worker:make {serverId} {siteId}
     --connection=sqs
     --timeout=90
     --sleep=10
@@ -505,32 +505,32 @@ $ forge make:worker {serverId} {siteId}
     --daemon
 ```
 
-#### list:workers
+#### worker:list
 Show all workers installed on a site.
 
 ```bash
-$ forge list:workers {serverId} {siteId}
+$ forge worker:list {serverId} {siteId}
 ```
 
-#### show:worker
+#### worker:show
 Show information about one of your workers.
 
 ```bash
-$ forge show:worker {serverId} {siteId} {workerId}
+$ forge worker:show {serverId} {siteId} {workerId}
 ```
 
-#### delete:worker
+#### worker:delete
 Delete a given worker from one of your sites. You will need to confirm your action.
 
 ```bash
-$ forge delete:worker {serverId} {siteId} {workerId}
+$ forge worker:delete {serverId} {siteId} {workerId}
 ```
 
-#### reboot:worker
+#### worker:reboot
 Reboot one of your workers. You will need to confirm your action.
 
 ```bash
-$ forge reboot:worker {serverId} {siteId} {workerId}
+$ forge worker:reboot {serverId} {siteId} {workerId}
 ```
 
 ---
