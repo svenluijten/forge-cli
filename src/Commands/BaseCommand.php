@@ -63,7 +63,7 @@ abstract class BaseCommand extends Command
             return;
         }
 
-        if (! $output->isQuiet()) {
+        if (!$output->isQuiet()) {
             $message = 'Using aliased server "'.$alias['server'].'"';
 
             if ($input->hasArgument('site')) {
