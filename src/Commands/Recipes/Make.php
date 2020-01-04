@@ -23,7 +23,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:recipe')
+        $this->setName('recipe:make')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the recipe.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The user the recipe should run as.', 'root')
             ->addOption('script', null, InputOption::VALUE_REQUIRED, 'The contents of the recipe.')

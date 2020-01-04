@@ -8,14 +8,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\Recipe;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:recipes')
+        $this->setName('recipe:list')
             ->setDescription('Show all recipes in your Forge account.');
     }
 

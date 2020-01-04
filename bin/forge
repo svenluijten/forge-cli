@@ -62,7 +62,7 @@ $app->addCommands([
     new Workers\Delete,
     new Workers\Show,
     new Workers\Reboot,
-    new Recipes\All,
+    new Recipes\ListAll,
     new Recipes\Make,
     new Recipes\Delete,
     new Recipes\Show,
