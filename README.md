@@ -630,31 +630,31 @@ If you do not supply the `--file` option, the command will look in `STDIN` for a
 $ forge env:set {serverId} {siteId} < new-env.txt
 ```
 
-#### get:nginx-config
+#### nginx-config:get
 Get the nginx config file of one of your sites.
 
 ```bash
-$ forge get:nginx-config {serverId} {siteId}
+$ forge nginx-config:get {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge get:nginx-config {serverId} {siteId} > nginx.conf
+$ forge nginx-config:get {serverId} {siteId} > nginx.conf
 ```
 
-#### update:nginx-config
+#### nginx-config:set
 Update the nginx config file for one of your sites.
 
 ```bash
-$ forge update:nginx-config {serverId} {siteId}
+$ forge nginx-config:set {serverId} {siteId}
     --file=new.conf
 ```
 
 If you do not supply the `--file` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge update:nginx-config {serverId} {siteId} < new.conf
+$ forge nginx-config:set {serverId} {siteId} < new.conf
 ```
 
 ---
