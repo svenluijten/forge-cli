@@ -552,31 +552,31 @@ Disable quick deployment for the given site.
 $ forge disable:quickdeploy {serverId} {siteId}
 ```
 
-#### get:deploy-script
+#### deploy-script:get
 Get the deployment script of the given site.
 
 ```bash
-$ forge get:deploy-script {serverId} {siteId}
+$ forge deploy-script:get {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge get:deploy-script {serverId} {siteId} > file.txt
+$ forge deploy-script:get {serverId} {siteId} > file.txt
 ```
 
-#### update:deploy-script
+#### deploy-script:set
 Update the deployment script of the given site.
 
 ```bash
-$ forge update:deploy-script {serverId} {siteId}
+$ forge deploy-script:set {serverId} {siteId}
     --file=file.txt
 ```
 
 If you do not supply the `--file` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge update:deploy-script {serverId} {siteId} < file.txt
+$ forge deploy-script:set {serverId} {siteId} < file.txt
 ```
 
 #### deploy-log

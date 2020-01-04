@@ -9,18 +9,18 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Update extends BaseCommand implements NeedsForge
+class Set extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('update:deploy-script')
+        $this->setName('deploy-script:set')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
-            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to update the deployment script of.')
+            ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to set the deployment script of.')
             ->addOption('file', null, InputOption::VALUE_REQUIRED, 'The file your new deployment script is in.')
-            ->setDescription('Update the deployment script of the given site.');
+            ->setDescription('Set the deployment script of the given site.');
     }
 
     /**
