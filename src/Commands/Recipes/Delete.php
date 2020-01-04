@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:recipe')
+        $this->setName('recipe:delete')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to delete.')
             ->setDescription('Delete one of your recipes.');
     }

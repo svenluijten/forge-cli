@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:recipe')
+        $this->setName('recipe:show')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to show information about.')
             ->setDescription('Show information about a recipe.');
     }

@@ -699,11 +699,11 @@ $ forge wordpress:delete {serverId} {siteId}
 
 ### Recipes
 
-#### make:recipe
+#### recipe:make
 Create a new recipe.
 
 ```bash
-$ forge make:recipe
+$ forge recipe:make
     --name="My Recipe"
     --user=forge
     --script="echo 'hi' >> /dev/null"
@@ -712,37 +712,37 @@ $ forge make:recipe
 If you do not supply the `--script` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge make:recipe --name="My Recipe" --user=forge < file.txt
+$ forge recipe:make --name="My Recipe" --user=forge < file.txt
 ```
 
-#### list:recipes
+#### recipe:list
 Show all recipes in your Forge account.
 
 ```bash
-$ forge list:recipes
+$ forge recipe:list
 ```
 
-#### show:recipe
+#### recipe:show
 Show information about one of your recipes.
 
 ```bash
-$ forge show:recipe {recipeId}
+$ forge recipe:show {recipeId}
 ```
 
-#### run:recipe
+#### recipe:run
 Run the given recipe on the specified server(s).
 
 ```bash
-$ forge run:recipe {recipeId}
+$ forge recipe:run {recipeId}
     --server=1234
     --server=5678
 ```
 
-#### delete:recipe
+#### recipe:delete
 Delete the given recipe. You will need to confirm your action.
 
 ```bash
-$ forge delete:recipe {recipeId}
+$ forge recipe:delete {recipeId}
 ```
 
 ---

@@ -16,7 +16,7 @@ class Run extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('run:recipe')
+        $this->setName('recipe:run')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to run.')
             ->addOption('server', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'The id of the server(s) to run the recipe on.')
             ->setDescription('Run one of your recipes.');
