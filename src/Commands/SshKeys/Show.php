@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:key')
+        $this->setName('key:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the SSH key is on.')
             ->addArgument('key', InputArgument::REQUIRED, 'The id of the SSH key to show information about.')
             ->setDescription('Show information about an SSH key on a specified server.');

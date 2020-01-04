@@ -9,14 +9,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\SSHKey;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:keys')
+        $this->setName('key:list')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list SSH keys for.')
             ->setDescription('Show all SSH keys installed on a server.');
     }
