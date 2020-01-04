@@ -15,7 +15,7 @@ class Enable extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('enable:quickdeploy')
+        $this->setName('quickdeploy:enable')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to enable quick deployment for.')
             ->setDescription('Enable quick deployment on the given site.');

@@ -538,18 +538,18 @@ Deploy the given site.
 $ forge deploy:site {serverId} {siteId}
 ```
 
-#### enable:quickdeploy
+#### quickdeploy:enable
 Enable quick deployment for the given site.
 
 ```bash
-$ forge enable:quickdeploy {serverId} {siteId}
+$ forge quickdeploy:enable {serverId} {siteId}
 ```
 
-#### disable:quickdeploy
+#### quickdeploy:disable
 Disable quick deployment for the given site.
 
 ```bash
-$ forge disable:quickdeploy {serverId} {siteId}
+$ forge quickdeploy:disable {serverId} {siteId}
 ```
 
 #### deploy-script:get
