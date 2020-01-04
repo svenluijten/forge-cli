@@ -34,7 +34,7 @@ $app->addCommands([
     new Services\Stop,
     new Services\Install,
     new Services\Uninstall,
-    new Daemons\All,
+    new Daemons\ListAll,
     new Daemons\Make,
     new Daemons\Delete,
     new Daemons\Show,

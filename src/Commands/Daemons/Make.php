@@ -24,7 +24,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:daemon')
+        $this->setName('daemon:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the daemon on.')
             ->addOption('command', null, InputOption::VALUE_REQUIRED, 'The command to run.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The user to run the command as.', 'forge')

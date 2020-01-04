@@ -2,7 +2,7 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Commands\Daemons\All;
+use Sven\ForgeCLI\Commands\Daemons\ListAll;
 use Sven\ForgeCLI\Commands\Daemons\Delete;
 use Sven\ForgeCLI\Commands\Daemons\Make;
 use Sven\ForgeCLI\Commands\Daemons\Reboot;
@@ -22,7 +22,7 @@ class DaemonsTest extends TestCase
                 new Daemon(['id' => '67890', 'command' => 'echo \'hello world\' >> /dev/null']),
             ]);
 
-        $tester = $this->command(All::class);
+        $tester = $this->command(ListAll::class);
 
         $tester->execute([
             'server' => '12345',
