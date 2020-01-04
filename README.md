@@ -204,37 +204,37 @@ $ forge delete:site {serverId} {siteId}
 
 ### Services
 
-#### reboot:service
+#### service:reboot
 Reboot a service on the given server. Supported services are `nginx`, `mysql`, and `postgres`.
 
 ```bash
-$ forge reboot:service {serverId} {service}
+$ forge service:reboot {serverId} {service}
 ```
 
-#### stop:service
+#### service:stop
 Stop a service on the given server. Supported services are `nginx`, `mysql`, and `postgres`.
 
 ```bash
-$ forge stop:service {serverId} {service}
+$ forge service:stop {serverId} {service}
 ```
 
-#### install:service
+#### service:install
 Install a service on the given server. Supported services are `blackfire` and `papertrail`. The `--host` option
 is only required when installing Papertrail, `--server-id` and `--server-token` are only required when installing
 Blackfire.
 
 ```bash
-$ forge install:service {serverId} {service}
+$ forge service:install {serverId} {service}
     --host=192.168.1.1
     --server-id=12345
     --server-token=YOUR_SERVER_TOKEN
 ```
 
-#### uninstall:service
+#### service:uninstall
 Uninstall a service from the given server. Supported services are `blackfire` and `papertrail`.
 
 ```bash
-$ forge uninstall:service {serverId} {service}
+$ forge service:uninstall {serverId} {service}
 ```
 
 ---

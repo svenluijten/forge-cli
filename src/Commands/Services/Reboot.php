@@ -16,7 +16,7 @@ class Reboot extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('reboot:service')
+        $this->setName('service:reboot')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to reboot the service on.')
             ->addArgument('service', InputArgument::REQUIRED, 'The service to reboot. Can be either "nginx", "mysql" or "postgres".')
             ->setDescription('Reboot a service on a server.');

@@ -31,7 +31,7 @@ class Install extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('install:service')
+        $this->setName('service:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to install the service on.')
             ->addArgument('service', InputArgument::REQUIRED, 'The service to be installed. Can be "blackfire" or "papertrail".')
             ->addOption('server-id', null, InputOption::VALUE_REQUIRED, 'Blackfire\'s server id. Only required when installing Blackfire.')
