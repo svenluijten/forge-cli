@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:database')
+        $this->setName('database:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to the database is running on.')
             ->addArgument('database', InputArgument::REQUIRED, 'The id of the database to show information about.')
             ->setDescription('Show information about the given database.');

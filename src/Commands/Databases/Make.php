@@ -25,7 +25,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:database')
+        $this->setName('database:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the database on.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The username of an (optional) database user to create.', null)
             ->addOption('password', null, InputOption::VALUE_REQUIRED, 'The password of the database user. Required with "user".', null)
