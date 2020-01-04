@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:certificate')
+        $this->setName('certificate:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the SSL certificate is on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the SSL certificate to show information about.')

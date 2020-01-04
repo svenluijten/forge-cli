@@ -23,7 +23,9 @@ class Authorize extends BaseCommand implements NeedsForge
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
+        /** @var \Symfony\Component\Console\Helper\QuestionHelper $helper */
         $helper = $this->getHelper('question');
+
         $question = new Question('What is your API key? ');
         $question->setHidden(true);
 

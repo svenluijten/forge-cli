@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:certificate')
+        $this->setName('certificate:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the SSL certificate to delete is on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the SSL certificate to delete.')

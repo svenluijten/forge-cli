@@ -395,25 +395,25 @@ $ forge delete:database {serverId} {databaseId}
 
 ### SSL Certificates
 
-#### list:certificates
+#### certificate:list
 Show all certificates installed on the given site.
 
 ```bash
-$ forge list:certificates {serverId} {siteId}
+$ forge certificate:list {serverId} {siteId}
 ```
 
-#### show:certificate
+#### certificate:show
 Show information about the specified certificate.
 
 ```bash
-$ forge show:certificate {serverId} {siteId} {certificateId}
+$ forge certificate:show {serverId} {siteId} {certificateId}
 ```
 
-#### make:certificate
+#### certificate:make
 Create a new certificate for one of your sites.
 
 ```bash
-$ forge make:certificate {serverId} {siteId}
+$ forge certificate:make {serverId} {siteId}
     --domain="www.example.com"
     --country="US"
     --state="NY"
@@ -422,25 +422,25 @@ $ forge make:certificate {serverId} {siteId}
     --department="Development"
 ```
 
-#### activate:certificate
+#### certificate:activate
 Activate a currently installed SSL certificate.
 
 ```bash
-$ forge activate:certificate {serverId} {siteId} {certificateId}
+$ forge certificate:activate {serverId} {siteId} {certificateId}
 ```
 
-#### install:certificate
+#### certificate:install
 Install a certificate on the given site.
 
 ```bash
-$ forge install:certificate {serverId} {siteId} {certificateId}
+$ forge certificate:install {serverId} {siteId} {certificateId}
 ```
 
-#### delete:certificate
+#### certificate:delete
 Revoke and remove a certificate from the given site. You will need to confirm you action.
 
 ```bash
-$ forge delete:certificate {serverId} {siteId} {certificateId}
+$ forge certificate:delete {serverId} {siteId} {certificateId}
 ```
 
 ---
