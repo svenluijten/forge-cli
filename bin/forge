@@ -57,7 +57,7 @@ $app->addCommands([
     new Databases\Make,
     new Databases\Delete,
     new Databases\Show,
-    new Workers\All,
+    new Workers\ListAll,
     new Workers\Make,
     new Workers\Delete,
     new Workers\Show,

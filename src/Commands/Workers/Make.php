@@ -27,7 +27,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:worker')
+        $this->setName('worker:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the worker on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to install the worker on.')
             ->addOption('connection', null, InputOption::VALUE_REQUIRED, 'The connection to start the worker on.')
