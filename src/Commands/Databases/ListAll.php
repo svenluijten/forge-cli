@@ -9,14 +9,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\MysqlDatabase;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:databases')
+        $this->setName('database:list')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to list the databases for.')
             ->setDescription('Show all databases a server.');
     }

@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:database')
+        $this->setName('database:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the database is on.')
             ->addArgument('database', InputArgument::REQUIRED, 'The id of the database to delete.')
             ->setDescription('Delete the given database from one of your servers.');
