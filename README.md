@@ -453,11 +453,11 @@ $ forge certificate:delete {serverId} {siteId} {certificateId}
 
 ### SSH Keys
 
-#### make:key
+#### key:make
 Create a new SSH key and add it to a server.
 
 ```bash
-$ forge make:key {serverId}
+$ forge key:make {serverId}
     --name="Macbook"
     --file="~/.ssh/id_rsa.pub"
 ```
@@ -465,28 +465,28 @@ $ forge make:key {serverId}
 If you do not supply the `--file` option, the command will look in `STDIN` for any input:
 
 ```bash
-$ forge make:key {serverId} --name="Macbook" < ~/.ssh/id_rsa.pub
+$ forge key:make {serverId} --name="Macbook" < ~/.ssh/id_rsa.pub
 ```
 
-#### list:keys
+#### key:list
 Show all SSH keys installed on a server.
 
 ```bash
-$ forge list:keys {serverId}
+$ forge key:list {serverId}
 ```
 
-#### show:key
+#### key:show
 Show information about one of your SSH keys.
 
 ```bash
-$ forge show:key {serverId} {keyId}
+$ forge key:show {serverId} {keyId}
 ```
 
-#### delete:key
+#### key:delete
 Delete a given SSH key from one of your servers. You will need to confirm your action.
 
 ```bash
-$ forge delete:key {serverId} {keyId}
+$ forge key:delete {serverId} {keyId}
 ```
 
 ---

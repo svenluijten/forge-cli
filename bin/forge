@@ -72,7 +72,7 @@ $app->addCommands([
     new NginxConfig\Set,
     new Env\Get,
     new Env\Update,
-    new SshKeys\All,
+    new SshKeys\ListAll,
     new SshKeys\Make,
     new SshKeys\Delete,
     new SshKeys\Show,

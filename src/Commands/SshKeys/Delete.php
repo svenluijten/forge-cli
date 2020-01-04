@@ -16,7 +16,7 @@ class Delete extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('delete:key')
+        $this->setName('key:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the SSH key is.')
             ->addArgument('key', InputArgument::REQUIRED, 'The id of the SSH key to delete.')
             ->setDescription('Delete an SSH key.');

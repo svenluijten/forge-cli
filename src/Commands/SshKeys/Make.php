@@ -23,7 +23,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:key')
+        $this->setName('key:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new SSH key on.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of your new SSH key.')
             ->addOption('file', null, InputOption::VALUE_REQUIRED, 'The path to the SSH key to install on the server.')
