@@ -9,14 +9,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Themsaid\Forge\Resources\Certificate;
 
-class All extends BaseCommand implements NeedsForge
+class ListAll extends BaseCommand implements NeedsForge
 {
     /**
      * {@inheritdoc}
      */
     public function configure()
     {
-        $this->setName('list:certificates')
+        $this->setName('certificate:list')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to list certificates for.')
             ->setDescription('Show all SSL certificates installed on the given site.');

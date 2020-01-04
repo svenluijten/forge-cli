@@ -81,7 +81,7 @@ $app->addCommands([
     new Projects\InstallGit,
     new Projects\InstallWordpress,
     new Certificates\Activate,
-    new Certificates\All,
+    new Certificates\ListAll,
     new Certificates\Delete,
     new Certificates\Install,
     new Certificates\Make,

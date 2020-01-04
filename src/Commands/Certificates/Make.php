@@ -16,7 +16,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:certificate')
+        $this->setName('certificate:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to make the SSL certificate for.')
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain to create an SSL certificate for.')

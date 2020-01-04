@@ -15,7 +15,7 @@ class Activate extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('activate:certificate')
+        $this->setName('certificate:activate')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site the certificate should be activated on.')
             ->addArgument('certificate', InputArgument::REQUIRED, 'The id of the certificate to activate.')
