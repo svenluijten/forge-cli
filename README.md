@@ -579,11 +579,11 @@ If you do not supply the `--file` option, the command will look in `STDIN` for a
 $ forge update:deploy-script {serverId} {siteId} < file.txt
 ```
 
-#### get:deploy-log
-Show the deployment log.
+#### deploy-log
+Show the latest deployment log.
 
 ```bash
-$ forge get:deploy-log {serverId} {siteId}
+$ forge deploy-log {serverId} {siteId}
 ```
 
 The output will be written to `STDOUT`, so you can save it to a file directly:
@@ -592,7 +592,7 @@ The output will be written to `STDOUT`, so you can save it to a file directly:
 $ forge get:deploy-log {serverId} {siteId} > file.log
 ```
 
-#### reset:deploy-state
+#### reset-deploy-state
 Reset the state of the deployment.
 
 ```bash

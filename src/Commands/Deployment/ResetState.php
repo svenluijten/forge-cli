@@ -15,7 +15,7 @@ class ResetState extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('reset:deploy-state')
+        $this->setName('reset-deploy-state')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site you want to reset the deployment state of.')
             ->setDescription('Reset the deployment state of the given site.');
