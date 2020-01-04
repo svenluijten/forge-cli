@@ -15,7 +15,7 @@ class Disable extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('disable:quickdeploy')
+        $this->setName('quickdeploy:disable')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the site to disable quick deployment for.')
             ->setDescription('Disable quick deployment on the given site.');
