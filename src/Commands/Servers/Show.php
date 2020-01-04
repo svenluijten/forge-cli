@@ -15,7 +15,7 @@ class Show extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('show:server')
+        $this->setName('server:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to show information about.')
             ->setDescription('Show information about one of your servers.');
     }

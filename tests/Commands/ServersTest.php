@@ -2,7 +2,7 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Commands\Servers\All;
+use Sven\ForgeCLI\Commands\Servers\ListAll;
 use Sven\ForgeCLI\Commands\Servers\Delete;
 use Sven\ForgeCLI\Commands\Servers\Make;
 use Sven\ForgeCLI\Commands\Servers\Reboot;
@@ -22,7 +22,7 @@ class ServersTest extends TestCase
                 new Server(['id' => '1234', 'ip_address' => '127.0.0.1']),
             ]);
 
-        $tester = $this->command(All::class);
+        $tester = $this->command(ListAll::class);
 
         $tester->execute([]);
 

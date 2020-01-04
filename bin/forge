@@ -19,7 +19,7 @@ $app->addCommands([
     new Authorize,
     new Credentials,
     new Servers\Make,
-    new Servers\All,
+    new Servers\ListAll,
     new Servers\Show,
     new Servers\Update,
     new Servers\Delete,

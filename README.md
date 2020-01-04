@@ -67,11 +67,11 @@ and running `forge list` or `forge help {command}`.
 
 ### Servers
 
-#### list:servers
+#### server:list
 Show all servers associated with your account.
 
 ```bash
-$ forge list:servers
+$ forge server:list
 
 +----------------+--------+----------------+-------------+-------+
 | Name           | Id     | IP Address     | Region      | Ready |
@@ -80,11 +80,11 @@ $ forge list:servers
 +----------------+--------+----------------+-------------+-------+
 ```
 
-#### show:server
+#### server:show
 Show information about one of your servers.
 
 ```bash
-$ forge show:server {serverId}
+$ forge server:show {serverId}
 
 Name:        sparkling-reef
 IP Address:  95.85.60.157
@@ -94,11 +94,11 @@ PHP version: php71
 Created:     2017-03-13 20:59:16
 ```
     
-#### make:server
+#### server:make
 Create a new server.
 
 ```bash
-$ forge make:server
+$ forge server:make
     --provider=ocean2
     --credentials={credentialId}
     --region=ams2
@@ -112,12 +112,12 @@ $ forge make:server
     --network={anotherServerId}
 ```
 
-#### update:server
+#### server:update
 Update the metadata on one of your servers. This will only update the data in Forge, it won't make any actual
 changes to your server.
 
 ```bash
-$ forge update:server {serverId} 
+$ forge server:update {serverId} 
     --name=sluggish-cheetah
     --size=1GB
     --ip=127.0.0.1
@@ -127,18 +127,18 @@ $ forge update:server {serverId}
     --network={anotherServerId}    
 ```
 
-#### reboot:server
+#### server:reboot
 Reboot one of your servers. You will need to confirm your action.
 
 ```bash
-$ forge reboot:server {serverId}
+$ forge server:reboot {serverId}
 ```
 
-#### delete:server
+#### server:delete
 Delete an existing server. You will need to confirm your action.
 
 ```bash
-$ forge delete:server {serverId}
+$ forge server:delete {serverId}
 ```
 
 ---

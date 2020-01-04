@@ -28,7 +28,7 @@ class Update extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('update:server')
+        $this->setName('server:update')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to update.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the server.')
             ->addOption('size', null, InputOption::VALUE_REQUIRED, 'The amount of RAM the server has.')

@@ -31,7 +31,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:server')
+        $this->setName('server:make')
             ->addOption('provider', null, InputOption::VALUE_REQUIRED, 'The provider to provision the server on. Can be either "ocean2", "linode", "aws", or "custom".', 'ocean2')
             ->addOption('credentials', 'C', InputOption::VALUE_REQUIRED, 'Credentials to use. Not required when using the "custom" provider.')
             ->addOption('region', null, InputOption::VALUE_REQUIRED, 'The region to provision the server in. Not required when using the "custom" provider.')
