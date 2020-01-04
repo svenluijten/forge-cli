@@ -2,7 +2,7 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Commands\Sites\All;
+use Sven\ForgeCLI\Commands\Sites\ListAll;
 use Sven\ForgeCLI\Commands\Sites\Delete;
 use Sven\ForgeCLI\Commands\Sites\Deploy;
 use Sven\ForgeCLI\Commands\Sites\Make;
@@ -22,7 +22,7 @@ class SitesTest extends TestCase
                 new Site(['id' => '12345', 'name' => 'A site name']),
             ]);
 
-        $tester = $this->command(All::class);
+        $tester = $this->command(ListAll::class);
 
         $tester->execute([
             'server' => '12345',

@@ -25,7 +25,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('make:site')
+        $this->setName('site:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new site on.')
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site.')
             ->addOption('type', null, InputOption::VALUE_REQUIRED, 'The type of application to install on the site. Can be either "php", "html", "Symfony", or "symfony_dev".', 'php')

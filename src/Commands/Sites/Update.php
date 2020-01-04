@@ -23,7 +23,7 @@ class Update extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('update:site')
+        $this->setName('site:update')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
             ->addArgument('site', InputArgument::REQUIRED, 'The id of the server to update.')
             ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The new base directory of the website.')
