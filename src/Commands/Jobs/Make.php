@@ -16,6 +16,7 @@ class Make extends BaseCommand implements NeedsForge
      */
     protected $optionMap = [
         'command' => 'command',
+        'user' => 'user',
         'frequency' => 'frequency',
         'minute' => 'minute',
         'hour' => 'hour',
@@ -31,6 +32,7 @@ class Make extends BaseCommand implements NeedsForge
     {
         $this->setName('job:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to schedule a new job for.')
+            ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The user that will be executing the command', 'forge')
             ->addOption('command', null, InputOption::VALUE_REQUIRED, 'The command to schedule.')
             ->addOption('frequency', null, InputOption::VALUE_REQUIRED, 'With what frequency should the command run? Valid values are "minutely", "hourly", "nightly", "weekly", "monthly", and "custom".', 'custom')
             ->addOption('minute', null, InputOption::VALUE_REQUIRED, 'The minute to run the scheduled job on. Only required when using the "custom" frequency.', '*')
