@@ -337,6 +337,7 @@ Create a new scheduled job.
 
 ```bash
 $ forge job:make {serverId}
+    --user="forge"
     --command="echo 'hello world' > /dev/null"
     --frequency="hourly"
 ```
