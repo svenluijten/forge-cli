@@ -39,5 +39,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Daemon:</info>     '.$worker->daemon ? 'Yes' : 'No',
             '<info>Created:</info>    '.$worker->createdAt,
         ]);
+
+        return 0;
     }
 }

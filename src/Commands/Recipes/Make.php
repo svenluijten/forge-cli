@@ -40,5 +40,7 @@ class Make extends BaseCommand implements NeedsForge
         $payload['script'] = $this->getFileContent($input, 'script');
 
         $this->forge->createRecipe($payload);
+
+        return 0;
     }
 }

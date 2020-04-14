@@ -35,5 +35,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>PHP version:</info> '.$server->phpVersion,
             '<info>Created:</info>     '.$server->createdAt,
         ]);
+
+        return 0;
     }
 }

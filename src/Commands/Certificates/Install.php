@@ -30,5 +30,7 @@ class Install extends BaseCommand implements NeedsForge
         $this->forge->installCertificate(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate')
         );
+
+        return 0;
     }
 }

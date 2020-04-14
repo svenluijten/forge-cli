@@ -34,10 +34,10 @@ class Delete extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your daemon is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->deleteDaemon($input->getArgument('server'), $daemon);
         }
 
-        $this->forge->deleteDaemon($input->getArgument('server'), $daemon);
+        return 0;
     }
 }

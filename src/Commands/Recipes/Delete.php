@@ -33,10 +33,10 @@ class Delete extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your recipe is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->deleteRecipe($recipe);
         }
 
-        $this->forge->deleteRecipe($recipe);
+        return 0;
     }
 }

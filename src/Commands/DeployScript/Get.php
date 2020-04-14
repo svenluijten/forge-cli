@@ -31,5 +31,7 @@ class Get extends BaseCommand implements NeedsForge
         );
 
         $output->writeln($script);
+
+        return 0;
     }
 }

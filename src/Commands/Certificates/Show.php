@@ -39,5 +39,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Request Status:</info>    '.$certificate->requestStatus,
             '<info>Created:</info>           '.$certificate->createdAt,
         ]);
+
+        return 0;
     }
 }

@@ -49,5 +49,7 @@ class Make extends BaseCommand implements NeedsForge
             '<info>Activation Status:</info> '.$certificate->activationStatus,
             '<info>Created:</info>           '.$certificate->createdAt,
         ]);
+
+        return 0;
     }
 }

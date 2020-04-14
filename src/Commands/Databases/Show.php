@@ -35,5 +35,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Name:</info>    '.$database->name,
             '<info>Created:</info> '.$database->createdAt,
         ]);
+
+        return 0;
     }
 }

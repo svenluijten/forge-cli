@@ -35,5 +35,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Status:</info>      '.$rule->status,
             '<info>Created:</info>     '.$rule->createdAt,
         ]);
+
+        return 0;
     }
 }

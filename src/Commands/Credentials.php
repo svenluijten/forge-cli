@@ -26,5 +26,7 @@ class Credentials extends BaseCommand implements NeedsForge
         $this->table($output, ['Id', 'Name', 'Type'], array_map(function (Credential $credential) {
             return [$credential->id, $credential->name, $credential->type];
         }, $this->forge->credentials()));
+
+        return 0;
     }
 }

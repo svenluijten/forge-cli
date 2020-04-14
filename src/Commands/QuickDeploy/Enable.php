@@ -29,5 +29,7 @@ class Enable extends BaseCommand implements NeedsForge
         $this->forge->enableQuickDeploy(
             $input->getArgument('server'), $input->getArgument('site')
         );
+
+        return 0;
     }
 }

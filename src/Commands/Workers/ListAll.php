@@ -32,5 +32,7 @@ class ListAll extends BaseCommand implements NeedsForge
         }, $this->forge->workers($input->getArgument('server'), $input->getArgument('site')));
 
         $this->table($output, ['Id', 'Connection', 'Status', 'Created'], $rows);
+
+        return 0;
     }
 }

@@ -29,5 +29,7 @@ class Disable extends BaseCommand implements NeedsForge
         $this->forge->disableQuickDeploy(
             $input->getArgument('server'), $input->getArgument('site')
         );
+
+        return 0;
     }
 }

@@ -31,5 +31,7 @@ class ListAll extends BaseCommand implements NeedsForge
         }, $this->forge->mysqlDatabases($input->getArgument('server')));
 
         $this->table($output, ['Id', 'Name', 'Status', 'Created'], $rows);
+
+        return 0;
     }
 }

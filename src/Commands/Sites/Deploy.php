@@ -29,5 +29,7 @@ class Deploy extends BaseCommand implements NeedsForge
         $this->forge->deploySite(
             $input->getArgument('server'), $input->getArgument('site')
         );
+
+        return 0;
     }
 }

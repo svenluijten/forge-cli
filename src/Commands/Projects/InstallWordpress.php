@@ -34,5 +34,7 @@ class InstallWordpress extends BaseCommand implements NeedsForge
             $input->getArgument('site'),
             $this->fillData($input->getOptions())
         );
+
+        return 0;
     }
 }

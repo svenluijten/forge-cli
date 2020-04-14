@@ -29,5 +29,7 @@ class ListAll extends BaseCommand implements NeedsForge
         $this->table($output, ['Id', 'Name', 'Status', 'Created'], array_map(function (SSHKey $key) {
             return [$key->id, $key->name, $key->status, $key->createdAt];
         }, $this->forge->keys($input->getArgument('server'))));
+
+        return 0;
     }
 }

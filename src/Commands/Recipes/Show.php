@@ -34,5 +34,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>User:</info>    '.$recipe->user,
             '<info>Created:</info> '.$recipe->createdAt,
         ]);
+
+        return 0;
     }
 }

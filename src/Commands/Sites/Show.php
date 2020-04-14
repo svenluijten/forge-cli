@@ -39,5 +39,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Project type:</info>    '.$site->projectType,
             '<info>Created:</info>         '.$site->createdAt,
         ]);
+
+        return 0;
     }
 }
