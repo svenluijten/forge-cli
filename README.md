@@ -55,8 +55,8 @@ $ forge authorize
 
 When prompted for it, paste in your API key.
 
-If the API key on your Forge account changed, you'll need to run the same command again. The configuration file will be saved to your home
-directory (`~/forge.json` on macOS / Linux, `%USERPROFILE%/forge.json` on Windows).
+If the API key on your Forge account changed, you'll need to run the same command again. A hidden configuration file will be saved to your home
+directory (`~/.forge.json` on macOS / Linux, `%USERPROFILE%/.forge.json` on Windows).
 
 ## Usage
 A list of commands with their explanation can be found below. You can also find a list of commands and their arguments by installing the package
