@@ -41,5 +41,7 @@ class Make extends BaseCommand implements NeedsForge
         $this->forge->createMysqlDatabase(
             $input->getArgument('server'), $this->fillData($input->getOptions()), false
         );
+
+        return 0;
     }
 }

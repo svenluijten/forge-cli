@@ -57,5 +57,7 @@ class Make extends BaseCommand implements NeedsForge
             $this->fillData($input->getOptions()),
             false
         );
+
+        return 0;
     }
 }

@@ -30,5 +30,7 @@ class Activate extends BaseCommand implements NeedsForge
         $this->forge->activateCertificate(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), false
         );
+
+        return 0;
     }
 }

@@ -36,7 +36,7 @@ class Reboot extends BaseCommand implements NeedsForge
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting.</info>');
 
-            return;
+            return 0;
         }
 
         switch ($service) {
@@ -50,5 +50,7 @@ class Reboot extends BaseCommand implements NeedsForge
                 $this->forge->rebootPostgres($server);
                 break;
         }
+
+        return 0;
     }
 }

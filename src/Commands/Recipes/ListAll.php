@@ -27,5 +27,7 @@ class ListAll extends BaseCommand implements NeedsForge
         $this->table($output, ['Id', 'Command', 'User', 'Created'], array_map(function (Recipe $recipe) {
             return [$recipe->id, $recipe->name, $recipe->user, $recipe->createdAt];
         }, $this->forge->recipes()));
+
+        return 0;
     }
 }

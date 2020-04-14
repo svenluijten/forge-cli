@@ -58,5 +58,7 @@ class Install extends BaseCommand implements NeedsForge
                 $this->forge->installPapertrail($server, $this->fillData($options, $this->papertrailMap));
                 break;
         }
+
+        return 0;
     }
 }

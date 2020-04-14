@@ -34,10 +34,10 @@ class Delete extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your firewall rule is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->deleteFirewallRule($input->getArgument('server'), $rule);
         }
 
-        $this->forge->deleteFirewallRule($input->getArgument('server'), $rule);
+        return 0;
     }
 }

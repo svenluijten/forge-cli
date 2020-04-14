@@ -42,5 +42,7 @@ class Make extends BaseCommand implements NeedsForge
         $this->forge->createSSHKey(
             $input->getArgument('server'), $data, false
         );
+
+        return 0;
     }
 }

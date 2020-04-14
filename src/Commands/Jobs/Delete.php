@@ -34,10 +34,10 @@ class Delete extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your scheduled job is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->deleteJob($input->getArgument('server'), $job);
         }
 
-        $this->forge->deleteJob($input->getArgument('server'), $job);
+        return 0;
     }
 }

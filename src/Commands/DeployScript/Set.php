@@ -31,5 +31,7 @@ class Set extends BaseCommand implements NeedsForge
         $this->forge->updateSiteDeploymentScript(
             $input->getArgument('server'), $input->getArgument('site'), $this->getFileContent($input, 'file')
         );
+
+        return 0;
     }
 }

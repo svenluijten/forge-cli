@@ -35,5 +35,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Status:</info>  '.$key->status,
             '<info>Created:</info> '.$key->createdAt,
         ]);
+
+        return 0;
     }
 }

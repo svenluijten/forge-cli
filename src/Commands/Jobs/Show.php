@@ -38,5 +38,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Status:</info>    '.$job->status,
             '<info>Created:</info>   '.$job->createdAt,
         ]);
+
+        return 0;
     }
 }

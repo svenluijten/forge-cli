@@ -39,5 +39,7 @@ class Make extends BaseCommand implements NeedsForge
         $this->forge->createDaemon(
             $input->getArgument('server'), $this->fillData($input->getOptions())
         );
+
+        return 0;
     }
 }

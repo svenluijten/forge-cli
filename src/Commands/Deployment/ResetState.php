@@ -29,5 +29,7 @@ class ResetState extends BaseCommand implements NeedsForge
         $this->forge->resetDeploymentState(
             $input->getArgument('server'), $input->getArgument('site')
         );
+
+        return 0;
     }
 }

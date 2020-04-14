@@ -33,5 +33,7 @@ class ListAll extends BaseCommand implements NeedsForge
         }, $rules);
 
         $this->table($output, ['Name', 'Id', 'Port', 'IP Address'], $rows);
+
+        return 0;
     }
 }

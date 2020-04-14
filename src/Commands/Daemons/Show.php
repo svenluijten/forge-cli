@@ -35,5 +35,7 @@ class Show extends BaseCommand implements NeedsForge
             '<info>Command:</info> '.$daemon->command,
             '<info>Created:</info> '.$daemon->createdAt,
         ]);
+
+        return 0;
     }
 }

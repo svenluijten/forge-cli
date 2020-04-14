@@ -36,5 +36,7 @@ class Update extends BaseCommand implements NeedsForge
         $this->forge->updateRecipe(
             $input->getArgument('recipe'), $payload
         );
+
+        return 0;
     }
 }

@@ -35,12 +35,12 @@ class Reboot extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting.</info>');
-
-            return;
+        } else {
+            $this->forge->restartWorker(
+                $input->getArgument('server'), $input->getArgument('site'), $worker, false
+            );
         }
 
-        $this->forge->restartWorker(
-            $input->getArgument('server'), $input->getArgument('site'), $worker, false
-        );
+        return 0;
     }
 }

@@ -36,7 +36,7 @@ class Uninstall extends BaseCommand implements NeedsForge
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting.</info>');
 
-            return;
+            return 0;
         }
 
         switch ($service) {
@@ -48,5 +48,7 @@ class Uninstall extends BaseCommand implements NeedsForge
                 $this->forge->removePapertrail($server);
                 break;
         }
+
+        return 0;
     }
 }

@@ -47,5 +47,7 @@ class Update extends BaseCommand implements NeedsForge
         $this->forge->updateServer(
             $input->getArgument('server'), $this->fillData($input->getOptions())
         );
+
+        return 0;
     }
 }

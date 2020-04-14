@@ -29,5 +29,7 @@ class GetLog extends BaseCommand implements NeedsForge
         $this->forge->siteDeploymentLog(
             $input->getArgument('server'), $input->getArgument('site')
         );
+
+        return 0;
     }
 }

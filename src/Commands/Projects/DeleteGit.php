@@ -34,10 +34,10 @@ class DeleteGit extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your git project is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->destroySiteGitRepository($input->getArgument('server'), $site);
         }
 
-        $this->forge->destroySiteGitRepository($input->getArgument('server'), $site);
+        return 0;
     }
 }

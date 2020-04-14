@@ -34,10 +34,10 @@ class DeleteWordpress extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your WordPress project is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->removeWordPress($input->getArgument('server'), $site);
         }
 
-        $this->forge->removeWordPress($input->getArgument('server'), $site);
+        return 0;
     }
 }

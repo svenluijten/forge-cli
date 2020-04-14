@@ -32,5 +32,7 @@ class ListAll extends BaseCommand implements NeedsForge
         $this->table($output, ['Id', 'Status', 'Active', 'Created'], array_map(function (Certificate $certificate) {
             return [$certificate->id, $certificate->status, $certificate->active ? 'Yes' : 'No', $certificate->createdAt];
         }, $certificates));
+
+        return 0;
     }
 }

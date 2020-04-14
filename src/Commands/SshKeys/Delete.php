@@ -34,10 +34,10 @@ class Delete extends BaseCommand implements NeedsForge
 
         if (!$helper->ask($input, $output, $question)) {
             $output->writeln('<info>Ok, aborting. Your SSH key is safe.</info>');
-
-            return;
+        } else {
+            $this->forge->deleteSSHKey($input->getArgument('server'), $key);
         }
 
-        $this->forge->deleteSSHKey($input->getArgument('server'), $key);
+        return 0;
     }
 }

@@ -30,5 +30,7 @@ class Run extends BaseCommand implements NeedsForge
         $this->forge->runRecipe(
             $input->getArgument('recipe'), $input->getOption('server')
         );
+
+        return 0;
     }
 }
