@@ -3,8 +3,8 @@
 namespace Sven\ForgeCLI\Commands;
 
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
@@ -25,7 +25,7 @@ class Authorize extends BaseCommand implements NeedsForge
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        if (! $input->getArgument('key')) {
+        if (!$input->getArgument('key')) {
             /** @var \Symfony\Component\Console\Helper\QuestionHelper $helper */
             $helper = $this->getHelper('question');
 
@@ -36,11 +36,11 @@ class Authorize extends BaseCommand implements NeedsForge
         } else {
             $this->config->set('key', $input->getArgument('key'));
         }
-        
+
         $this->config->persist();
 
         $output->write('<info>Your API key has successfully been set.</info>');
-        
+
         return 0;
     }
 }
