@@ -14,7 +14,7 @@
         "php": "^7.2",
         "symfony/console": "^5.0",
         "symfony/process": "^5.0",
-        "themsaid/forge-sdk": "^1.2",
+        "themsaid/forge-sdk": "^2.0",
         "sven/file-config": "^3.0"
     },
     "require-dev": {
