@@ -126,13 +126,26 @@ abstract class BaseCommand extends Command
      */
     protected function getFileConfig()
     {
-        $home = strncasecmp(PHP_OS, 'WIN', 3) === 0 ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
-        $configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
+        $homeDirectory = (
+            strncasecmp(PHP_OS, 'WIN', 3) === 0
+                ? $_SERVER['USERPROFILE']
+                : $_SERVER['HOME']
+            ) . DIRECTORY_SEPARATOR;
 
-        if (!file_exists($configFile)) {
-            file_put_contents($configFile, '{}');
+        $visibleConfigFile = $homeDirectory.'forge.json';
+        $hiddenConfigFile = $homeDirectory.'.forge.json';
+
+        // If an existing visible configuration file exists, continue using it.
+        if (file_exists($visibleConfigFile)) {
+            return new Store(new File($visibleConfigFile), new Json());
         }
 
-        return new Store(new File($configFile), new Json());
+        // If a hidden configuration file does not exist, create it.
+        if (! file_exists($hiddenConfigFile)) {
+            file_put_contents($hiddenConfigFile, '{}');
+        }
+
+        // Return the hidden configuration file.
+        return new Store(new File($hiddenConfigFile), new Json());
     }
 }
