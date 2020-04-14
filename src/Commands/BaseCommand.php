@@ -130,7 +130,7 @@ abstract class BaseCommand extends Command
             strncasecmp(PHP_OS, 'WIN', 3) === 0
                 ? $_SERVER['USERPROFILE']
                 : $_SERVER['HOME']
-            ) . DIRECTORY_SEPARATOR;
+            ).DIRECTORY_SEPARATOR;
 
         $visibleConfigFile = $homeDirectory.'forge.json';
         $hiddenConfigFile = $homeDirectory.'.forge.json';
@@ -141,7 +141,7 @@ abstract class BaseCommand extends Command
         }
 
         // If a hidden configuration file does not exist, create it.
-        if (! file_exists($hiddenConfigFile)) {
+        if (!file_exists($hiddenConfigFile)) {
             file_put_contents($hiddenConfigFile, '{"key":""}');
         }
 
