@@ -142,7 +142,7 @@ abstract class BaseCommand extends Command
 
         // If a hidden configuration file does not exist, create it.
         if (! file_exists($hiddenConfigFile)) {
-            file_put_contents($hiddenConfigFile, '{}');
+            file_put_contents($hiddenConfigFile, '{"key":""}');
         }
 
         // Return the hidden configuration file.
