@@ -196,11 +196,11 @@ $ forge site:update {serverId} {siteId}
     --directory=/html
 ```
 
-#### deploy:site
+#### site:deploy
 Deploy the given site.
 
 ```bash
-$ forge deploy:site {serverId} {siteId}
+$ forge site:deploy {serverId} {siteId}
 ```
 
 #### site:delete
@@ -591,14 +591,14 @@ $ forge deploy-log {serverId} {siteId}
 The output will be written to `STDOUT`, so you can save it to a file directly:
 
 ```bash
-$ forge get:deploy-log {serverId} {siteId} > file.log
+$ forge deploy-log {serverId} {siteId} > file.log
 ```
 
 #### reset-deploy-state
 Reset the state of the deployment.
 
 ```bash
-$ forge reset:deploy-state {serverId} {siteId}
+$ forge reset-deploy-state {serverId} {siteId}
 ```
 
 ---
