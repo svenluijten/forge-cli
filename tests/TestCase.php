@@ -26,10 +26,15 @@ abstract class TestCase extends BaseTestCase
 
     public function tearDown(): void
     {
-        $configFile = __DIR__.'/fixtures/forge.json';
+        $configFiles = [
+            __DIR__.'/fixtures/forge.json',
+            __DIR__.'/fixtures/.forge.json',
+        ];
 
-        if (file_exists($configFile)) {
-            unlink($configFile);
+        foreach ($configFiles as $configFile) {
+            if (file_exists($configFile)) {
+                unlink($configFile);
+            }
         }
     }
 
