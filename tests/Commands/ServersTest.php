@@ -57,6 +57,9 @@ class ServersTest extends TestCase
                 'private_ip_address' => '192.168.1.1',
                 'php_version' => 'php71',
                 'database' => 'testing',
+                'database_type' => 'mysql',
+                'name' => 'silly-goose',
+                'size' => '5',
                 'maria' => false,
                 'load_balancer' => false,
                 'network' => [],
@@ -69,7 +72,43 @@ class ServersTest extends TestCase
             '--ip' => '127.0.0.1',
             '--private-ip' => '192.168.1.1',
             '--php' => 'php71',
+            '--name' => 'silly-goose',
+            '--size' => '5',
             '--database' => 'testing',
+        ]);
+    }
+
+    /** @test */
+    public function it_creates_a_server_without_db()
+    {
+        $this->forge->shouldReceive()
+            ->createServer([
+                'provider' => 'ocean2',
+                'credential_id' => '1234',
+                'region' => 'AMS2',
+                'ip_address' => '127.0.0.1',
+                'private_ip_address' => '192.168.1.1',
+                'php_version' => 'php71',
+                'database' => 'testing',
+                'database_type' => '',
+                'name' => 'silly-goose',
+                'size' => '5',
+                'maria' => false,
+                'load_balancer' => false,
+                'network' => [],
+            ]);
+
+        $this->command(Make::class)->execute([
+            '--provider' => 'ocean2',
+            '--credentials' => '1234',
+            '--region' => 'AMS2',
+            '--ip' => '127.0.0.1',
+            '--private-ip' => '192.168.1.1',
+            '--php' => 'php71',
+            '--name' => 'silly-goose',
+            '--size' => '5',
+            '--database' => 'testing',
+            '--database-type' => 'none',
         ]);
     }
 
