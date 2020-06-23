@@ -2,8 +2,8 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Tests\TestCase;
 use Sven\ForgeCLI\Commands\NginxConfig\Set;
+use Sven\ForgeCLI\Tests\TestCase;
 
 class NginxConfigTest extends TestCase
 {
@@ -11,7 +11,7 @@ class NginxConfigTest extends TestCase
     public function it_fails_if_file_is_missing()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("The file provided \"does-not-exist.test\" was not found.");
+        $this->expectExceptionMessage('The file provided "does-not-exist.test" was not found.');
 
         $tester = $this->command(Set::class);
 
