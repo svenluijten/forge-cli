@@ -25,6 +25,8 @@ class Make extends BaseCommand implements NeedsForge
         'install-maria' => 'maria',
         'load-balancer' => 'load_balancer',
         'network' => 'network',
+        'name' => 'name',
+        'size' => 'size',
     ];
 
     /**
@@ -44,6 +46,8 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('install-maria', null, InputOption::VALUE_NONE, 'Whether MariaDB should be installed. If left out, MySQL will be installed by default.')
             ->addOption('load-balancer', null, InputOption::VALUE_NONE, 'Whether the server should be provisioned as a load balancer.')
             ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.')
+            ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the server.')
+            ->addOption('size', null, InputOption::VALUE_REQUIRED, 'The size of the server.')
             ->setDescription('Create a new server.');
     }
 
