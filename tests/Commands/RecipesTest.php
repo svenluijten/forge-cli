@@ -7,7 +7,6 @@ use Sven\ForgeCLI\Tests\TestCase;
 
 class RecipesTest extends TestCase
 {
-
     public function test_it_runs_a_recipe()
     {
         $this->forge->shouldReceive('runRecipe')
