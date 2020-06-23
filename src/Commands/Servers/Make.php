@@ -21,6 +21,7 @@ class Make extends BaseCommand implements NeedsForge
         'private-ip' => 'private_ip_address',
         'php' => 'php_version',
         'database' => 'database',
+        'database-type' => 'database_type',
         'install-maria' => 'maria',
         'load-balancer' => 'load_balancer',
         'network' => 'network',
@@ -39,6 +40,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addOption('private-ip', null, InputOption::VALUE_REQUIRED, 'Private IP address of the server. Required when using the "custom" provider.')
             ->addOption('php', null, InputOption::VALUE_REQUIRED, 'PHP version to install when provisioning the server. Supported versions are "php56", "php70", and "php71".')
             ->addOption('database', null, InputOption::VALUE_REQUIRED, 'The name of the database to create when provisioning the server.', 'forge')
+            ->addOption('database-type', null, InputOption::VALUE_OPTIONAL, 'The type of DB to install. Can be "mariadb", "mysql", "mysql8, "postgres", or "none".', 'mysql')
             ->addOption('install-maria', null, InputOption::VALUE_NONE, 'Whether MariaDB should be installed. If left out, MySQL will be installed by default.')
             ->addOption('load-balancer', null, InputOption::VALUE_NONE, 'Whether the server should be provisioned as a load balancer.')
             ->addOption('network', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'Other servers\' ids this one can network with.')
@@ -50,9 +52,13 @@ class Make extends BaseCommand implements NeedsForge
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->forge->createServer(
-            $this->fillData($input->getOptions())
-        );
+        $createServerRequest = $this->fillData($input->getOptions());
+
+        if ($createServerRequest['database_type'] === 'none') {
+            $createServerRequest['database_type'] = '';
+        }
+
+        $this->forge->createServer($createServerRequest);
 
         return 0;
     }
