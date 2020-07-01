@@ -2,16 +2,16 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Themsaid\Forge\Resources\Site;
 use Sven\ForgeCLI\Commands\Servers\Delete;
 use Sven\ForgeCLI\Commands\Servers\ListAll;
 use Sven\ForgeCLI\Commands\Servers\Make;
 use Sven\ForgeCLI\Commands\Servers\Reboot;
 use Sven\ForgeCLI\Commands\Servers\Show;
+use Sven\ForgeCLI\Commands\Servers\SshConfig;
 use Sven\ForgeCLI\Commands\Servers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
 use Themsaid\Forge\Resources\Server;
-use Sven\ForgeCLI\Commands\Servers\SshConfig;
+use Themsaid\Forge\Resources\Site;
 
 class ServersTest extends TestCase
 {
@@ -181,7 +181,6 @@ class ServersTest extends TestCase
             ->andReturn([
                 new Site(['id' => '1234', 'name' => 'site-test', 'server_id' => '1234', 'username' => 'notforge']),
             ]);
-
 
         $tester = $this->command(SshConfig::class);
 
