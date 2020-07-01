@@ -2,6 +2,7 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Themsaid\Forge\Resources\Site;
 use Sven\ForgeCLI\Commands\Servers\Delete;
 use Sven\ForgeCLI\Commands\Servers\ListAll;
 use Sven\ForgeCLI\Commands\Servers\Make;
@@ -10,6 +11,7 @@ use Sven\ForgeCLI\Commands\Servers\Show;
 use Sven\ForgeCLI\Commands\Servers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
 use Themsaid\Forge\Resources\Server;
+use Sven\ForgeCLI\Commands\Servers\SshConfig;
 
 class ServersTest extends TestCase
 {
@@ -142,5 +144,59 @@ class ServersTest extends TestCase
             '--private-ip' => '192.168.1.1',
             '--max-upload-size' => '2GB',
         ]);
+    }
+
+    /** @test */
+    public function it_generates_an_ssh_config()
+    {
+        $this->forge->shouldReceive()
+            ->servers()
+            ->andReturn([
+                new Server(['id' => '1234', 'name' => 'test', 'ip_address' => '127.0.0.1', 'ssh_port' => 22]),
+            ]);
+
+        $tester = $this->command(SshConfig::class);
+
+        $tester->execute([]);
+
+        $output = $tester->getDisplay();
+
+        $this->assertStringContainsString('Host test', $output);
+        $this->assertStringContainsString('    User forge', $output);
+        $this->assertStringContainsString('    Port 22', $output);
+        $this->assertStringContainsString('    Hostname 127.0.0.1', $output);
+    }
+
+    /** @test */
+    public function it_generates_an_ssh_config_with_sites()
+    {
+        $this->forge->shouldReceive()
+            ->servers()
+            ->andReturn([
+                new Server(['id' => '1234', 'name' => 'test', 'ip_address' => '127.0.0.1', 'ssh_port' => 22]),
+            ]);
+
+        $this->forge->shouldReceive()
+            ->sites('1234')
+            ->andReturn([
+                new Site(['id' => '1234', 'name' => 'site-test', 'server_id' => '1234', 'username' => 'notforge']),
+            ]);
+
+
+        $tester = $this->command(SshConfig::class);
+
+        $tester->execute(['--with-sites' => true]);
+
+        $output = $tester->getDisplay();
+
+        $this->assertStringContainsString('Host test', $output);
+        $this->assertStringContainsString('    User forge', $output);
+        $this->assertStringContainsString('    Port 22', $output);
+        $this->assertStringContainsString('    Hostname 127.0.0.1', $output);
+
+        $this->assertStringContainsString('Host test:site-test', $output);
+        $this->assertStringContainsString('    User notforge', $output);
+        $this->assertStringContainsString('    RequestTTY yes', $output);
+        $this->assertStringContainsString('    RemoteCommand cd site-test; exec $SHELL;', $output);
     }
 }
