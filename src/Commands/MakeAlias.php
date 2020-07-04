@@ -34,6 +34,8 @@ class MakeAlias extends BaseCommand
         $output->writeln("<info>{$this->getMessage($alias, $server, $site)}</info>");
 
         $this->config->persist();
+
+        return 1;
     }
 
     protected function server(InputInterface $input, OutputInterface $output)
