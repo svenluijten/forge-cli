@@ -8,6 +8,7 @@ use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
 use Sven\ForgeCLI\Contracts\NeedsForge;
+use Sven\ForgeCLI\Util;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -138,26 +139,15 @@ abstract class BaseCommand extends Command
 
     protected function getFileConfig(): Store
     {
-        $homeDirectory = (
-            strncasecmp(PHP_OS, 'WIN', 3) === 0
-                ? $_SERVER['USERPROFILE']
-                : $_SERVER['HOME']
-            ).DIRECTORY_SEPARATOR;
+        $config = Util::getConfigFilePath();
 
-        $visibleConfigFile = $homeDirectory.'forge.json';
-        $hiddenConfigFile = $homeDirectory.'.forge.json';
-
-        // If an existing visible configuration file exists, continue using it.
-        if (file_exists($visibleConfigFile)) {
-            return new Store(new File($visibleConfigFile), new Json());
+        // If this is the first time this command is run, we will
+        // create a new configuration file. Otherwise, we just
+        // return the already existing configuration store.
+        if (! file_exists($config)) {
+            file_put_contents($config, '{"key":""}');
         }
 
-        // If a hidden configuration file does not exist, create it.
-        if (!file_exists($hiddenConfigFile)) {
-            file_put_contents($hiddenConfigFile, '{"key":""}');
-        }
-
-        // Return the hidden configuration file.
-        return new Store(new File($hiddenConfigFile), new Json());
+        return new Store(new File($config), new Json());
     }
 }

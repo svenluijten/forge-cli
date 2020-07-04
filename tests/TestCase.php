@@ -27,7 +27,7 @@ abstract class TestCase extends BaseTestCase
     {
         $this->forge = m::mock(Forge::class);
 
-        /* @see \Sven\ForgeCLI\Commands\BaseCommand::getFileConfig */
+        /* @see \Sven\ForgeCLI\Util::getHomeDirectory() */
         $_SERVER['USERPROFILE'] = __DIR__.'/fixtures';
         $_SERVER['HOME'] = __DIR__.'/fixtures';
 
