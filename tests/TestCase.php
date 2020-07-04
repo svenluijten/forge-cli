@@ -31,7 +31,7 @@ abstract class TestCase extends BaseTestCase
         $_SERVER['USERPROFILE'] = __DIR__.'/fixtures';
         $_SERVER['HOME'] = __DIR__.'/fixtures';
 
-        $file = __DIR__.'/fixtures/forge.json';
+        $file = __DIR__.'/fixtures/.forge.json';
 
         file_put_contents($file, '{}');
         $this->config = new Store(new File($file), new Json());
