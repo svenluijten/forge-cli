@@ -16,7 +16,7 @@ class Update extends BaseCommand implements NeedsForge
      */
     public function configure()
     {
-        $this->setName('recipe:show')
+        $this->setName('recipe:update')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to update.')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The new name of the recipe.')
             ->addOption('user', null, InputOption::VALUE_REQUIRED, 'The new user to run the recipe as.')
