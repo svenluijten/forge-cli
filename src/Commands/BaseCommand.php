@@ -136,18 +136,4 @@ abstract class BaseCommand extends Command
             );
         }
     }
-
-    protected function getFileConfig(): Store
-    {
-        $config = Util::getConfigFilePath();
-
-        // If this is the first time this command is run, we will
-        // create a new configuration file. Otherwise, we just
-        // return the already existing configuration store.
-        if (!file_exists($config)) {
-            file_put_contents($config, '{"key":""}');
-        }
-
-        return new Store(new File($config), new Json());
-    }
 }
