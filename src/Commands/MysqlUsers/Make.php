@@ -23,7 +23,7 @@ class Make extends BaseCommand implements NeedsForge
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the MySQL user on.')
             ->addOption('username', null, InputOption::VALUE_REQUIRED, 'The username of the MySQL user to create.', null)
             ->addOption('password', null, InputOption::VALUE_REQUIRED, 'The password of the database user.', null)
-            ->addOption('database', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'The name of the database(s) to give the MySQL user access to.', null)
+            ->addOption('database', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'The id(s) of the database(s) to give the MySQL user access to.', null)
             ->setDescription('Create a new MySQL user.');
     }
 
