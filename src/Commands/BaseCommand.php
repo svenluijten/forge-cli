@@ -8,7 +8,6 @@ use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
 use Sven\ForgeCLI\Contracts\NeedsForge;
-use Sven\ForgeCLI\Util;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
