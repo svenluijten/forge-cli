@@ -28,33 +28,33 @@ class SshConfig extends BaseCommand implements NeedsForge
         $servers = $this->forge->servers();
 
         foreach ($servers as $server) {
-            $output->write($this->sshTemplate($server->name, $server->ipAddress, $server->sshPort));
+            $output->writeln($this->outputTemplate($server->name, $server->ipAddress, $server->sshPort));
+            $output->writeln('');
 
             if ($input->getOption('with-sites')) {
                 $sites = $this->forge->sites($server->id);
 
                 foreach ($sites as $site) {
-                    $output->write($this->sshTemplate("{$server->name}:{$site->name}", $server->ipAddress, $server->sshPort, $site->username ?? 'forge', $site->name));
+                    $output->writeln($this->outputTemplate("{$server->name}:{$site->name}", $server->ipAddress, $server->sshPort,
+                        $site->username ?? 'forge', $site->name));
+                    $output->writeln('');
                 }
-                $output->writeln('');
             }
         }
 
         return 0;
     }
 
-    public function sshTemplate($name, $ip, $port = 22, $username = 'forge', $directory = null)
+    public function outputTemplate($name, $ip, $port = 22, $username = 'forge', $directory = null)
     {
-        $template = "Host {$name}\n";
-        $template .= "    Hostname {$ip}\n";
-        $template .= "    Port {$port}\n";
-        $template .= "    User {$username}\n";
-        if ($directory) {
-            $template .= "    RequestTTY yes\n";
-            $template .= "    RemoteCommand cd {$directory}; exec \$SHELL;\n";
-        }
-        $template .= "\n";
-
-        return $template;
+        return [
+            "Host {$name}",
+            "    Hostname {$ip}",
+            "    Port {$port}",
+            "    User {$username}",
+        ] + ($directory ? [
+            "    RequestTTY yes",
+            "    RemoteCommand cd {$directory}; exec \$SHELL;",
+        ] : []);
     }
 }
