@@ -179,11 +179,13 @@ Created:         2017-03-13 21:14:19
 ```
 
 #### site:make
-Create a new site on one of your servers.
+Create a new site on one of your servers. Use `--alias` to include one or more additional domains.
 
 ```bash
 $ forge site:make {serverId} 
     --domain=example.com
+    --alias=example.org
+    --alias=another-site.net
     --type=php
     --directory=/public
 ```
