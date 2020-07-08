@@ -53,7 +53,7 @@ class SshConfig extends BaseCommand implements NeedsForge
             "    Port {$port}",
             "    User {$username}",
         ] + ($directory ? [
-            "    RequestTTY yes",
+            '    RequestTTY yes',
             "    RemoteCommand cd {$directory}; exec \$SHELL;",
         ] : []);
     }
