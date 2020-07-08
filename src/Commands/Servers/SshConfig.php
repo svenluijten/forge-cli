@@ -47,14 +47,14 @@ class SshConfig extends BaseCommand implements NeedsForge
 
     public function outputTemplate($name, $ip, $port = 22, $username = 'forge', $directory = null)
     {
-        return [
+        return array_merge([
             "Host {$name}",
             "    Hostname {$ip}",
             "    Port {$port}",
             "    User {$username}",
-        ] + ($directory ? [
+        ], ($directory ? [
             '    RequestTTY yes',
             "    RemoteCommand cd {$directory}; exec \$SHELL;",
-        ] : []);
+        ] : []));
     }
 }
