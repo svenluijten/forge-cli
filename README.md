@@ -144,6 +144,23 @@ Delete an existing server. You will need to confirm your action.
 $ forge server:delete {serverId}
 ```
 
+#### server:ssh-config
+Generate an SSH config from your site list. `--with-sites` will also give you per-site SSH hosts and will use correct
+usernames for isolated sites.
+
+```bash
+$ forge server:ssh-config
+
+Host loopy-aardvark
+    Hostname 111.222.111.222
+    Port 22
+    User forge
+
+Host daring-squirrel
+    Hostname 111.222.111.223
+    Port 22
+```
+
 ---
 
 ### Sites
