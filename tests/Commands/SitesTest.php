@@ -84,6 +84,7 @@ class SitesTest extends TestCase
                 'domain' => 'example.com',
                 'project_type' => 'symfony_dev',
                 'directory' => '/public',
+                'isolated' => false,
             ], false);
 
         $this->command(Make::class)->execute([
@@ -95,6 +96,26 @@ class SitesTest extends TestCase
     }
 
     /** @test */
+    public function it_creates_a_site_with_website_isolation(): void
+    {
+        $this->forge->shouldReceive()
+            ->createSite('12345', [
+                'domain' => 'example.com',
+                'project_type' => 'symfony_dev',
+                'directory' => '/public',
+                'isolated' => true,
+            ], false);
+
+        $this->command(Make::class)->execute([
+            'server' => '12345',
+            '--domain' => 'example.com',
+            '--type' => 'symfony_dev',
+            '--directory' => '/public',
+            '--isolated' => true,
+        ]);
+    }
+
+    /** @test */
     public function it_defaults_to_php_site_when_not_supplying_the_option()
     {
         $this->forge->shouldReceive()
@@ -102,6 +123,7 @@ class SitesTest extends TestCase
                 'domain' => 'example.com',
                 'project_type' => 'php',
                 'directory' => '/public_html',
+                'isolated' => false,
             ], false);
 
         $this->command(Make::class)->execute([
@@ -119,6 +141,7 @@ class SitesTest extends TestCase
                 'domain' => 'example.com',
                 'project_type' => 'Symfony',
                 'directory' => '/public',
+                'isolated' => false,
             ], false);
 
         $this->command(Make::class)->execute([
