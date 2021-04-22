@@ -21,6 +21,7 @@ $app->addCommands([
     new Servers\Make,
     new Servers\ListAll,
     new Servers\Show,
+    new Servers\SshConfig,
     new Servers\Update,
     new Servers\Delete,
     new Servers\Reboot,
