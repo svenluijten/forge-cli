@@ -2,13 +2,13 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Laravel\Forge\Resources\DatabaseUser;
 use Sven\ForgeCLI\Commands\DatabaseUsers\Delete;
 use Sven\ForgeCLI\Commands\DatabaseUsers\ListAll;
 use Sven\ForgeCLI\Commands\DatabaseUsers\Make;
 use Sven\ForgeCLI\Commands\DatabaseUsers\Show;
 use Sven\ForgeCLI\Commands\DatabaseUsers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Laravel\Forge\Resources\DatabaseUser;
 
 class DatabaseUsersTest extends TestCase
 {

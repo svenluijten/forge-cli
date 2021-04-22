@@ -2,11 +2,11 @@
 
 namespace Sven\ForgeCLI\Tests;
 
+use Laravel\Forge\Forge;
 use Mockery as m;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use Laravel\Forge\Forge;
 
 abstract class TestCase extends BaseTestCase
 {
