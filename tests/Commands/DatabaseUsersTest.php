@@ -13,7 +13,7 @@ use Sven\ForgeCLI\Tests\TestCase;
 class DatabaseUsersTest extends TestCase
 {
     /** @test */
-    public function it_lists_all_mysql_users_on_a_server()
+    public function it_lists_all_database_users_on_a_server()
     {
         $this->forge->shouldReceive()
             ->databaseUsers('12345')
@@ -43,7 +43,7 @@ class DatabaseUsersTest extends TestCase
     }
 
     /** @test */
-    public function it_deletes_a_mysql_user()
+    public function it_deletes_a_database_user()
     {
         $this->forge->shouldReceive()
             ->deleteDatabaseUser('12345', '67890');
@@ -57,7 +57,7 @@ class DatabaseUsersTest extends TestCase
     }
 
     /** @test */
-    public function it_does_not_delete_the_mysql_user_if_no_is_answered()
+    public function it_does_not_delete_the_database_user_if_no_is_answered()
     {
         $this->forge->shouldNotReceive()
             ->deleteDatabaseUser();
@@ -71,7 +71,7 @@ class DatabaseUsersTest extends TestCase
     }
 
     /** @test */
-    public function it_makes_a_mysql_user()
+    public function it_makes_a_database_user()
     {
         $this->forge->shouldReceive()
             ->createDatabaseUser('12345', [
@@ -89,7 +89,7 @@ class DatabaseUsersTest extends TestCase
     }
 
     /** @test */
-    public function it_updates_a_mysql_user()
+    public function it_updates_a_database_user()
     {
         $this->forge->shouldReceive()
             ->updateDatabaseUser('12345', '67890', [
@@ -104,7 +104,7 @@ class DatabaseUsersTest extends TestCase
     }
 
     /** @test */
-    public function it_shows_information_about_a_mysql_user()
+    public function it_shows_information_about_a_database_user()
     {
         $this->forge->shouldReceive()
             ->databaseUser('12345', '67890')
