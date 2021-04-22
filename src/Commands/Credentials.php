@@ -2,10 +2,10 @@
 
 namespace Sven\ForgeCLI\Commands;
 
+use Laravel\Forge\Resources\Credential;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Laravel\Forge\Resources\Credential;
 
 class Credentials extends BaseCommand implements NeedsForge
 {

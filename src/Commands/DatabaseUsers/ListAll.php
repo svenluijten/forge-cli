@@ -2,12 +2,12 @@
 
 namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
+use Laravel\Forge\Resources\DatabaseUser;
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Laravel\Forge\Resources\DatabaseUser;
 
 class ListAll extends BaseCommand implements NeedsForge
 {
