@@ -19,7 +19,8 @@ class Show extends BaseCommand implements NeedsForge
             ->setDescription('Show information about an SSL certificate on the given website.');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output): int    {
+    public function execute(InputInterface $input, OutputInterface $output): int
+    {
         $certificate = $this->forge->certificate(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate')
         );
