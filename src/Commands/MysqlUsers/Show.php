@@ -21,7 +21,7 @@ class Show extends BaseCommand implements NeedsForge
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $user = $this->forge->mysqlUser(
-            $input->getArgument('server'), $input->getArgument('database')
+            $input->getArgument('server'), $input->getArgument('user')
         );
 
         $output->writeln([
