@@ -26,10 +26,10 @@ class Delete extends BaseCommand implements NeedsForge
         $helper = $this->getHelper('question');
         $question = new ConfirmationQuestion('Are you sure you want to delete the MySQL user with id "'.$user.'"?', false);
 
-        if (!$helper->ask($input, $output, $question)) {
-            $output->writeln('<info>Ok, aborting. Your MySQL user is safe.</info>');
-        } else {
+        if ($helper->ask($input, $output, $question)) {
             $this->forge->deleteMysqlUser($input->getArgument('server'), $user);
+        } else {
+            $output->writeln('<info>Ok, aborting. Your MySQL user is safe.</info>');
         }
 
         return 0;
