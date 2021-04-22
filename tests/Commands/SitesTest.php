@@ -85,6 +85,7 @@ class SitesTest extends TestCase
                 'project_type' => 'symfony_dev',
                 'directory' => '/public',
                 'isolated' => false,
+                'aliases' => [],
             ], false);
 
         $this->command(Make::class)->execute([
@@ -104,6 +105,7 @@ class SitesTest extends TestCase
                 'project_type' => 'symfony_dev',
                 'directory' => '/public',
                 'isolated' => true,
+                'aliases' => [],
             ], false);
 
         $this->command(Make::class)->execute([
@@ -116,6 +118,30 @@ class SitesTest extends TestCase
     }
 
     /** @test */
+    public function it_creates_a_site_with_aliases()
+    {
+        $this->forge->shouldReceive()
+            ->createSite('12345', [
+                'domain' => 'example.com',
+                'project_type' => 'symfony_dev',
+                'directory' => '/public',
+                'isolated' => false,
+                'aliases' => [
+                    'foo.local',
+                    'bar.local',
+                ],
+            ], false);
+
+        $this->command(Make::class)->execute([
+            'server' => '12345',
+            '--domain' => 'example.com',
+            '--type' => 'symfony_dev',
+            '--directory' => '/public',
+            '--alias' => ['foo.local', 'bar.local'],
+        ]);
+    }
+
+    /** @test */
     public function it_defaults_to_php_site_when_not_supplying_the_option()
     {
         $this->forge->shouldReceive()
@@ -124,6 +150,7 @@ class SitesTest extends TestCase
                 'project_type' => 'php',
                 'directory' => '/public_html',
                 'isolated' => false,
+                'aliases' => [],
             ], false);
 
         $this->command(Make::class)->execute([
@@ -142,6 +169,7 @@ class SitesTest extends TestCase
                 'project_type' => 'Symfony',
                 'directory' => '/public',
                 'isolated' => false,
+                'aliases' => [],
             ], false);
 
         $this->command(Make::class)->execute([
