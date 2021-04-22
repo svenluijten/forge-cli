@@ -302,6 +302,59 @@ $ forge delete:daemon {serverId} {daemonId}
 
 ---
 
+### MySQL Users
+
+#### mysql-user:make
+Create a new MySQL user with access to the given databases.
+
+```bash
+$ forge mysql-user:make {serverId}
+    --username="your_username"
+    --password="password"
+    --database=456
+    --database=789
+```
+
+#### mysql-user:list
+List all MySQL users on the given server.
+
+```bash
+$ forge mysql-user:list {serverId}
+
++-------+---------------+------------+---------------------+
+| Id    | Name          | Status     | Created             |
++-------+---------------+------------+---------------------+
+| 67890 | your_username | installing | 2017-03-13 21:14:19 |
++-------+---------------+------------+---------------------+
+```
+
+#### mysql-user:show
+Show information about the given MySQL user.
+
+```bash
+$ forge mysql-user:show {serverId} {userId}
+
+Status:  installing
+Name:    your_username
+Created: 2017-03-21 18:26:33
+```
+
+#### mysql-user:update
+Update the databases a MySQL user has access to.
+
+```bash
+$ forge mysql-user:update {serverId} {userId}
+    --database=987
+    --database=654
+```
+
+#### mysql-user:delete
+Delete the given MySQL user from your server. You will need to confirm your action.
+
+```bash
+$ forge mysql-user:delete {serverId} {userId}
+```
+
 ### Firewall Rules
 
 #### rule:make
