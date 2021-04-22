@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class Show extends BaseCommand implements NeedsForge
 {
     public function configure(): void
-{
+    {
         $this->setName('rule:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the firewall rule to show information about is on.')
             ->addArgument('rule', InputArgument::REQUIRED, 'The id of the firewall rule to show information about.')
