@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\MysqlUsers;
+namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
-    public function configure()
+    public function configure(): void
     {
         $this->setName('mysql-user:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the MySQL user is on.')
@@ -19,7 +19,7 @@ class Delete extends BaseCommand implements NeedsForge
             ->setDescription('Delete the given MySQL user from one of your servers.');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $user = $input->getArgument('user');
 
@@ -27,7 +27,7 @@ class Delete extends BaseCommand implements NeedsForge
         $question = new ConfirmationQuestion('Are you sure you want to delete the MySQL user with id "'.$user.'"?', false);
 
         if ($helper->ask($input, $output, $question)) {
-            $this->forge->deleteMysqlUser($input->getArgument('server'), $user);
+            $this->forge->deleteDatabaseUser($input->getArgument('server'), $user);
         } else {
             $output->writeln('<info>Ok, aborting. Your MySQL user is safe.</info>');
         }

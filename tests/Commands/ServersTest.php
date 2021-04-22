@@ -9,7 +9,7 @@ use Sven\ForgeCLI\Commands\Servers\Reboot;
 use Sven\ForgeCLI\Commands\Servers\Show;
 use Sven\ForgeCLI\Commands\Servers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Server;
+use Laravel\Forge\Resources\Server;
 
 class ServersTest extends TestCase
 {

@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GetLog extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('deploy-log')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -21,10 +18,7 @@ class GetLog extends BaseCommand implements NeedsForge
             ->setDescription('Get latest deployment log of the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->siteDeploymentLog(
             $input->getArgument('server'), $input->getArgument('site')

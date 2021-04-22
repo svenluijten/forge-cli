@@ -14,14 +14,11 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'name' => 'name',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('key:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new SSH key on.')
@@ -30,10 +27,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Install a new SSH key on one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $data = $this->fillData($input->getOptions());
 

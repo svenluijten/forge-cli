@@ -13,15 +13,12 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'name' => 'name',
         'user' => 'user',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('recipe:make')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The name of the recipe.')
@@ -30,10 +27,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create a new recipe.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $payload = $this->fillData($input->getOptions());
 

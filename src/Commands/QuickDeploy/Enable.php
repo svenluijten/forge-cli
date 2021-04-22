@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Enable extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('quickdeploy:enable')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -21,10 +18,7 @@ class Enable extends BaseCommand implements NeedsForge
             ->setDescription('Enable quick deployment on the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->enableQuickDeploy(
             $input->getArgument('server'), $input->getArgument('site')

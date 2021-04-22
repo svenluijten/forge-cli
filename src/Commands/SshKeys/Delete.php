@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('key:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the SSH key is.')
@@ -22,10 +19,7 @@ class Delete extends BaseCommand implements NeedsForge
             ->setDescription('Delete an SSH key.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $key = $input->getArgument('key');
 

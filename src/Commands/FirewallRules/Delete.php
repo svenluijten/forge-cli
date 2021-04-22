@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('rule:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the firewall rule to delete is on.')
@@ -22,10 +19,7 @@ class Delete extends BaseCommand implements NeedsForge
             ->setDescription('Delete a firewall rule.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $rule = $input->getArgument('rule');
 

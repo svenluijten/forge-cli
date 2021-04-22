@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Show extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('daemon:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to the daemon is running on.')
@@ -21,10 +18,7 @@ class Show extends BaseCommand implements NeedsForge
             ->setDescription('Show information about the given daemon.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $daemon = $this->forge->daemon(
             $input->getArgument('server'), $input->getArgument('daemon')

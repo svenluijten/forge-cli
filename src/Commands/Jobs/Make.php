@@ -14,7 +14,7 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'command' => 'command',
         'user' => 'user',
         'frequency' => 'frequency',
@@ -25,10 +25,7 @@ class Make extends BaseCommand implements NeedsForge
         'weekday' => 'weekday',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('job:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to schedule a new job for.')
@@ -43,10 +40,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Schedule a new job on one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         if (strtolower($input->getOption('frequency')) !== 'custom') {
             $this->requireOptions($input, 'minute', 'hour', 'day', 'month', 'weekday');

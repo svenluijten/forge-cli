@@ -2,24 +2,24 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
-use Sven\ForgeCLI\Commands\MysqlUsers\Delete;
-use Sven\ForgeCLI\Commands\MysqlUsers\ListAll;
-use Sven\ForgeCLI\Commands\MysqlUsers\Make;
-use Sven\ForgeCLI\Commands\MysqlUsers\Show;
-use Sven\ForgeCLI\Commands\MysqlUsers\Update;
+use Sven\ForgeCLI\Commands\DatabaseUsers\Delete;
+use Sven\ForgeCLI\Commands\DatabaseUsers\ListAll;
+use Sven\ForgeCLI\Commands\DatabaseUsers\Make;
+use Sven\ForgeCLI\Commands\DatabaseUsers\Show;
+use Sven\ForgeCLI\Commands\DatabaseUsers\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\MysqlUser;
+use Laravel\Forge\Resources\DatabaseUser;
 
-class MysqlUsersTest extends TestCase
+class DatabaseUsersTest extends TestCase
 {
     /** @test */
     public function it_lists_all_mysql_users_on_a_server()
     {
         $this->forge->shouldReceive()
-            ->mysqlUsers('12345')
+            ->databaseUsers('12345')
             ->once()
             ->andReturn([
-                new MysqlUser([
+                new DatabaseUser([
                     'id' => '::id::',
                     'serverId' => '12345',
                     'name' => '::name::',
@@ -46,7 +46,7 @@ class MysqlUsersTest extends TestCase
     public function it_deletes_a_mysql_user()
     {
         $this->forge->shouldReceive()
-            ->deleteMysqlUser('12345', '67890');
+            ->deleteDatabaseUser('12345', '67890');
 
         $this->command(Delete::class)
             ->setInputs(['yes'])
@@ -60,7 +60,7 @@ class MysqlUsersTest extends TestCase
     public function it_does_not_delete_the_mysql_user_if_no_is_answered()
     {
         $this->forge->shouldNotReceive()
-            ->deleteMysqlUser();
+            ->deleteDatabaseUser();
 
         $this->command(Delete::class)
             ->setInputs(['no'])
@@ -74,7 +74,7 @@ class MysqlUsersTest extends TestCase
     public function it_makes_a_mysql_user()
     {
         $this->forge->shouldReceive()
-            ->createMysqlUser('12345', [
+            ->createDatabaseUser('12345', [
                 'name' => '::username::',
                 'password' => '::password::',
                 'databases' => [1, 2, 3],
@@ -92,7 +92,7 @@ class MysqlUsersTest extends TestCase
     public function it_updates_a_mysql_user()
     {
         $this->forge->shouldReceive()
-            ->updateMysqlUser('12345', '67890', [
+            ->updateDatabaseUser('12345', '67890', [
                 'databases' => [4, 5, 6],
             ]);
 
@@ -107,9 +107,9 @@ class MysqlUsersTest extends TestCase
     public function it_shows_information_about_a_mysql_user()
     {
         $this->forge->shouldReceive()
-            ->mysqlUser('12345', '67890')
+            ->databaseUser('12345', '67890')
             ->andReturn(
-                new MysqlUser([
+                new DatabaseUser([
                     'id' => '::id::',
                     'serverId' => '12345',
                     'name' => '::name::',

@@ -11,10 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Update extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('recipe:update')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to update.')
@@ -24,10 +21,7 @@ class Update extends BaseCommand implements NeedsForge
             ->setDescription('Update the given recipe.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $payload = $this->fillData($input->getOptions());
 

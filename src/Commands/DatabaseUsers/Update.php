@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\MysqlUsers;
+namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
@@ -11,11 +11,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Update extends BaseCommand implements NeedsForge
 {
-    protected $optionMap = [
+    protected array $optionMap = [
         'database' => 'databases',
     ];
 
-    public function configure()
+    public function configure(): void
     {
         $this->setName('mysql-user:update')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the MySQL user is on.')
@@ -24,11 +24,11 @@ class Update extends BaseCommand implements NeedsForge
             ->setDescription('Update the given MySQL user.');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $payload = $this->fillData($input->getOptions());
 
-        $this->forge->updateMysqlUser(
+        $this->forge->updateDatabaseUser(
             $input->getArgument('server'), $input->getArgument('user'), $payload
         );
 

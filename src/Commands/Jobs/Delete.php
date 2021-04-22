@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('job:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
@@ -22,10 +19,7 @@ class Delete extends BaseCommand implements NeedsForge
             ->setDescription('Delete a scheduled job.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $job = $input->getArgument('job');
 

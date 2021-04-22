@@ -6,12 +6,12 @@ use Mockery as m;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
-use Themsaid\Forge\Forge;
+use Laravel\Forge\Forge;
 
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @var \Mockery\MockInterface&\Themsaid\Forge\Forge
+     * @var \Mockery\MockInterface&\Laravel\Forge\Forge
      */
     protected $forge;
 

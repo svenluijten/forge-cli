@@ -11,18 +11,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Make extends BaseCommand implements NeedsForge
 {
-    /**
-     * @var array
-     */
-    protected $optionMap = [
+    protected array $optionMap = [
         'command' => 'command',
         'user' => 'user',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('daemon:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the daemon on.')
@@ -31,10 +25,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create and start a new daemon.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->createDaemon(
             $input->getArgument('server'), $this->fillData($input->getOptions())

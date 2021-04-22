@@ -8,7 +8,7 @@ use Sven\ForgeCLI\Commands\Daemons\Make;
 use Sven\ForgeCLI\Commands\Daemons\Reboot;
 use Sven\ForgeCLI\Commands\Daemons\Show;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Daemon;
+use Laravel\Forge\Resources\Daemon;
 
 class DaemonsTest extends TestCase
 {

@@ -9,7 +9,7 @@ use Sven\ForgeCLI\Commands\Sites\Make;
 use Sven\ForgeCLI\Commands\Sites\Show;
 use Sven\ForgeCLI\Commands\Sites\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Site;
+use Laravel\Forge\Resources\Site;
 
 class SitesTest extends TestCase
 {
