@@ -1,11 +1,27 @@
 #!/usr/bin/env php
 <?php
 
-use Sven\ForgeCLI\Commands\{
-    Authorize, Certificates, Credentials, Daemons, Databases, Deployment,
-    DeployScript, Env, FirewallRules, Jobs, MakeAlias, MysqlUsers, NginxConfig,
-    Projects, QuickDeploy, Recipes, Servers, Services, SshKeys, Sites, Workers
-};
+use Sven\ForgeCLI\Commands\{Authorize,
+    Certificates,
+    Credentials,
+    Daemons,
+    Databases,
+    Deployment,
+    DeployScript,
+    Env,
+    FirewallRules,
+    Jobs,
+    MakeAlias,
+    MysqlUsers,
+    NginxConfig,
+    Projects,
+    QuickDeploy,
+    Recipes,
+    Servers,
+    Services,
+    SshKeys,
+    Sites,
+    Workers};
 use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
@@ -59,7 +75,7 @@ $app->addCommands([
     new Deployment\GetLog($config),
     new Deployment\ResetState($config),
     new DeployScript\Get($config),
-    new DeployScript\Update($config),
+    new DeployScript\Set($config),
     new FirewallRules\ListAll($config),
     new FirewallRules\Make($config),
     new FirewallRules\Delete($config),
@@ -88,7 +104,7 @@ $app->addCommands([
     new Recipes\Run($config),
     new Recipes\Update($config),
     new NginxConfig\Get($config),
-    new NginxConfig\Update($config),
+    new NginxConfig\Set($config),
     new Env\Get($config),
     new Env\Update($config),
     new SshKeys\ListAll($config),

@@ -73,7 +73,7 @@ class MakeAlias extends BaseCommand
         $message = 'Successfully created alias "'.$alias.'" for server "'.$server.'"';
 
         if ($site !== null) {
-            $message .= " and site '$site'";
+            $message .= ' and site "'.$site.'"';
         }
 
         return $message.'.';

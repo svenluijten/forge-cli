@@ -30,6 +30,10 @@ abstract class BaseCommand extends Command
 
     public function initialize(InputInterface $input, OutputInterface $output)
     {
+        if ($this instanceof MakeAlias) {
+            return;
+        }
+
         if (!$input->hasArgument('server')) {
             return;
         }
