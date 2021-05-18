@@ -28,7 +28,7 @@ class Show extends BaseCommand implements NeedsForge
         $output->writeln([
             '<info>Domain:</info>            '.$certificate->domain,
             '<info>Status:</info>            '.$certificate->status,
-            '<info>Exists:</info>            '.$certificate->existing ? 'Yes' : 'No',
+            '<info>Exists:</info>            '.($certificate->existing ? 'Yes' : 'No'),
             '<info>Activation Status:</info> '.$certificate->activationStatus,
             '<info>Request Status:</info>    '.$certificate->requestStatus,
             '<info>Created:</info>           '.$certificate->createdAt,

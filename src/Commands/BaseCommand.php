@@ -17,17 +17,70 @@ use Laravel\Forge\Forge;
 abstract class BaseCommand extends Command
 {
     protected Forge $forge;
-    protected Store $config;
     protected array $optionMap = [];
 
-    public function __construct(?Forge $forge = null)
+    public function __construct(protected Store $config, ?Forge $forge = null)
     {
         parent::__construct();
 
-        $this->config = $this->getFileConfig();
-
         if ($this instanceof NeedsForge) {
             $this->forge = $forge ?: new Forge($this->config->get('key'));
+        }
+    }
+
+    public function initialize(InputInterface $input, OutputInterface $output)
+    {
+        if ($this instanceof MakeAlias) {
+            return;
+        }
+
+        if (!$input->hasArgument('server')) {
+            return;
+        }
+
+        // If the 'site' argument is present, the user probably did not
+        // use an alias, so we will return early. If it is missing,
+        // resolve the alias and set the arguments accordingly.
+        if ($input->hasArgument('site') && $input->getArgument('site') !== null) {
+            return;
+        }
+
+        $alias = $this->config->get(
+            'aliases.'.$input->getArgument('server')
+        );
+
+        // No alias was found by that name, so we will
+        // continue executing the command here. This
+        // will cause a validation error later on.
+        if ($alias === null) {
+            $output->writeln('<error>No alias found for "'.$input->getArgument('server').'".</error>');
+
+            return;
+        }
+
+        // Could not find alias for site, continue executing the
+        // command to cause an error later on by Symfony's own
+        // validation that takes place after this method.
+        if (!isset($alias['site']) && $input->hasArgument('site')) {
+            $output->writeln('<error>No site alias found, but a site is required for this command.</error>');
+
+            return;
+        }
+
+        if (!$output->isQuiet()) {
+            $message = 'Using aliased server "'.$alias['server'].'"';
+
+            if ($input->hasArgument('site')) {
+                $message .= ' and site "'.$alias['site'].'"';
+            }
+
+            $output->writeln('<comment>'.$message.'.</comment>');
+        }
+
+        $input->setArgument('server', $alias['server']);
+
+        if ($input->hasArgument('site')) {
+            $input->setArgument('site', $alias['site']);
         }
     }
 
