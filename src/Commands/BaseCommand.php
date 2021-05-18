@@ -4,8 +4,6 @@ namespace Sven\ForgeCLI\Commands;
 
 use InvalidArgumentException;
 use RuntimeException;
-use Sven\FileConfig\Drivers\Json;
-use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Command\Command;
@@ -134,30 +132,5 @@ abstract class BaseCommand extends Command
                 sprintf('The option "%s" is required.', $key)
             );
         }
-    }
-
-    protected function getFileConfig(): Store
-    {
-        $homeDirectory = (
-            strncasecmp(PHP_OS, 'WIN', 3) === 0
-                ? $_SERVER['USERPROFILE']
-                : $_SERVER['HOME']
-            ).DIRECTORY_SEPARATOR;
-
-        $visibleConfigFile = $homeDirectory.'forge.json';
-        $hiddenConfigFile = $homeDirectory.'.forge.json';
-
-        // If an existing visible configuration file exists, continue using it.
-        if (file_exists($visibleConfigFile)) {
-            return new Store(new File($visibleConfigFile), new Json());
-        }
-
-        // If a hidden configuration file does not exist, create it.
-        if (!file_exists($hiddenConfigFile)) {
-            file_put_contents($hiddenConfigFile, '{"key":""}');
-        }
-
-        // Return the hidden configuration file.
-        return new Store(new File($hiddenConfigFile), new Json());
     }
 }

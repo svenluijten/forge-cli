@@ -25,6 +25,7 @@ use Sven\ForgeCLI\Commands\{Authorize,
 use Sven\FileConfig\Drivers\Json;
 use Sven\FileConfig\File;
 use Sven\FileConfig\Store;
+use Sven\ForgeCLI\Util;
 
 if (file_exists(__DIR__.'/../../../autoload.php')) {
     require __DIR__.'/../../../autoload.php';
@@ -32,13 +33,13 @@ if (file_exists(__DIR__.'/../../../autoload.php')) {
     require __DIR__.'/../vendor/autoload.php';
 }
 
-// Get the configuration file to use for the application. By default,
-// we will use the `$HOME` directory (`%USERPROFILE%` on Windows).
-$home = PHP_OS_FAMILY === 'Windows' ? $_SERVER['USERPROFILE'] : $_SERVER['HOME'];
-$configFile = $home.DIRECTORY_SEPARATOR.'forge.json';
+$configFile = Util::getConfigFilePath();
 
-if (! file_exists($configFile)) {
-    file_put_contents($configFile, '{}');
+// If this is the first time this command is run, we will
+// create a new configuration file. Otherwise, we just
+// return the already existing configuration store.
+if (!file_exists($configFile)) {
+    file_put_contents($configFile, '{"key":""}');
 }
 
 $config = new Store(new File($configFile), new Json());

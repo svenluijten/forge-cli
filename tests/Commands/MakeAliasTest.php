@@ -81,6 +81,6 @@ class MakeAliasTest extends TestCase
 
     protected function getConfig(): array
     {
-        return json_decode(file_get_contents(__DIR__.'/../fixtures/forge.json'), true);
+        return json_decode(file_get_contents(__DIR__.'/../fixtures/.forge.json'), true);
     }
 }
