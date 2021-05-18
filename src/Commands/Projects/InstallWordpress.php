@@ -11,10 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallWordpress extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('wordpress:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -24,10 +21,7 @@ class InstallWordpress extends BaseCommand implements NeedsForge
             ->setDescription('Install a new WordPress project on a site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->installWordPress(
             $input->getArgument('server'),

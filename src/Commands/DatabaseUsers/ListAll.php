@@ -1,13 +1,13 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\MysqlUsers;
+namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
+use Laravel\Forge\Resources\DatabaseUser;
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Themsaid\Forge\Resources\MysqlUser;
 
 class ListAll extends BaseCommand implements NeedsForge
 {
@@ -20,9 +20,9 @@ class ListAll extends BaseCommand implements NeedsForge
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $rows = array_map(function (MysqlUser $user) {
+        $rows = array_map(function (DatabaseUser $user) {
             return [$user->id, $user->name, $user->status, $user->createdAt];
-        }, $this->forge->mysqlUsers($input->getArgument('server')));
+        }, $this->forge->databaseUsers($input->getArgument('server')));
 
         $this->table($output, ['Id', 'Name', 'Status', 'Created'], $rows);
 

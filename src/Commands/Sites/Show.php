@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Show extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('site:show')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -21,10 +18,7 @@ class Show extends BaseCommand implements NeedsForge
             ->setDescription('Show information about a site on a specified server.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $site = $this->forge->site(
             $input->getArgument('server'), $input->getArgument('site')

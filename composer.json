@@ -6,15 +6,15 @@
     "authors": [
         {
             "name": "Sven Luijten",
-            "email": "sven@luijten.co",
+            "email": "contact@svenluijten.com",
             "homepage": "https://svenluijten.com"
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^8.0",
         "symfony/console": "^4.0 || ^5.0",
         "symfony/process": "^4.0 || ^5.0",
-        "themsaid/forge-sdk": "^2.0",
+        "laravel/forge-sdk": "^3.0",
         "sven/file-config": "^3.0"
     },
     "require-dev": {

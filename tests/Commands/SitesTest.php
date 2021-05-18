@@ -2,6 +2,7 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Laravel\Forge\Resources\Site;
 use Sven\ForgeCLI\Commands\Sites\Delete;
 use Sven\ForgeCLI\Commands\Sites\Deploy;
 use Sven\ForgeCLI\Commands\Sites\ListAll;
@@ -9,7 +10,6 @@ use Sven\ForgeCLI\Commands\Sites\Make;
 use Sven\ForgeCLI\Commands\Sites\Show;
 use Sven\ForgeCLI\Commands\Sites\Update;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Site;
 
 class SitesTest extends TestCase
 {

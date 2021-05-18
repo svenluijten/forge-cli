@@ -11,20 +11,14 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Delete extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('recipe:delete')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to delete.')
             ->setDescription('Delete one of your recipes.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $recipe = $input->getArgument('recipe');
 

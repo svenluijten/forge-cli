@@ -10,20 +10,14 @@ use Symfony\Component\Console\Question\Question;
 
 class Authorize extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('authorize')
             ->setDescription('Set or update the API key used in the commands.')
             ->addArgument('key', InputArgument::OPTIONAL, 'Forge API Key');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$input->getArgument('key')) {
             /** @var \Symfony\Component\Console\Helper\QuestionHelper $helper */

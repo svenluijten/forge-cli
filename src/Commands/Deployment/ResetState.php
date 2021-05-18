@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ResetState extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('reset-deploy-state')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -21,10 +18,7 @@ class ResetState extends BaseCommand implements NeedsForge
             ->setDescription('Reset the deployment state of the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->resetDeploymentState(
             $input->getArgument('server'), $input->getArgument('site')

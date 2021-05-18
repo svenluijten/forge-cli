@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Install extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('certificate:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server where the site is.')
@@ -22,10 +19,7 @@ class Install extends BaseCommand implements NeedsForge
             ->setDescription('Install the given SSL certificate on a site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->installCertificate(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate')

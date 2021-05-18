@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\MysqlUsers;
+namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
@@ -11,13 +11,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Make extends BaseCommand implements NeedsForge
 {
-    protected $optionMap = [
+    protected array $optionMap = [
         'username' => 'name',
         'password' => 'password',
         'database' => 'databases',
     ];
 
-    public function configure()
+    public function configure(): void
     {
         $this->setName('mysql-user:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the MySQL user on.')
@@ -27,9 +27,9 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create a new MySQL user.');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->forge->createMysqlUser(
+        $this->forge->createDatabaseUser(
             $input->getArgument('server'), $this->fillData($input->getOptions())
         );
 

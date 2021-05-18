@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Deploy extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('site:deploy')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site to deploy is on.')
@@ -21,10 +18,7 @@ class Deploy extends BaseCommand implements NeedsForge
             ->setDescription('Deploy the given website.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->deploySite(
             $input->getArgument('server'), $input->getArgument('site')

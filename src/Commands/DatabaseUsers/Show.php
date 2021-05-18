@@ -1,6 +1,6 @@
 <?php
 
-namespace Sven\ForgeCLI\Commands\MysqlUsers;
+namespace Sven\ForgeCLI\Commands\DatabaseUsers;
 
 use Sven\ForgeCLI\Commands\BaseCommand;
 use Sven\ForgeCLI\Contracts\NeedsForge;
@@ -20,7 +20,7 @@ class Show extends BaseCommand implements NeedsForge
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $user = $this->forge->mysqlUser(
+        $user = $this->forge->databaseUser(
             $input->getArgument('server'), $input->getArgument('user')
         );
 

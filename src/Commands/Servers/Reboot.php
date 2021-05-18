@@ -11,20 +11,14 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Reboot extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('server:reboot')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to reboot.')
             ->setDescription('Reboot one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $server = $input->getArgument('server');
 

@@ -2,9 +2,9 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Laravel\Forge\Resources\Certificate;
 use Sven\ForgeCLI\Commands\Certificates\Activate;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Certificate;
 
 class CertificatesTest extends TestCase
 {
