@@ -2,7 +2,7 @@
 <?php
 
 use Sven\ForgeCLI\Commands\{
-    Authorize, Certificates, Credentials, Daemons, Databases, MysqlUsers, Deployment,
+    Authorize, Certificates, Credentials, Daemons, Databases, DatabaseUsers, Deployment,
     DeployScript, Env, FirewallRules, Jobs, NginxConfig, Projects, QuickDeploy,
     Recipes, Servers, Services, SshKeys, Sites, Workers
 };
@@ -57,10 +57,10 @@ $app->addCommands([
     new Databases\Make,
     new Databases\Delete,
     new Databases\Show,
-    new MysqlUsers\ListAll,
-    new MysqlUsers\Make,
-    new MysqlUsers\Delete,
-    new MysqlUsers\Show,
+    new DatabaseUsers\ListAll,
+    new DatabaseUsers\Make,
+    new DatabaseUsers\Delete,
+    new DatabaseUsers\Show,
     new Workers\ListAll,
     new Workers\Make,
     new Workers\Delete,
