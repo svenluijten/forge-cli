@@ -22,7 +22,9 @@ class Run extends BaseCommand implements NeedsForge
     public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->runRecipe(
-            $input->getArgument('recipe'), $input->getOption('server')
+            $input->getArgument('recipe'), [
+                'servers' => $input->getOption('server'),
+            ]
         );
 
         return 0;
