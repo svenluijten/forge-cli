@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Get extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('deploy-script:get')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -21,10 +18,7 @@ class Get extends BaseCommand implements NeedsForge
             ->setDescription('Output the deployment script used for the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $script = $this->forge->siteDeploymentScript(
             $input->getArgument('server'), $input->getArgument('site')

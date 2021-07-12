@@ -14,7 +14,7 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'connection' => 'connection',
         'timeout' => 'timeout',
         'sleep' => 'sleep',
@@ -22,10 +22,7 @@ class Make extends BaseCommand implements NeedsForge
         'daemon' => 'daemon',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('worker:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the worker on.')
@@ -38,10 +35,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create a new worker.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->createWorker(
             $input->getArgument('server'), $input->getArgument('site'), $this->fillData($input->getOptions()), false

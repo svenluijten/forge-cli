@@ -14,16 +14,13 @@ class InstallGit extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'provider' => 'provider',
         'repository' => 'repository',
         'branch' => 'branch',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('git:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -34,10 +31,7 @@ class InstallGit extends BaseCommand implements NeedsForge
             ->setDescription('Install a new git project on a site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->installGitRepositoryOnSite(
             $input->getArgument('server'),

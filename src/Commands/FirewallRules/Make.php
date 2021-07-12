@@ -14,15 +14,12 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'name' => 'name',
         'port' => 'port',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('rule:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create the firewall rule on.')
@@ -31,10 +28,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create a new firewall rule.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->createFirewallRule(
             $input->getArgument('server'), $this->fillData($input->getOptions()), false

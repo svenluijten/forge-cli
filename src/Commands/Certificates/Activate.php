@@ -10,10 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Activate extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('certificate:activate')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -22,10 +19,7 @@ class Activate extends BaseCommand implements NeedsForge
             ->setDescription('Activate one of the SSL certificates on the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->activateCertificate(
             $input->getArgument('server'), $input->getArgument('site'), $input->getArgument('certificate'), false

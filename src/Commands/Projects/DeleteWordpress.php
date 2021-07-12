@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class DeleteWordpress extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('wordpress:delete')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -22,10 +19,7 @@ class DeleteWordpress extends BaseCommand implements NeedsForge
             ->setDescription('Delete a WordPress project from a site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $site = $input->getArgument('site');
 

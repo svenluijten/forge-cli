@@ -14,29 +14,27 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'domain' => 'domain',
         'type' => 'project_type',
         'directory' => 'directory',
+        'isolated' => 'isolated',
+        'alias' => 'aliases',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('site:make')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to create a new site on.')
             ->addOption('domain', null, InputOption::VALUE_REQUIRED, 'The domain of your new site.')
             ->addOption('type', null, InputOption::VALUE_REQUIRED, 'The type of application to install on the site. Can be either "php", "html", "Symfony", or "symfony_dev".', 'php')
             ->addOption('directory', null, InputOption::VALUE_REQUIRED, 'The base directory of the site.', '/public')
+            ->addOption('isolated', null, InputOption::VALUE_NONE, 'Whether or not to use website isolation.')
+            ->addOption('alias', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_OPTIONAL, 'The aliases assigned to the site.')
             ->setDescription('Create a new site on one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->createSite(
             $input->getArgument('server'),

@@ -11,10 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Run extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('recipe:run')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to run.')
@@ -22,10 +19,7 @@ class Run extends BaseCommand implements NeedsForge
             ->setDescription('Run one of your recipes.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->runRecipe(
             $input->getArgument('recipe'), [

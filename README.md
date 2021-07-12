@@ -12,27 +12,6 @@ Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites 
 servers, add sites, and install repositories all without leaving the comfort of your command line. An overview of all available commands
 can be found [here](#usage).
 
-## Table of Contents
-- [Installation](#installation)
-- [Setup](#setup)
-- [Usage](#usage)
-  - [Servers](#servers)
-  - [Sites](#sites)
-  - [Services](#services)
-  - [Daemons](#daemons)
-  - [Firewall Rules](#firewall-rules)
-  - [Scheduled Jobs](#scheduled-jobs)
-  - [Databases](#databases)
-  - [SSL Certificates](#ssl-certificates)
-  - [SSH Keys](#ssh-keys)
-  - [Workers](#workers)
-  - [Configuration](#configuration)
-  - [Projects](#projects)
-  - [Recipes](#recipes)
-  - [Credentials](#credentials)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 Via [composer](http://getcomposer.org):
 
@@ -179,11 +158,13 @@ Created:         2017-03-13 21:14:19
 ```
 
 #### site:make
-Create a new site on one of your servers.
+Create a new site on one of your servers. Use `--alias` to include one or more additional domains.
 
 ```bash
 $ forge site:make {serverId} 
     --domain=example.com
+    --alias=example.org
+    --alias=another-site.net
     --type=php
     --directory=/public
 ```
@@ -299,6 +280,59 @@ $ forge delete:daemon {serverId} {daemonId}
 ```
 
 ---
+
+### MySQL Users
+
+#### mysql-user:make
+Create a new MySQL user with access to the given databases.
+
+```bash
+$ forge mysql-user:make {serverId}
+    --username="your_username"
+    --password="password"
+    --database=456
+    --database=789
+```
+
+#### mysql-user:list
+List all MySQL users on the given server.
+
+```bash
+$ forge mysql-user:list {serverId}
+
++-------+---------------+------------+---------------------+
+| Id    | Name          | Status     | Created             |
++-------+---------------+------------+---------------------+
+| 67890 | your_username | installing | 2017-03-13 21:14:19 |
++-------+---------------+------------+---------------------+
+```
+
+#### mysql-user:show
+Show information about the given MySQL user.
+
+```bash
+$ forge mysql-user:show {serverId} {userId}
+
+Status:  installing
+Name:    your_username
+Created: 2017-03-21 18:26:33
+```
+
+#### mysql-user:update
+Update the databases a MySQL user has access to.
+
+```bash
+$ forge mysql-user:update {serverId} {userId}
+    --database=987
+    --database=654
+```
+
+#### mysql-user:delete
+Delete the given MySQL user from your server. You will need to confirm your action.
+
+```bash
+$ forge mysql-user:delete {serverId} {userId}
+```
 
 ### Firewall Rules
 

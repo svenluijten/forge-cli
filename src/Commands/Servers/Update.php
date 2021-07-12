@@ -14,7 +14,7 @@ class Update extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'name' => 'name',
         'size' => 'size',
         'ip' => 'ip_address',
@@ -23,10 +23,7 @@ class Update extends BaseCommand implements NeedsForge
         'network' => 'network',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('server:update')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to update.')
@@ -39,10 +36,7 @@ class Update extends BaseCommand implements NeedsForge
             ->setDescription('Update the metadata on one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->updateServer(
             $input->getArgument('server'), $this->fillData($input->getOptions())

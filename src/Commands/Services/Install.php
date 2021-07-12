@@ -26,10 +26,7 @@ class Install extends BaseCommand implements NeedsForge
         'host' => 'host',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('service:install')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to install the service on.')
@@ -40,10 +37,7 @@ class Install extends BaseCommand implements NeedsForge
             ->setDescription('Install a service on a server.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $service = strtolower($input->getArgument('service'));
         $server = $input->getArgument('server');

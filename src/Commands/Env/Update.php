@@ -14,14 +14,11 @@ class Update extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'file' => 'file',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('env:set')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the site is on.')
@@ -30,10 +27,7 @@ class Update extends BaseCommand implements NeedsForge
             ->setDescription('Update the .env file of the given site.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->forge->updateSiteEnvironmentFile(
             $input->getArgument('server'), $input->getArgument('site'), $this->getFileContent($input, 'file')

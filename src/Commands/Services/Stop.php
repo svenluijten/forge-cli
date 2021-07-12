@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Stop extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('service:stop')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server to stop the service on.')
@@ -22,10 +19,7 @@ class Stop extends BaseCommand implements NeedsForge
             ->setDescription('Stop a service on a server.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $service = strtolower($input->getArgument('service'));
         $server = $input->getArgument('server');

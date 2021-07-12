@@ -11,10 +11,7 @@ use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class Reboot extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('daemon:reboot')
             ->addArgument('server', InputArgument::REQUIRED, 'The id of the server the daemon is on.')
@@ -22,10 +19,7 @@ class Reboot extends BaseCommand implements NeedsForge
             ->setDescription('Restart the given daemon on one of your servers.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $daemon = $input->getArgument('daemon');
 

@@ -13,7 +13,7 @@ class Make extends BaseCommand implements NeedsForge
     /**
      * @var array
      */
-    protected $optionMap = [
+    protected array $optionMap = [
         'provider' => 'provider',
         'credentials' => 'credential_id',
         'region' => 'region',
@@ -29,10 +29,7 @@ class Make extends BaseCommand implements NeedsForge
         'size' => 'size',
     ];
 
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('server:make')
             ->addOption('provider', null, InputOption::VALUE_REQUIRED, 'The provider to provision the server on. Can be either "ocean2", "linode", "aws", or "custom".', 'ocean2')
@@ -51,10 +48,7 @@ class Make extends BaseCommand implements NeedsForge
             ->setDescription('Create a new server.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $createServerRequest = $this->fillData($input->getOptions());
 

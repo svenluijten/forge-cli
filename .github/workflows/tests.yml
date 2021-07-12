@@ -3,26 +3,28 @@ on: [push, pull_request]
 
 jobs:
   phpunit:
-    name: PHP ${{ matrix.php }} (${{ matrix.composer_flags }})
-    runs-on: ubuntu-latest
+    name: PHP ${{ matrix.php }} (${{ matrix.os }}, ${{ matrix.dependency-versions }} deps)
+    runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
-      max-parallel: 15
       matrix:
-        php: [7.2, 7.3, 7.4]
-        composer_flags: ['--prefer-lowest', '--prefer-stable']
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        php: [8.0]
+        dependency-versions: [highest, lowest]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Configure PHP
-        uses: shivammathur/setup-php@v1
+        uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
           extensions: mbstring
           coverage: none
 
-      - name: Install Composer dependencies
-        run: composer update --no-interaction --no-ansi --no-suggest --prefer-dist ${{ matrix.composer_flags }}
+      - name: Install dependencies
+        uses: ramsey/composer-install@v1
+        with:
+          dependency-versions: ${{ matrix.dependency-version }}
+          composer-options: "--prefer-dist"
 
       - name: Execute tests
         run: vendor/bin/phpunit

@@ -10,20 +10,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class Show extends BaseCommand implements NeedsForge
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configure()
+    public function configure(): void
     {
         $this->setName('recipe:show')
             ->addArgument('recipe', InputArgument::REQUIRED, 'The id of the recipe to show information about.')
             ->setDescription('Show information about a recipe.');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): int
     {
         $recipe = $this->forge->recipe(
             $input->getArgument('recipe')

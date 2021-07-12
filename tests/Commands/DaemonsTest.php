@@ -2,13 +2,13 @@
 
 namespace Sven\ForgeCLI\Tests\Commands;
 
+use Laravel\Forge\Resources\Daemon;
 use Sven\ForgeCLI\Commands\Daemons\Delete;
 use Sven\ForgeCLI\Commands\Daemons\ListAll;
 use Sven\ForgeCLI\Commands\Daemons\Make;
 use Sven\ForgeCLI\Commands\Daemons\Reboot;
 use Sven\ForgeCLI\Commands\Daemons\Show;
 use Sven\ForgeCLI\Tests\TestCase;
-use Themsaid\Forge\Resources\Daemon;
 
 class DaemonsTest extends TestCase
 {
