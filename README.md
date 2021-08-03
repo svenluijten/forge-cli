@@ -8,6 +8,11 @@
 [![Build Status][ico-tests]][link-tests]
 [![StyleCI][ico-styleci]][link-styleci]
 
+---
+## ⚠️ Notice
+**This package is abandoned**: Use [the official `laravel/forge-cli`](https://github.com/laravel/forge-cli) instead.
+---
+
 Interact with your [Laravel Forge](https://forge.laravel.com) servers and sites via the command line with this package. Create and list
 servers, add sites, and install repositories all without leaving the comfort of your command line. An overview of all available commands
 can be found [here](#usage).
